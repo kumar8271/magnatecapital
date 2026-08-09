@@ -84,10 +84,10 @@ export default function Home() {
   // Typewriter banner phrase state
   const [typewriterText, setTypewriterText] = useState('');
   const phrases = [
+    'Trade with Royalty.',
     'Empower Your Capital.',
-    'Trade Global Markets.',
-    'Execute with Precision.',
-    'Experience Elite Brokerage.'
+    'Institutional Execution.',
+    'Elite Multi-Asset Brokerage.'
   ];
   const phraseIndexRef = useRef(0);
   const characterIndexRef = useRef(0);
@@ -636,34 +636,48 @@ export default function Home() {
 
         <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="hero-content">
-            <div className="gold-badge">Trusted Multi-Asset Brokerage</div>
+            <div className="gold-badge">Official Multi-Asset Brokerage</div>
             <h1 className="text-shine">
               Magnate Capital<br />
               <span className="typewriter-text">{typewriterText}</span><span className="typewriter-cursor">|</span>
             </h1>
             <p className="hero-lead">
-              Connect directly to global financial liquidity pools. Trade Forex, Indices, Shares, Cryptocurrencies, and Commodities with razor-sharp execution, ultra-tight spreads, and institutional-grade security.
+              Experience the art of trading at its finest — tailored solutions, institutional power, royal treatment. Connect directly to global financial liquidity with razor-sharp execution.
             </p>
             <div className="hero-actions">
-              <a href="#offers" className="btn btn-primary btn-lg">Explore Accounts</a>
-              <a href="#calculator" className="btn btn-secondary btn-lg">Calculate Margin</a>
+              <a href="https://trade.magnatefx.com/register/" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">Start Trading</a>
+              <a href="#about" className="btn btn-secondary btn-lg">Learn More</a>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', marginTop: '50px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-              <div>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>2020</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Founded</div>
+
+            {/* Key Highlights Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '40px', paddingTop: '25px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <i className="fa-solid fa-shield-halved" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Regulated Broker</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Ensuring transparency & trust in every transaction.</div>
+                </div>
               </div>
-              <div>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>1000+</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Instruments</div>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <i className="fa-solid fa-laptop-code" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Advanced Platforms</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Access to MT4, MT5, and cTrader for seamless execution.</div>
+                </div>
               </div>
-              <div>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>50+</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Countries</div>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <i className="fa-solid fa-chart-line" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Diverse Asset Classes</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Trade Forex, Commodities, Indices, Stocks & Crypto.</div>
+                </div>
               </div>
-              <div>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>24/5</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Support</div>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <i className="fa-solid fa-headset" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>24/5 Dedicated Support</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Our team is here to assist you every step of the way.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1043,29 +1057,72 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="container">
+      <section id="about" className="about-section" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div className="forex-tech-bg">
+          <div className="tech-grid-pattern"></div>
+          <div className="tech-glow-orb gold" style={{ width: '450px', height: '450px', top: '10%', right: '5%' }}></div>
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="section-title text-center">
             <span className="section-label">About Magnate Capital</span>
-            <h2>About Magnate Capital</h2>
-            <p className="subtitle">Designed for elite traders who demand precision, security, and velocity.</p>
+            <h2>Where Precision Meets Prestige</h2>
+            <p className="subtitle">Built for traders who demand institutional power, tailored solutions, and royal treatment.</p>
           </div>
-          <div className="grid-3">
-            <div className="about-card">
-              <div className="icon-wrap"><i className="fa-solid fa-shield-halved"></i></div>
-              <h3>Tier-1 Security</h3>
-              <p>Client funds are segregated in tier-1 international banks, backed by institutional security protocols.</p>
+
+          {/* Vision & Mission 2-Column Grid */}
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.75)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', marginBottom: '16px' }}>
+                <i className="fa-solid fa-compass" style={{ color: 'var(--accent-gold)', fontSize: '0.85rem' }}></i>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR VISION</span>
+              </div>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Benchmark in Elite Trading</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.7' }}>
+                We aspire to be the global benchmark in elite trading—where precision, power, and prestige meet to deliver an unrivaled trading environment.
+              </p>
             </div>
-            <div className="about-card">
-              <div className="icon-wrap"><i className="fa-solid fa-bolt"></i></div>
-              <h3>Ultra-Low Latency</h3>
-              <p>Our server infrastructure in London and New York ensures execution speed under 15 milliseconds.</p>
+
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.75)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', marginBottom: '16px' }}>
+                <i className="fa-solid fa-bullseye" style={{ color: 'var(--accent-gold)', fontSize: '0.85rem' }}></i>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR MISSION</span>
+              </div>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Lasting Wealth & Transparency</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.7' }}>
+                Our mission is to create lasting wealth and trust through honest, innovative, and expert trading services tailored to every trader's financial goals.
+              </p>
             </div>
-            <div className="about-card">
-              <div className="icon-wrap"><i className="fa-solid fa-headset"></i></div>
-              <h3>VIP Support 24/5</h3>
-              <p>Access your dedicated relationship manager around the clock in multiple languages.</p>
-            </div>
+          </div>
+
+          {/* Core Values — PILLAR Framework Header */}
+          <div className="text-center" style={{ marginBottom: '35px' }}>
+            <span className="section-label">Core Values</span>
+            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>The "PILLAR" Framework</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px' }}>Six foundational principles guiding every solution we deliver.</p>
+          </div>
+
+          {/* PILLAR 6-Grid */}
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            {[
+              { letter: 'P', title: 'Professionalism', desc: 'We act with expertise, integrity, and dedication to exceed client expectations.', icon: 'fa-user-tie' },
+              { letter: 'I', title: 'Integrity', desc: 'We maintain complete transparency, trust, and honesty in all transactions.', icon: 'fa-shield-heart' },
+              { letter: 'L', title: 'Legacy', desc: 'We build sustainable wealth and strategic value that lasts across generations.', icon: 'fa-building-columns' },
+              { letter: 'L', title: 'Leadership (Excellence)', desc: 'We lead the global market with top-tier execution and industry innovation.', icon: 'fa-award' },
+              { letter: 'A', title: 'Adaptability (Innovation)', desc: 'We leverage cutting-edge tools and Next-Gen platforms to stay ahead.', icon: 'fa-microchip' },
+              { letter: 'R', title: 'Relationships (Client-Centric)', desc: 'We tailor every trading solution directly to our clients’ unique goals.', icon: 'fa-handshake' }
+            ].map((pillar) => (
+              <div key={pillar.title} className="glass-card" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.65)', border: '1px solid rgba(255,255,255,0.06)', transition: 'all 0.3s' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                  <span style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', lineHeight: 1 }}>{pillar.letter}</span>
+                  <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.1)', border: '1px solid rgba(212, 168, 75, 0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
+                    <i className={`fa-solid ${pillar.icon}`} style={{ fontSize: '1rem' }}></i>
+                  </div>
+                </div>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{pillar.title}</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6' }}>{pillar.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
