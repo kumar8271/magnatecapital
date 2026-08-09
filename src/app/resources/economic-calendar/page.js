@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function EconomicCalendarPage() {
   // Active filters (Matching ForexFactory & Kama Capital)
@@ -14,7 +16,6 @@ export default function EconomicCalendarPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedEventDetail, setSelectedEventDetail] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Fetch API Stream
   useEffect(() => {
@@ -51,47 +52,7 @@ export default function EconomicCalendarPage() {
 
   return (
     <div style={{ background: '#1A0F2E', minHeight: '100vh', color: '#fff' }}>
-      {/* Top Bar */}
-      <div className="top-bar">
-        <div className="container top-bar-content">
-          <div className="top-bar-item">
-            <i className="fa-solid fa-envelope"></i> <span>support@magnatecapital.com</span>
-          </div>
-          <div className="top-bar-socials">
-            <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ display: 'inline-flex', alignItems: 'center' }}><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram"><i className="fa-brands fa-telegram"></i></a>
-            <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube"><i className="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-
-      {/* Header / Navigation */}
-      <header>
-        <div className="container header-container">
-          <div className="logo-area" style={{ display: 'flex', alignItems: 'center' }}>
-            <Link href="/"><img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} /></Link>
-          </div>
-          <nav className={isMobileMenuOpen ? 'active' : ''}>
-            <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/#live-rates">Products</Link></li>
-              <li><Link href="/resources/economic-calendar" style={{ color: 'var(--accent-gold)' }}>Economic Calendar</Link></li>
-              <li><Link href="/#calculator">Calculators</Link></li>
-              <li><Link href="/#offers">Accounts</Link></li>
-              <li><Link href="/#contact">Contact</Link></li>
-              <li>
-                <a href="https://trade.magnatefx.com/login/" target="_blank" rel="noreferrer" className="btn" style={{ background: 'var(--accent-gold)', color: '#fff', padding: '8px 16px', borderRadius: '6px', fontSize: '0.85rem' }}>Login</a>
-              </li>
-              <li>
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.4)', color: '#fff', padding: '8px 16px', borderRadius: '6px', fontSize: '0.85rem' }}>Open Live Account</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Main Economic Calendar Hero & Interactive Suite */}
       <main style={{ padding: '50px 0 100px 0', position: 'relative', overflow: 'hidden' }}>
@@ -327,14 +288,7 @@ export default function EconomicCalendarPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer style={{ background: '#160B28', padding: '60px 0 30px 0', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div className="footer-bottom text-center">
-            <p>&copy; 2026 Magnate Capital. All rights reserved. Registered under license regulations.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
