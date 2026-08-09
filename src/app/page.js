@@ -450,7 +450,7 @@ export default function Home() {
           </div>
           <div className="top-bar-socials">
             <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)"><i className="fa-brands fa-x-twitter"></i></a>
+            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ display: 'inline-flex', alignItems: 'center' }}><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
             <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram"><i className="fa-brands fa-telegram"></i></a>
@@ -1354,7 +1354,7 @@ export default function Home() {
               <p className="brand-desc">Magnate Capital is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
               <div className="footer-socials" style={{ display: 'flex', gap: '14px', marginTop: '16px' }}>
                 <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-x-twitter"></i></a>
+                <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                 <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-telegram"></i></a>
