@@ -475,8 +475,8 @@ export default function Home() {
               <li><a href="#live-rates" onClick={() => setIsMobileMenuOpen(false)}>Market Watch</a></li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Accounts</a></li>
               <li><a href="#calculator" onClick={() => setIsMobileMenuOpen(false)}>Calculator</a></li>
-              <li><a href="#contact" className="btn btn-outline" onClick={() => setIsMobileMenuOpen(false)}>Login</a></li>
-              <li><a href="#contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Open Account</a></li>
+              <li><a href="https://trade.magnatefx.com/login/" className="btn btn-outline" target="_blank" rel="noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Login</a></li>
+              <li><a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Open Account</a></li>
             </ul>
           </nav>
           <div className="menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -738,7 +738,7 @@ export default function Home() {
                           </svg>
                         </td>
                         <td style={{ textAlign: 'right' }}>
-                          <a href="#contact" className="btn-trading">Trading</a>
+                          <a href="https://trade.magnatefx.com/register/" className="btn-trading" target="_blank" rel="noreferrer">Trading</a>
                         </td>
                       </tr>
                     );
@@ -951,7 +951,7 @@ export default function Home() {
                     <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$0 (Zero Commission)</strong></li>
                     <li><i className="fa-solid fa-check gold-color"></i> Execution: <strong>Market Execution</strong></li>
                   </ul>
-                  <a href="#contact" className="btn btn-primary">Open Classic Account</a>
+                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open Classic Account</a>
                 </div>
                 <div className="tab-mockup">
                   <div className="glass-card metrics-card">
@@ -987,7 +987,7 @@ export default function Home() {
                     <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$2 per side per lot</strong></li>
                     <li><i className="fa-solid fa-check gold-color"></i> Priority Withdrawal Processing: <strong>Yes</strong></li>
                   </ul>
-                  <a href="#contact" className="btn btn-primary">Open Prime Account</a>
+                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open Prime Account</a>
                 </div>
                 <div className="tab-mockup">
                   <div className="glass-card metrics-card VIP">
@@ -1023,7 +1023,7 @@ export default function Home() {
                     <li><i class="fa-solid fa-check gold-color"></i> Commission: <strong>$3 per side per lot</strong></li>
                     <li><i class="fa-solid fa-check gold-color"></i> VPS Hosting Integration: <strong>Complimentary</strong></li>
                   </ul>
-                  <a href="#contact" className="btn btn-primary">Open ECN Pro Account</a>
+                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open ECN Pro Account</a>
                 </div>
                 <div className="tab-mockup">
                   <div className="glass-card metrics-card ECN">
