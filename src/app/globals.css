@@ -469,6 +469,35 @@ nav ul li a:hover {
   100% { transform: translateY(-10px); }
 }
 
+/* High-Tech Card & Pulse Enhancements */
+.tech-card-pulse {
+  position: relative;
+  border: 1px solid rgba(212, 168, 75, 0.35) !important;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 168, 75, 0.18) !important;
+  transition: all 0.4s ease;
+}
+
+.tech-card-pulse:hover {
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 168, 75, 0.35) !important;
+  border-color: rgba(212, 168, 75, 0.6) !important;
+}
+
+.tech-data-stream {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(212, 168, 75, 0.4) 50%, transparent 100%);
+  animation: stream-flow 4s linear infinite;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes stream-flow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;

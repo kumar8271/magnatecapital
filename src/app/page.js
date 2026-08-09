@@ -559,6 +559,9 @@ export default function Home() {
         <div className="forex-tech-bg">
           <div className="tech-grid-pattern"></div>
           <div className="tech-scanline"></div>
+          <div className="tech-data-stream" style={{ left: '20%', animationDelay: '0s' }}></div>
+          <div className="tech-data-stream" style={{ left: '50%', animationDelay: '1.5s' }}></div>
+          <div className="tech-data-stream" style={{ left: '80%', animationDelay: '3s' }}></div>
           <div className="tech-glow-orb gold" style={{ width: '400px', height: '400px', top: '-100px', left: '10%' }}></div>
           <div className="tech-glow-orb purple" style={{ width: '500px', height: '500px', top: '50px', right: '5%' }}></div>
           
@@ -649,7 +652,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="glass-card trading-preview" style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(197,160,89,0.15)' }}>
+            <div className="glass-card trading-preview tech-card-pulse" style={{ borderRadius: '16px', overflow: 'hidden' }}>
               <div className="card-header" style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span className="dot red"></span>
