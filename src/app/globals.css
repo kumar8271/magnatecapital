@@ -1692,3 +1692,143 @@ footer {
   background: var(--accent-gold-hover);
 }
 
+/* ==========================================================================
+   ECONOMIC CALENDAR & TRADING CALCULATOR STYLES
+   ========================================================================== */
+
+.economic-calendar-container {
+  background: rgba(35, 21, 60, 0.85);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  margin-top: 20px;
+}
+
+.calendar-filter-bar {
+  padding: 22px 28px;
+  background: rgba(22, 11, 40, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #C9C0DB;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  outline: none;
+}
+
+.filter-pill:hover {
+  background: rgba(212, 168, 75, 0.15);
+  border-color: var(--accent-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.filter-pill.active {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: #1A0F2E !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 15px rgba(212, 168, 75, 0.35);
+}
+
+/* Economic Calendar Table Styling */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.calendar-table th {
+  padding: 18px 24px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(18, 9, 34, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.calendar-table td {
+  padding: 20px 24px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: middle;
+}
+
+.event-row {
+  transition: background 0.25s ease;
+  cursor: pointer;
+}
+
+.event-row:hover {
+  background: rgba(212, 168, 75, 0.08) !important;
+}
+
+.impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.impact-badge.high {
+  background: rgba(239, 83, 80, 0.15);
+  border: 1px solid rgba(239, 83, 80, 0.4);
+  color: #ef5350;
+}
+
+.impact-badge.medium {
+  background: rgba(255, 167, 38, 0.15);
+  border: 1px solid rgba(255, 167, 38, 0.4);
+  color: #ffa726;
+}
+
+.impact-badge.low {
+  background: rgba(255, 235, 59, 0.15);
+  border: 1px solid rgba(255, 235, 59, 0.4);
+  color: #ffee58;
+}
+
+.val-better {
+  color: #2ecc71 !important;
+  font-weight: 800;
+}
+
+.val-worse {
+  color: #ef5350 !important;
+  font-weight: 800;
+}
+
+.val-neutral {
+  color: #fff !important;
+}
+

@@ -1604,7 +1604,7 @@ export default function Home() {
             <div className="calendar-filter-bar">
               {/* Timeframe Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Time:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Timeframe:</span>
                 <button className={`filter-pill ${calendarTimeframe === 'today' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('today')}>Today</button>
                 <button className={`filter-pill ${calendarTimeframe === 'tomorrow' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('tomorrow')}>Tomorrow</button>
                 <button className={`filter-pill ${calendarTimeframe === 'all' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('all')}>All Week</button>
@@ -1612,7 +1612,7 @@ export default function Home() {
 
               {/* Currency Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Currency:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Currency:</span>
                 {['all', 'USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD'].map((curr) => (
                   <button key={curr} className={`filter-pill ${calendarCurrency === curr ? 'active' : ''}`} onClick={() => setCalendarCurrency(curr)}>
                     {curr === 'all' ? 'All' : curr}
@@ -1622,7 +1622,7 @@ export default function Home() {
 
               {/* Impact Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Impact:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Impact:</span>
                 <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All Impact</button>
                 <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
                 <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Medium</button>
@@ -1633,14 +1633,14 @@ export default function Home() {
             <div style={{ overflowX: 'auto' }}>
               <table className="calendar-table">
                 <thead>
-                  <tr>
-                    <th>Time</th>
-                    <th>Cur</th>
-                    <th>Impact</th>
-                    <th>Event</th>
-                    <th>Actual</th>
-                    <th>Forecast</th>
-                    <th>Previous</th>
+                  <tr style={{ background: 'rgba(18, 9, 34, 0.85)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                    <th style={{ padding: '16px 20px', width: '120px' }}>Time</th>
+                    <th style={{ padding: '16px 20px', width: '100px' }}>Cur</th>
+                    <th style={{ padding: '16px 20px', width: '110px' }}>Impact</th>
+                    <th style={{ padding: '16px 20px' }}>Economic Event</th>
+                    <th style={{ padding: '16px 20px', width: '100px', textAlign: 'right' }}>Actual</th>
+                    <th style={{ padding: '16px 20px', width: '100px', textAlign: 'right' }}>Forecast</th>
+                    <th style={{ padding: '16px 20px', width: '100px', textAlign: 'right' }}>Previous</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1649,25 +1649,25 @@ export default function Home() {
                     .filter(ev => calendarCurrency === 'all' || ev.country === calendarCurrency)
                     .filter(ev => calendarImpact === 'all' || ev.impact === calendarImpact)
                     .map((ev) => (
-                      <tr key={ev.id} className="event-row" onClick={() => setSelectedEventDetail(ev)}>
-                        <td style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: 'var(--text-muted)' }}>{ev.time}</td>
-                        <td>
+                      <tr key={ev.id} className="event-row" onClick={() => setSelectedEventDetail(ev)} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: 'var(--text-muted)' }}>{ev.time}</td>
+                        <td style={{ padding: '18px 20px' }}>
                           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#fff' }}>
                             <span>{ev.flag}</span>
                             <span>{ev.country}</span>
                           </span>
                         </td>
-                        <td>
+                        <td style={{ padding: '18px 20px' }}>
                           <span className={`impact-badge ${ev.impact}`}>
                             {ev.impact === 'high' ? '🔴 High' : ev.impact === 'medium' ? '🟠 Med' : '🟡 Low'}
                           </span>
                         </td>
-                        <td style={{ fontWeight: 700, color: '#fff' }}>{ev.event}</td>
-                        <td className={ev.isBetter === true ? 'val-better' : ev.isBetter === false ? 'val-worse' : 'val-neutral'} style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                        <td style={{ padding: '18px 20px', fontWeight: 700, color: '#fff', fontSize: '0.95rem' }}>{ev.event}</td>
+                        <td className={ev.isBetter === true ? 'val-better' : ev.isBetter === false ? 'val-worse' : 'val-neutral'} style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', textAlign: 'right' }}>
                           {ev.actual}
                         </td>
-                        <td style={{ fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.forecast}</td>
-                        <td style={{ fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.previous}</td>
+                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.forecast}</td>
+                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.previous}</td>
                       </tr>
                     ))}
                 </tbody>
