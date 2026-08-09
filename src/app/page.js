@@ -109,6 +109,9 @@ export default function Home() {
   const [entryPrice, setEntryPrice] = useState(1.0850);
   const [exitPrice, setExitPrice] = useState(1.0900);
 
+  // Commodity Tab & FX Matrix State (Panel 2 & Panel 4)
+  const [activeCommodityTab, setActiveCommodityTab] = useState('commodities'); // 'forex', 'indices', 'crypto', 'commodities'
+
   // Legal Policy & KYC Modal State
   const [selectedPolicyModal, setSelectedPolicyModal] = useState(null); // 'kyc', 'aml', 'terms', 'legal'
 
@@ -894,7 +897,168 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Market Watch - Forex Live Prices Feed Section */}
+      {/* Trade In Commodities & Asset Classes Section (Panel 1 & Panel 2 from image) */}
+      <section id="commodities-trading" className="commodities-trading-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+          
+          {/* Tab Navigation Pill Header */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '40px', flexWrap: 'wrap' }}>
+            {[
+              { id: 'forex', label: 'Forex' },
+              { id: 'indices', label: 'Indices' },
+              { id: 'crypto', label: 'Crypto' },
+              { id: 'commodities', label: 'Commodities' }
+            ].map((tab) => (
+              <button 
+                key={tab.id}
+                onClick={() => setActiveCommodityTab(tab.id)}
+                style={{ 
+                  padding: '10px 24px', 
+                  borderRadius: '6px', 
+                  border: activeCommodityTab === tab.id ? '1px solid var(--accent-gold)' : '1px solid rgba(255,255,255,0.2)', 
+                  background: activeCommodityTab === tab.id ? 'var(--accent-gold)' : 'transparent', 
+                  color: activeCommodityTab === tab.id ? '#1A0F2E' : '#fff', 
+                  fontWeight: 700, 
+                  fontSize: '0.9rem', 
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'center' }}>
+            <div>
+              <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '10px' }}>
+                {activeCommodityTab === 'commodities' ? 'Trade In commodities' : activeCommodityTab === 'forex' ? 'Trade Forex Currencies' : activeCommodityTab === 'indices' ? 'Trade Global Indices' : 'Trade Crypto CFDs'}
+              </h2>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', marginBottom: '20px' }}>
+                {activeCommodityTab === 'commodities' ? 'Fuel Your Portfolio with Gold, Oil, and More' : activeCommodityTab === 'forex' ? 'Access 50+ Currency Pairs with Tight Raw Spreads' : activeCommodityTab === 'indices' ? 'Trade S&P 500, NASDAQ, Dow Jones & DAX' : '24/7 Digital Asset Trading with Institutional Liquidity'}
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '30px' }}>
+                {activeCommodityTab === 'commodities' 
+                  ? 'Access a wide range of global commodities — from precious metals to energy and agriculture — all on one powerful trading platform designed for performance and precision.'
+                  : 'Access major, minor, and exotic currency pairs with ultra-fast execution, low latency, and zero commission options tailored to your trading strategy.'}
+              </p>
+              <div style={{ display: 'flex', gap: '15px' }}>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '12px 28px' }}>
+                  Start Trading &gt;
+                </a>
+              </div>
+            </div>
+
+            {/* Asset Feature Cards Grid (Panel 1 Exact Copy) */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
+                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
+                  <i className="fa-solid fa-chart-column"></i>
+                </div>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Commodities</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Gold, Silver, Copper, WTI, etc</p>
+                <a href="#live-rates" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+              </div>
+
+              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
+                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
+                  <i className="fa-solid fa-bolt"></i>
+                </div>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Energies</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Oil, Gas, and all Energies</p>
+                <a href="#live-rates" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MOST POPULAR FX PAIRS Cross Matrix Section (Panel 4 from image) */}
+      <section className="fx-matrix-section" style={{ padding: '80px 0', background: '#0D061A', borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '40px' }}>
+            <span className="section-label">Live Exchange Matrix</span>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>MOST POPULAR FX PAIRS</h2>
+            <p className="subtitle">Real-time cross-currency exchange matrix for global currency pairs.</p>
+          </div>
+
+          <div className="glass-card" style={{ padding: '20px', borderRadius: '18px', background: '#120922', border: '1px solid rgba(255,255,255,0.08)', overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', fontFamily: 'JetBrains Mono, monospace', color: '#fff', textAlign: 'center' }}>
+              <thead>
+                <tr style={{ background: 'rgba(0,0,0,0.5)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <th style={{ padding: '14px', width: '90px' }}></th>
+                  {[
+                    { code: 'INR', flag: '🇮🇳' },
+                    { code: 'EUR', flag: '🇪🇺' },
+                    { code: 'USD', flag: '🇺🇸' },
+                    { code: 'JPY', flag: '🇯🇵' },
+                    { code: 'GBP', flag: '🇬🇧' },
+                    { code: 'CHF', flag: '🇨🇭' },
+                    { code: 'AUD', flag: '🇦🇺' },
+                    { code: 'CAD', flag: '🇨🇦' },
+                    { code: 'NZD', flag: '🇳🇿' },
+                  ].map(c => (
+                    <th key={c.code} style={{ padding: '14px', color: '#fff', fontWeight: 800 }}>
+                      <span style={{ marginRight: '4px' }}>{c.flag}</span> {c.code}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { row: 'INR', flag: '🇮🇳', rates: ['—', '0.010047', '0.01160', '1.6699', '0.00854', '0.00941', '0.01786', '0.01578', '0.01926'] },
+                  { row: 'EUR', flag: '🇪🇺', rates: ['99.4894', '—', '1.15466', '166.312', '0.8507', '0.9368', '1.7778', '1.5704', '1.9171'] },
+                  { row: 'USD', flag: '🇺🇸', rates: ['86.0610', '0.8658', '—', '144.028', '0.7368', '0.8113', '1.5397', '1.3601', '1.6603'] },
+                  { row: 'JPY', flag: '🇯🇵', rates: ['0.59793', '0.0060122', '0.006942', '—', '0.00511', '0.00563', '0.01068', '0.00944', '0.01153'] },
+                  { row: 'GBP', flag: '🇬🇧', rates: ['116.9520', '1.1758', '1.3578', '195.557', '—', '1.1012', '2.0901', '1.8461', '2.2536'], highlight: 3 },
+                  { row: 'CHF', flag: '🇨🇭', rates: ['106.195', '1.0672', '1.2322', '177.557', '0.9081', '—', '1.8980', '1.6765', '2.0465'] },
+                  { row: 'AUD', flag: '🇦🇺', rates: ['55.9840', '0.5625', '0.64961', '93.567', '0.4784', '0.5268', '—', '0.8833', '1.0783'] },
+                  { row: 'CAD', flag: '🇨🇦', rates: ['63.357', '0.6368', '0.7356', '105.962', '0.5417', '0.5965', '1.1321', '—', '1.2207'] },
+                  { row: 'NZD', flag: '🇳🇿', rates: ['51.906', '0.5211', '0.60226', '86.744', '0.4437', '0.4886', '0.9273', '0.8192', '—'] },
+                ].map((r) => (
+                  <tr key={r.row} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                    <td style={{ padding: '12px', fontWeight: 800, color: '#fff', textAlign: 'left', background: 'rgba(0,0,0,0.3)' }}>
+                      <span style={{ marginRight: '4px' }}>{r.flag}</span> {r.row}
+                    </td>
+                    {r.rates.map((val, idx) => (
+                      <td 
+                        key={idx} 
+                        style={{ 
+                          padding: '12px', 
+                          background: r.highlight === idx ? '#900C27' : val === '—' ? 'rgba(255,255,255,0.02)' : 'transparent', 
+                          color: r.highlight === idx ? '#fff' : val === '—' ? 'var(--text-muted)' : '#fff',
+                          fontWeight: r.highlight === idx ? 800 : 500
+                        }}
+                      >
+                        {val}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Monthly Promotions Hero Banner (Panel 5 from image) */}
+      <section className="monthly-promotions-banner" style={{ padding: '80px 0', background: 'radial-gradient(circle at center, #2C184A 0%, #160B28 100%)', borderTop: '1px solid var(--border-light)', textCenter: 'center', position: 'relative' }}>
+        <div className="container text-center">
+          <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '12px' }}>
+            Monthly Promotions for Partners & Traders
+          </span>
+          <h2 style={{ fontSize: '3.2rem', fontWeight: 900, color: '#fff', marginBottom: '16px', lineHeight: 1.15 }}>
+            Unlock Rewards. Elevate Your Experience.
+          </h2>
+          <p style={{ maxWidth: '750px', margin: '0 auto 30px auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7' }}>
+            Exclusive monthly offers designed to reward your performance and fuel your growth—whether you're trading or referring.
+          </p>
+          <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1.05rem', borderRadius: '10px' }}>
+            Start Trading &gt;
+          </a>
+        </div>
+      </section>
       <section id="live-rates" className="live-rates-section">
         <div className="container">
           <div className="section-title text-center">
@@ -1221,8 +1385,53 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          
+          {/* Panel 3 Featured Card: About Magnate Capital */}
+          <div className="glass-card tech-card-pulse" style={{ padding: '45px', borderRadius: '20px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', marginBottom: '60px' }}>
+            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '40px', alignItems: 'center' }}>
+              <div>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                  About Us
+                </span>
+                <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '16px', lineHeight: 1.15 }}>
+                  About Magnate Capital
+                </h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
+                  Magnate Capital is a reliable and reputable trading company with a proven track record of successful transactions. The company values transparency, integrity, and honesty in all dealings, making it a trustworthy partner.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '28px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <span>Regulated Broker</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <span>Advanced Trading Platforms</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <span>Diverse Asset Classes</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <span>24/5 Dedicated Support</span>
+                  </div>
+                </div>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '12px 30px' }}>
+                  Start Trading &gt;
+                </a>
+              </div>
+
+              <div style={{ textCenter: 'center', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ width: '220px', height: '220px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(212,168,75,0.2) 0%, rgba(26,15,46,0) 70%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212,168,75,0.3)' }}>
+                  <i className="fa-solid fa-building-columns" style={{ fontSize: '5rem', color: 'var(--accent-gold)' }}></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="section-title text-center">
-            <span className="section-label">About Magnate Capital</span>
+            <span className="section-label">Institutional Vision</span>
             <h2>Where Precision Meets Prestige</h2>
             <p className="subtitle">Built for traders who demand institutional power, tailored solutions, and royal treatment.</p>
           </div>
