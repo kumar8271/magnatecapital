@@ -323,141 +323,72 @@ export default function Home() {
     loadFeed();
   }, []);
 
-  // 3. REST API & WebSockets Live Feeds
+  // 3. REST API Real-Time Live Market Stream Polling
   useEffect(() => {
-    // A. Fetch Daily Forex Baselines and update BOTH tables
-    async function fetchBaselines() {
+    async function fetchLiveMarketRates() {
       try {
-        const response = await fetch('https://open.er-api.com/v6/latest/USD');
+        const response = await fetch('/api/rates');
         const data = await response.json();
-        if (data && data.rates) {
-          const rates = data.rates;
-          
-          // Compute Rates
-          const eurusd = 1 / (rates.EUR || 0.915);
-          const gbpusd = 1 / (rates.GBP || 0.785);
-          const audusd = 1 / (rates.AUD || 1.415);
-          const nzdusd = 1 / (rates.NZD || 1.698);
-          const usdjpy = rates.JPY || 157.80;
-          const usdchf = rates.CHF || 0.885;
-          const usdcad = rates.CAD || 1.378;
+        if (data && data.success && data.rates) {
+          const r = data.rates;
 
-          const eurgbp = (rates.GBP || 0.785) / (rates.EUR || 0.915);
-          const eurjpy = (rates.JPY || 157.80) / (rates.EUR || 0.915);
-          const gbpjpy = (rates.JPY || 157.80) / (rates.GBP || 0.785);
-          const audcad = (rates.CAD || 1.378) / (rates.AUD || 1.415);
-          const nzdchf = (rates.CHF || 0.885) / (rates.NZD || 1.698);
-          const eurnzd = (rates.NZD || 1.63) / (rates.EUR || 0.915);
-
-          // Update Ticker state
+          // Update Top Ticker Bar
           setTickerItems(prev => ({
             ...prev,
-            eurusd: { ...prev.eurusd, price: eurusd },
-            gbpusd: { ...prev.gbpusd, price: gbpusd },
-            usdjpy: { ...prev.usdjpy, price: usdjpy },
-            eurnzd: { ...prev.eurnzd, price: eurnzd },
-            eurjpy: { ...prev.eurjpy, price: eurjpy }
+            eurusd: { ...prev.eurusd, price: r.eurusd.price, change: r.eurusd.change, isUp: r.eurusd.isUp },
+            gbpusd: { ...prev.gbpusd, price: r.gbpusd.price, change: r.gbpusd.change, isUp: r.gbpusd.isUp },
+            xauusd: { ...prev.xauusd, price: r.gold.price, change: r.gold.change, isUp: r.gold.isUp },
+            btcusd: { ...prev.btcusd, price: r.btcusd.price, change: r.btcusd.change, isUp: r.btcusd.isUp },
+            usoil: { ...prev.usoil, price: r.usoil.price, change: r.usoil.change, isUp: r.usoil.isUp },
+            spx500: { ...prev.spx500, price: r.spx500.price, change: r.spx500.change, isUp: r.spx500.isUp },
+            eurjpy: { ...prev.eurjpy, price: r.eurjpy.price, change: r.eurjpy.change, isUp: r.eurjpy.isUp },
+            usdjpy: { ...prev.usdjpy, price: r.usdjpy.price, change: r.usdjpy.change, isUp: r.usdjpy.isUp },
+            ethusd: { ...prev.ethusd, price: r.ethusd.price, change: r.ethusd.change, isUp: r.ethusd.isUp },
+            eurnzd: { ...prev.eurnzd, price: r.eurnzd.price, change: r.eurnzd.change, isUp: r.eurnzd.isUp },
+            xagusd: { ...prev.xagusd, price: r.silver.price, change: r.silver.change, isUp: r.silver.isUp }
           }));
 
-          // Update Rates table list
+          // Update Crypto & Spot Rates Table
           setRatesItems(prev => ({
             ...prev,
-            USDJPY: { ...prev.USDJPY, buy: usdjpy },
-            EURJPY: { ...prev.EURJPY, buy: eurjpy },
-            EURNZD: { ...prev.EURNZD, buy: eurnzd }
+            BTCUSD: { ...prev.BTCUSD, buy: r.btcusd.price, change: r.btcusd.change },
+            ETHUSD: { ...prev.ETHUSD, buy: r.ethusd.price, change: r.ethusd.change },
+            XAUUSD: { ...prev.XAUUSD, buy: r.gold.price, change: r.gold.change },
+            USDJPY: { ...prev.USDJPY, buy: r.usdjpy.price },
+            EURJPY: { ...prev.EURJPY, buy: r.eurjpy.price },
+            EURNZD: { ...prev.EURNZD, buy: r.eurnzd.price }
           }));
 
-          // Update Market Watch Forex Pairs state (with high/low/price baselines)
+          // Update Market Watch Forex Pairs
           setForexPairs(prev => {
             return prev.map(item => {
               let calculatedPrice = item.price;
-              if (item.symbol === 'EUR/USD') calculatedPrice = eurusd;
-              else if (item.symbol === 'GBP/USD') calculatedPrice = gbpusd;
-              else if (item.symbol === 'AUD/USD') calculatedPrice = audusd;
-              else if (item.symbol === 'NZD/USD') calculatedPrice = nzdusd;
-              else if (item.symbol === 'USD/JPY') calculatedPrice = usdjpy;
-              else if (item.symbol === 'USD/CHF') calculatedPrice = usdchf;
-              else if (item.symbol === 'USD/CAD') calculatedPrice = usdcad;
-              else if (item.symbol === 'EUR/GBP') calculatedPrice = eurgbp;
-              else if (item.symbol === 'EUR/JPY') calculatedPrice = eurjpy;
-              else if (item.symbol === 'GBP/JPY') calculatedPrice = gbpjpy;
-              else if (item.symbol === 'AUD/CAD') calculatedPrice = audcad;
-              else if (item.symbol === 'NZD/CHF') calculatedPrice = nzdchf;
+              if (item.symbol === 'EUR/USD') calculatedPrice = r.eurusd.price;
+              else if (item.symbol === 'GBP/USD') calculatedPrice = r.gbpusd.price;
+              else if (item.symbol === 'USD/JPY') calculatedPrice = r.usdjpy.price;
+              else if (item.symbol === 'EUR/JPY') calculatedPrice = r.eurjpy.price;
 
               return {
                 ...item,
                 price: calculatedPrice,
-                high: calculatedPrice * 1.002,
-                low: calculatedPrice * 0.998
+                high: Math.max(item.high || calculatedPrice, calculatedPrice * 1.001),
+                low: Math.min(item.low || calculatedPrice, calculatedPrice * 0.999)
               };
             });
           });
         }
       } catch (err) {
-        console.warn('Could not fetch forex baseline rates, using defaults:', err);
+        console.warn('Could not fetch real-time market rates from /api/rates:', err);
       }
     }
 
-    fetchBaselines();
+    // Initial fetch
+    fetchLiveMarketRates();
 
-    // B. WebSocket Crypto Stream
-    const ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/ethusdt@ticker/bnbusdt@ticker');
-    
-    ws.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        const binanceSymbol = data.s;
-        const closePrice = parseFloat(data.c);
-        const priceChangePct = parseFloat(data.P);
+    // Poll live market endpoint every 3.5 seconds
+    const interval = setInterval(fetchLiveMarketRates, 3500);
 
-        let ourSymbol = '';
-        if (binanceSymbol === 'BTCUSDT') ourSymbol = 'BTCUSD';
-        else if (binanceSymbol === 'ETHUSDT') ourSymbol = 'ETHUSD';
-        else if (binanceSymbol === 'BNBUSDT') ourSymbol = 'BNBUSD';
-
-        if (ourSymbol) {
-          // Sync Ticker
-          const tickerKey = ourSymbol.toLowerCase();
-          setTickerItems(prev => {
-            if (prev[tickerKey]) {
-              return {
-                ...prev,
-                [tickerKey]: { ...prev[tickerKey], price: closePrice, change: priceChangePct, isUp: priceChangePct >= 0 }
-              };
-            }
-            return prev;
-          });
-
-          // Sync Rates list
-          setRatesItems(prev => {
-            if (prev[ourSymbol]) {
-              const updatedSpark = [...prev[ourSymbol].spark];
-              updatedSpark.shift();
-              updatedSpark.push(closePrice);
-              return {
-                ...prev,
-                [ourSymbol]: { ...prev[ourSymbol], buy: closePrice, change: priceChangePct, spark: updatedSpark }
-              };
-            }
-            return prev;
-          });
-        }
-      } catch (err) {
-        console.error('Error parsing WebSocket message:', err);
-      }
-    };
-
-    ws.onerror = (err) => {
-      // Handle socket error gracefully
-    };
-
-    return () => {
-      if (ws.readyState === WebSocket.CONNECTING) {
-        ws.onopen = () => ws.close();
-      } else if (ws.readyState === WebSocket.OPEN) {
-        ws.close();
-      }
-    };
+    return () => clearInterval(interval);
   }, []);
 
   // 4. Forex/Gold/Oil Market Live Updates & Fluctuations
