@@ -19,7 +19,7 @@ export default function Footer() {
             {/* Col 1: Brand & Identity */}
             <div>
               <Link href="/" style={{ display: 'inline-block', marginBottom: '18px' }}>
-                <img src="/logo.png" alt="Magnate Capital" style={{ height: '42px', width: 'auto', display: 'block' }} />
+                <img src="/logo.png" alt="Magnate Capital" style={{ height: '73px', width: 'auto', display: 'block' }} />
               </Link>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7', marginBottom: '20px' }}>
                 Global Magnate Capital Ltd. is a tier-1 multi-asset broker delivering raw ECN liquidity, co-located MT5 execution, and tailored institutional solutions worldwide.
@@ -142,17 +142,26 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Bottom Bar: Single Horizontal Line */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', fontSize: '0.85rem' }}>
-            <div style={{ color: 'var(--text-secondary)' }}>
-              &copy; 2026 Global Magnate Capital Ltd. All rights reserved. | Designed &amp; Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
+          {/* Bottom Bar: Perfectly Organized & Structured */}
+          <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', marginTop: '30px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '16px', fontSize: '0.88rem' }}>
+              <div style={{ color: 'var(--text-secondary)' }}>
+                &copy; 2026 Global Magnate Capital Ltd. All rights reserved. Registered in Saint Lucia (Reg: 2025-00329).
+              </div>
+              <div style={{ color: 'var(--text-secondary)' }}>
+                Designed &amp; Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
+              </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '22px', flexWrap: 'wrap', color: 'var(--text-secondary)', fontWeight: 500 }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '20px', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
               <Link href="/kyc-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Privacy Policy</Link>
+              <span style={{ opacity: 0.25 }}>|</span>
               <Link href="/terms-and-conditions" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Terms of Use</Link>
+              <span style={{ opacity: 0.25 }}>|</span>
               <Link href="/aml-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>AML Policy</Link>
+              <span style={{ opacity: 0.25 }}>|</span>
               <Link href="/kyc-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>KYC Policy</Link>
+              <span style={{ opacity: 0.25 }}>|</span>
               <Link href="/legal-document" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Risk Disclosure</Link>
             </div>
           </div>

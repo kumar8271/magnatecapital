@@ -75,7 +75,7 @@ export default function Header() {
       <header>
         <div className="container header-container">
           <Link href="/" className="logo-area" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
+            <img src="/logo.png" alt="Magnate Capital" style={{ height: '58px', width: 'auto', display: 'block' }} />
           </Link>
 
           <nav className={isMobileMenuOpen ? 'active' : ''}>
