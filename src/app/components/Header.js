@@ -61,13 +61,13 @@ export default function Header() {
             <span><i className="fa-solid fa-envelope" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> support@magnatefx.com</span>
             <span><i className="fa-solid fa-building-shield" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> Global Magnate Capital Ltd. (Reg: 2025-00329)</span>
           </div>
-          <div className="top-bar-socials" style={{ display: 'flex', gap: '12px' }}>
-            <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)"><i className="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram"><i className="fa-brands fa-telegram"></i></a>
-            <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube"><i className="fa-brands fa-youtube"></i></a>
+          <div className="top-bar-socials" style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+            <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" aria-label="X (Twitter)"><i className="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram" aria-label="Telegram"><i className="fa-brands fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -75,8 +75,8 @@ export default function Header() {
       {/* Main Glass Header */}
       <header>
         <div className="container header-container">
-          <Link href="/" className="logo-area" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Magnate Capital" style={{ height: '58px', width: 'auto', display: 'block' }} />
+          <Link href="/" className="logo-area" style={{ display: 'flex', alignItems: 'center' }} aria-label="Magnate Capital Homepage">
+            <img src="/logo.png" alt="Magnate Capital Logo" width="200" height="58" style={{ height: '58px', width: 'auto', display: 'block' }} />
           </Link>
 
           <nav className={isMobileMenuOpen ? 'active' : ''}>

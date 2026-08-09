@@ -9,10 +9,10 @@
   --accent-gold-hover: #E5C158;
   --accent-gold-muted: rgba(212, 168, 75, 0.12);
   --text-primary: #FFFFFF;
-  --text-secondary: #C9C0DB;
-  --text-muted: #7E7196;
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(212, 168, 75, 0.25);
+  --text-secondary: #E3DCF5;
+  --text-muted: #A89DC4;
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-gold: rgba(212, 168, 75, 0.35);
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: 'JetBrains Mono', monospace;

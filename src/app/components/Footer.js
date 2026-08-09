@@ -18,8 +18,8 @@ export default function Footer() {
             
             {/* Col 1: Brand & Identity */}
             <div>
-              <Link href="/" style={{ display: 'inline-block', marginBottom: '18px' }}>
-                <img src="/logo.png" alt="Magnate Capital" style={{ height: '73px', width: 'auto', display: 'block' }} />
+              <Link href="/" style={{ display: 'inline-block', marginBottom: '18px' }} aria-label="Magnate Capital Homepage">
+                <img src="/logo.png" alt="Magnate Capital Logo" width="250" height="73" style={{ height: '73px', width: 'auto', display: 'block' }} />
               </Link>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7', marginBottom: '20px' }}>
                 Global Magnate Capital Ltd. is a tier-1 multi-asset broker delivering raw ECN liquidity, co-located MT5 execution, and tailored institutional solutions worldwide.
@@ -39,9 +39,10 @@ export default function Footer() {
                     target="_blank" 
                     rel="noreferrer" 
                     title={s.label}
+                    aria-label={s.label}
                     style={{ 
-                      width: '36px', 
-                      height: '36px', 
+                      width: '40px', 
+                      height: '40px', 
                       borderRadius: '50%', 
                       background: 'rgba(255,255,255,0.05)', 
                       border: '1px solid rgba(255,255,255,0.1)', 
@@ -189,7 +190,7 @@ export default function Footer() {
           >
             <div style={{ background: '#075E54', padding: '15px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <img src="/logo.png" alt="Support Agent" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)', background: '#120922', objectFit: 'contain', padding: '4px' }} />
+                <img src="/logo.png" alt="Support Agent Avatar" width="36" height="36" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)', background: '#120922', objectFit: 'contain', padding: '4px' }} />
                 <div>
                   <div style={{ fontSize: '0.85rem', fontWeight: 700 }}>Magnate VIP Desk</div>
                   <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', gap: '4px' }}>
