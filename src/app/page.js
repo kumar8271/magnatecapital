@@ -102,6 +102,135 @@ export default function Home() {
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', account: 'classic', message: '' });
   const [formFeedback, setFormFeedback] = useState({ show: false, success: false, message: '' });
 
+  // Economic Calendar Filter & Data State
+  const [calendarImpact, setCalendarImpact] = useState('all');
+  const [calendarCurrency, setCalendarCurrency] = useState('all');
+  const [calendarTimeframe, setCalendarTimeframe] = useState('today');
+  const [selectedEventDetail, setSelectedEventDetail] = useState(null);
+
+  const economicEvents = [
+    {
+      id: 1,
+      time: '14:30 EST',
+      date: 'today',
+      country: 'USD',
+      flag: '🇺🇸',
+      impact: 'high',
+      event: 'US Non-Farm Payrolls (NFP)',
+      actual: '254K',
+      forecast: '180K',
+      previous: '159K',
+      isBetter: true,
+      impactInfo: 'Measures net change in employment. Higher than forecast signals US economic strength and is bullish for USD.',
+      affectedPairs: ['EURUSD', 'GBPUSD', 'USDJPY', 'XAUUSD']
+    },
+    {
+      id: 2,
+      time: '14:30 EST',
+      date: 'today',
+      country: 'USD',
+      flag: '🇺🇸',
+      impact: 'high',
+      event: 'US Unemployment Rate',
+      actual: '4.1%',
+      forecast: '4.2%',
+      previous: '4.2%',
+      isBetter: true,
+      impactInfo: 'Measures percentage of total work force that is unemployed. Lower than forecast is positive for USD.',
+      affectedPairs: ['EURUSD', 'USDJPY', 'XAUUSD']
+    },
+    {
+      id: 3,
+      time: '15:45 EST',
+      date: 'today',
+      country: 'EUR',
+      flag: '🇪🇺',
+      impact: 'high',
+      event: 'ECB Interest Rate Decision',
+      actual: '3.40%',
+      forecast: '3.40%',
+      previous: '3.65%',
+      isBetter: null,
+      impactInfo: 'Key interest rate set by the European Central Bank. Rate hikes boost EUR attraction.',
+      affectedPairs: ['EURUSD', 'EURGBP', 'EURJPY']
+    },
+    {
+      id: 4,
+      time: '16:00 EST',
+      date: 'today',
+      country: 'GBP',
+      flag: '🇬🇧',
+      impact: 'medium',
+      event: 'UK Retail Sales (MoM)',
+      actual: '0.3%',
+      forecast: '0.1%',
+      previous: '-0.2%',
+      isBetter: true,
+      impactInfo: 'Primary gauge of consumer spending in the UK economy.',
+      affectedPairs: ['GBPUSD', 'EURGBP', 'GBPJPY']
+    },
+    {
+      id: 5,
+      time: '18:00 EST',
+      date: 'today',
+      country: 'USD',
+      flag: '🇺🇸',
+      impact: 'high',
+      event: 'US FOMC Economic Projections & Rate Statement',
+      actual: '5.00%',
+      forecast: '5.00%',
+      previous: '5.25%',
+      isBetter: null,
+      impactInfo: 'Detailed monetary policy outlook from Federal Reserve governors.',
+      affectedPairs: ['EURUSD', 'GBPUSD', 'XAUUSD', 'SPX500']
+    },
+    {
+      id: 6,
+      time: '08:30 EST',
+      date: 'tomorrow',
+      country: 'JPY',
+      flag: '🇯🇵',
+      impact: 'medium',
+      event: 'BOJ Core CPI (YoY)',
+      actual: '2.3%',
+      forecast: '2.1%',
+      previous: '2.0%',
+      isBetter: true,
+      impactInfo: 'Bank of Japan preferred inflation measure.',
+      affectedPairs: ['USDJPY', 'EURJPY', 'GBPJPY']
+    },
+    {
+      id: 7,
+      time: '10:00 EST',
+      date: 'tomorrow',
+      country: 'AUD',
+      flag: '🇦🇺',
+      impact: 'high',
+      event: 'AU Employment Change',
+      actual: '64.1K',
+      forecast: '25.0K',
+      previous: '47.5K',
+      isBetter: true,
+      impactInfo: 'Key Australian labor market data release.',
+      affectedPairs: ['AUDUSD', 'EURAUD']
+    },
+    {
+      id: 8,
+      time: '12:30 EST',
+      date: 'tomorrow',
+      country: 'CAD',
+      flag: '🇨🇦',
+      impact: 'medium',
+      event: 'CA Building Permits (MoM)',
+      actual: '-1.5%',
+      forecast: '0.8%',
+      previous: '2.2%',
+      isBetter: false,
+      impactInfo: 'Leading indicator of Canadian housing market health.',
+      affectedPairs: ['USDCAD', 'EURCAD']
+    }
+  ];
+
   // Instrument static configurations for the calculator
   const calculatorOptions = {
     EURUSD: { pipSize: 0.0001, contract: 100000, label: 'EURUSD (Forex - EUR/USD)' },
@@ -485,6 +614,7 @@ export default function Home() {
                 </a>
               </li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Accounts</a></li>
+              <li><a href="#calendar" onClick={() => setIsMobileMenuOpen(false)}>Economic Calendar</a></li>
               <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Partnership</a></li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Promotions</a></li>
               <li>
@@ -1307,6 +1437,152 @@ export default function Home() {
               <p className="calc-note">*Values are calculated dynamically based on current market rates and leverage parameters.</p>
             </div>
           </div>
+        </div>
+      {/* Economic Calendar Section */}
+      <section id="calendar" className="calendar-section" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div className="forex-tech-bg">
+          <div className="tech-grid-pattern"></div>
+          <div className="tech-glow-orb purple" style={{ width: '400px', height: '400px', top: '20%', left: '5%' }}></div>
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-title text-center">
+            <span className="section-label">Market Intelligence</span>
+            <h2>Forex Economic Calendar</h2>
+            <p className="subtitle">Real-time macroeconomic releases, interest rate decisions, and high-impact market drivers.</p>
+          </div>
+
+          <div className="economic-calendar-container">
+            {/* Filter Bar */}
+            <div className="calendar-filter-bar">
+              {/* Timeframe Filters */}
+              <div className="filter-group">
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Time:</span>
+                <button className={`filter-pill ${calendarTimeframe === 'today' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('today')}>Today</button>
+                <button className={`filter-pill ${calendarTimeframe === 'tomorrow' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('tomorrow')}>Tomorrow</button>
+                <button className={`filter-pill ${calendarTimeframe === 'all' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('all')}>All Week</button>
+              </div>
+
+              {/* Currency Filters */}
+              <div className="filter-group">
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Currency:</span>
+                {['all', 'USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD'].map((curr) => (
+                  <button key={curr} className={`filter-pill ${calendarCurrency === curr ? 'active' : ''}`} onClick={() => setCalendarCurrency(curr)}>
+                    {curr === 'all' ? 'All' : curr}
+                  </button>
+                ))}
+              </div>
+
+              {/* Impact Filters */}
+              <div className="filter-group">
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '4px' }}>Impact:</span>
+                <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All Impact</button>
+                <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
+                <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Medium</button>
+              </div>
+            </div>
+
+            {/* Events Table */}
+            <div style={{ overflowX: 'auto' }}>
+              <table className="calendar-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Cur</th>
+                    <th>Impact</th>
+                    <th>Event</th>
+                    <th>Actual</th>
+                    <th>Forecast</th>
+                    <th>Previous</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {economicEvents
+                    .filter(ev => calendarTimeframe === 'all' || ev.date === calendarTimeframe)
+                    .filter(ev => calendarCurrency === 'all' || ev.country === calendarCurrency)
+                    .filter(ev => calendarImpact === 'all' || ev.impact === calendarImpact)
+                    .map((ev) => (
+                      <tr key={ev.id} className="event-row" onClick={() => setSelectedEventDetail(ev)}>
+                        <td style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: 'var(--text-muted)' }}>{ev.time}</td>
+                        <td>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#fff' }}>
+                            <span>{ev.flag}</span>
+                            <span>{ev.country}</span>
+                          </span>
+                        </td>
+                        <td>
+                          <span className={`impact-badge ${ev.impact}`}>
+                            {ev.impact === 'high' ? '🔴 High' : ev.impact === 'medium' ? '🟠 Med' : '🟡 Low'}
+                          </span>
+                        </td>
+                        <td style={{ fontWeight: 700, color: '#fff' }}>{ev.event}</td>
+                        <td className={ev.isBetter === true ? 'val-better' : ev.isBetter === false ? 'val-worse' : 'val-neutral'} style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                          {ev.actual}
+                        </td>
+                        <td style={{ fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.forecast}</td>
+                        <td style={{ fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.previous}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Event Detail Modal Window when clicked */}
+          {selectedEventDetail && (
+            <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(10px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+              <div className="glass-card tech-card-pulse" style={{ maxWidth: '550px', width: '100%', borderRadius: '20px', padding: '30px', background: '#160B28', border: '1px solid var(--accent-gold)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ fontSize: '1.5rem' }}>{selectedEventDetail.flag}</span>
+                    <div>
+                      <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fff' }}>{selectedEventDetail.event}</h3>
+                      <span className={`impact-badge ${selectedEventDetail.impact}`} style={{ marginTop: '4px' }}>
+                        {selectedEventDetail.impact === 'high' ? '🔴 High Impact' : '🟠 Medium Impact'}
+                      </span>
+                    </div>
+                  </div>
+                  <button onClick={() => setSelectedEventDetail(null)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.2rem', cursor: 'pointer' }}>
+                    <i className="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>{selectedEventDetail.impactInfo}</p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', textAlign: 'center', marginBottom: '20px', background: 'rgba(0,0,0,0.2)', padding: '12px', borderRadius: '10px' }}>
+                  <div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
+                    <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</div>
+                    <div style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.forecast}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</div>
+                    <div style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.previous}</div>
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>Affected Market Instruments:</div>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    {selectedEventDetail.affectedPairs.map(p => (
+                      <span key={p} style={{ padding: '4px 10px', borderRadius: '6px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: '#fff', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block' }}>
+                  Trade This Release Live →
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
