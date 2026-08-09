@@ -109,6 +109,9 @@ export default function Home() {
   const [entryPrice, setEntryPrice] = useState(1.0850);
   const [exitPrice, setExitPrice] = useState(1.0900);
 
+  // Legal Policy & KYC Modal State
+  const [selectedPolicyModal, setSelectedPolicyModal] = useState(null); // 'kyc', 'aml', 'terms', 'legal'
+
   // Contact Form Inputs & Feedback
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', account: 'classic', message: '' });
   const [formFeedback, setFormFeedback] = useState({ show: false, success: false, message: '' });
@@ -1281,6 +1284,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* IB Program & White Label Solutions Section (Panel 2 from image) */}
+      <section id="partnership" className="ib-partnership-section" style={{ padding: '90px 0', background: 'rgba(22, 11, 40, 0.95)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
+        <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'center' }}>
+          <div>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '10px' }}>
+              Partner with Us – Earn More with Every Trade
+            </span>
+            <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: '20px' }}>
+              Introducing Our Introducing Broker (IB) Program
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '20px' }}>
+              As an IB, you earn competitive commissions on every trade made by your referred clients. Whether you're an individual or a business, our program is designed to help you grow your income by simply referring traders to our platform.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '30px' }}>
+              Looking to take it a step further? We also offer White Label Solutions — launch your own branded forex brokerage with our full support, infrastructure, and technology.
+            </p>
+            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary">
+                Become an IB Partner →
+              </a>
+              <a href="#contact" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)' }}>
+                White Label Solutions
+              </a>
+            </div>
+          </div>
+
+          <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', textAlign: 'center' }}>
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px auto', fontSize: '2rem', color: 'var(--accent-gold)' }}>
+              <i className="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Tier-1 IB Rebate Network</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: '1.6', marginBottom: '20px' }}>
+              Instant automated commission payouts, daily reporting dashboards, and multi-tier sub-IB tracking.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', background: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '12px' }}>
+              <div>
+                <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Max IB Rebate</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>Up to $12/Lot</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Payout Speed</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#2ecc71', fontFamily: 'JetBrains Mono, monospace' }}>Daily Auto</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Account Offers Compare Section */}
       <section id="offers" className="offers-section">
         <div className="container">
@@ -1421,6 +1472,63 @@ export default function Home() {
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
                 Choose Plan &gt;
               </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Promotions & Partner Loyalty Program Section (Panel 5 & Panel 1 from image) */}
+      <section id="promotions" className="promotions-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
+        <div className="container">
+          <div className="section-title text-center">
+            <span className="section-label">Exclusive Incentives</span>
+            <h2>Promotions & Loyalty Rewards</h2>
+            <p className="subtitle">Boost your trading power with our deposit bonus schemes and institutional loyalty rewards.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
+            
+            {/* Card 1: First Deposit Bonus */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+                <i className="fa-solid fa-gift"></i>
+              </div>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>First Deposit Bonus (New Traders)</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '20px' }}>
+                Get a 20% trading bonus on your first deposit of $100 or more. More capital, more potential.
+              </p>
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '0.85rem' }}>
+                Claim 20% Bonus →
+              </a>
+            </div>
+
+            {/* Card 2: Partner Loyalty Program (Panel 5 Exact Points) */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+                <i className="fa-solid fa-crown"></i>
+              </div>
+              <h3 style={{ fontSize: '1.4rem', fontWeight 800, color: '#fff', marginBottom: '6px' }}>Partner Loyalty Program</h3>
+              <div style={{ color: 'var(--accent-gold)', fontSize: '0.88rem', fontWeight: 700, fontStyle: 'italic', marginBottom: '12px' }}>“The Longer You Stay, The More You Earn”</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '14px' }}>Our loyal IBs get rewarded with tiered benefits:</p>
+              
+              <ol style={{ paddingLeft: '20px', color: '#fff', fontSize: '0.9rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li>Higher commissions</li>
+                <li>Priority support</li>
+                <li>Access to exclusive tools & reports</li>
+                <li><strong>Build with Magnate, and we'll build with you.</strong></li>
+              </ol>
+            </div>
+
+            {/* Card 3: Technical Analysis (Panel 1 Exact Text) */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+                <i className="fa-solid fa-chart-candlestick"></i>
+              </div>
+              <h3 style={{ fontSize: '1.4rem', fontWeight 800, color: '#fff', marginBottom: '12px' }}>Technical Analysis</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: '1.7' }}>
+                Magnate Capital trading platform offers a wide range of technical analysis tools that help traders make informed investment decisions. With real-time data, advanced charting capabilities, and customizable indicators.
+              </p>
             </div>
 
           </div>
@@ -1975,7 +2083,10 @@ export default function Home() {
                 <li><a href="#about">About Our Firm</a></li>
                 <li><a href="#offers">Account Compare</a></li>
                 <li><a href="#calculator">Trading Calculator</a></li>
-                <li><a href="#contact">Contact Support</a></li>
+                <li><button type="button" onClick={() => setSelectedPolicyModal('kyc')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>KYC Policy</button></li>
+                <li><button type="button" onClick={() => setSelectedPolicyModal('aml')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>AML Policy</button></li>
+                <li><button type="button" onClick={() => setSelectedPolicyModal('terms')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>Terms & Conditions</button></li>
+                <li><button type="button" onClick={() => setSelectedPolicyModal('legal')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>Legal Document</button></li>
               </ul>
             </div>
           </div>
@@ -2103,6 +2214,120 @@ export default function Home() {
           <i className="fa-brands fa-whatsapp"></i>
         </button>
       </div>
+      {/* Interactive Policy Modal Drawer (Matching Panel 3 from image) */}
+      {selectedPolicyModal && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)', zIndex: 999999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+          <div className="glass-card tech-card-pulse" style={{ maxWidth: '750px', width: '100%', maxHeight: '85vh', overflowY: 'auto', borderRadius: '24px', padding: '35px', background: '#160B28', border: '1px solid var(--accent-gold)' }}>
+            
+            {/* Modal Header & Navigation Tabs (Matching Panel 3) */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '15px' }}>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <button 
+                  onClick={() => setSelectedPolicyModal('aml')}
+                  style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid var(--accent-gold)', background: selectedPolicyModal === 'aml' ? 'var(--accent-gold)' : 'transparent', color: selectedPolicyModal === 'aml' ? '#1A0F2E' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  AML Policy
+                </button>
+                <button 
+                  onClick={() => setSelectedPolicyModal('kyc')}
+                  style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid var(--accent-gold)', background: selectedPolicyModal === 'kyc' ? 'var(--accent-gold)' : 'transparent', color: selectedPolicyModal === 'kyc' ? '#1A0F2E' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  KYC Policy
+                </button>
+                <button 
+                  onClick={() => setSelectedPolicyModal('terms')}
+                  style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid var(--accent-gold)', background: selectedPolicyModal === 'terms' ? 'var(--accent-gold)' : 'transparent', color: selectedPolicyModal === 'terms' ? '#1A0F2E' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  Terms & Conditions
+                </button>
+                <button 
+                  onClick={() => setSelectedPolicyModal('legal')}
+                  style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid var(--accent-gold)', background: selectedPolicyModal === 'legal' ? 'var(--accent-gold)' : 'transparent', color: selectedPolicyModal === 'legal' ? '#1A0F2E' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  Legal Document
+                </button>
+              </div>
+
+              <button onClick={() => setSelectedPolicyModal(null)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.4rem', cursor: 'pointer' }}>
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            {/* KYC Policy Panel Content (Panel 3 Exact Copy) */}
+            {selectedPolicyModal === 'kyc' && (
+              <div>
+                <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '12px' }}>Our Commitment to Prevention</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                  We take the protection of your personal and financial data seriously. Global Magnate Capital Ltd. utilizes advanced security protocols and fraud control systems to safeguard all transactions and account information.
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '24px' }}>
+                  To ensure secure electronic transactions, we require certain documents from you—especially when funding your account.
+                </p>
+
+                <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.1rem', fontWeight: 800, marginBottom: '12px' }}>Required Documents for Verification</h4>
+                <p style={{ color: '#fff', fontWeight: 600, fontSize: '0.92rem', marginBottom: '12px' }}>When making a deposit, please provide the following:</p>
+                
+                <ul style={{ listStyle: 'disc', paddingLeft: '24px', color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                  <li>A valid government-issued passport (with the signature page)</li>
+                  <li>
+                    Credit card copies used for the deposit:
+                    <ul style={{ listStyle: 'circle', paddingLeft: '20px', marginTop: '4px' }}>
+                      <li>Front side: only the last four digits visible</li>
+                      <li>Back side: CVV code covered</li>
+                    </ul>
+                  </li>
+                  <li>A recent utility bill in your name showing your current address</li>
+                  <li>A signed copy of your purchase history of online transactions</li>
+                </ul>
+
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                  If you have any questions, feel free to reach out to our support team at <a href="mailto:info@magnatecapital.com" style={{ color: 'var(--accent-gold)' }}>info@magnatecapital.com</a>.
+                </p>
+              </div>
+            )}
+
+            {/* AML Policy Panel Content */}
+            {selectedPolicyModal === 'aml' && (
+              <div>
+                <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '12px' }}>Anti-Money Laundering (AML) Compliance</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                  Global Magnate Capital Ltd. strictly enforces Anti-Money Laundering (AML) policies in compliance with international regulatory frameworks and Saint Lucia financial guidelines.
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7' }}>
+                  All client deposits and withdrawals must match verified bank account titles. Third-party deposits are strictly prohibited under company policy.
+                </p>
+              </div>
+            )}
+
+            {/* Terms & Conditions Panel Content */}
+            {selectedPolicyModal === 'terms' && (
+              <div>
+                <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '12px' }}>Terms & Conditions</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                  By opening an account with Global Magnate Capital Ltd. (Registration: 2025-00329), you agree to comply with our client agreement terms, margin execution policies, and risk warnings.
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7' }}>
+                  These Terms shall be governed by the laws of Saint Lucia. Any dispute or claim arising under or in connection with these Terms will be subject to the exclusive jurisdiction of the Courts of Saint Lucia.
+                </p>
+              </div>
+            )}
+
+            {/* Legal Document Panel Content */}
+            {selectedPolicyModal === 'legal' && (
+              <div>
+                <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '12px' }}>Regulatory & Compliance Legal Documentation</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                  Global Magnate Capital Ltd. operates under strict regulatory compliance in Saint Lucia (Company Registration Number: 2025-00329).
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.7' }}>
+                  Registered Address: Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia.
+                </p>
+              </div>
+            )}
+
+          </div>
+        </div>
+      )}
     </>
   );
 }
