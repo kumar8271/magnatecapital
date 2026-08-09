@@ -1286,123 +1286,144 @@ export default function Home() {
         <div className="container">
           <div className="section-title text-center">
             <span className="section-label">Account Types</span>
-            <h2>Exclusive Account Types</h2>
-            <p className="subtitle">Flexible account configurations designed to match your specific trading scale and style.</p>
+            <h2>Exclusive Account Configurations</h2>
+            <p className="subtitle">Select the account structure that perfectly matches your capital scale and trading strategy.</p>
           </div>
 
-          <div className="tabs-header">
-            <button className={`tab-btn ${activeAccountTab === 'classic' ? 'active' : ''}`} onClick={() => setActiveAccountTab('classic')}>Classic Account</button>
-            <button className={`tab-btn ${activeAccountTab === 'prime' ? 'active' : ''}`} onClick={() => setActiveAccountTab('prime')}>Prime Account</button>
-            <button className={`tab-btn ${activeAccountTab === 'ecn' ? 'active' : ''}`} onClick={() => setActiveAccountTab('ecn')}>ECN Pro Account</button>
+          {/* 3-Column Account Pricing Cards Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
+            
+            {/* Card 1: Classic Noble */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid rgba(212, 168, 75, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
+              <div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Classic Noble</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$50</div>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Spreads: <strong>Starting From 1.5 pips</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Minimum Deposit: <strong>$50</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Commission: <strong>No Commission</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Trading Platform: <strong>cTrader / MT5</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Leverage: <strong>1:500</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Ideal: <strong>Beginners</strong></span>
+                  </li>
+                </ul>
+              </div>
+
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
+                Choose Plan &gt;
+              </a>
+            </div>
+
+            {/* Card 2: Prime Crown */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.95)', border: '2px solid var(--accent-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center', boxShadow: '0 0 30px rgba(212, 168, 75, 0.2)', transform: 'translateY(-6px)' }}>
+              <div>
+                <span className="gold-badge" style={{ marginBottom: '10px', display: 'inline-block' }}>Most Popular</span>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Prime Crown</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$500</div>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Spreads: <strong>Starting From 0.8 pips</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Minimum Deposit: <strong>$500</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Commission: <strong>No Commission</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Trading Platform: <strong>cTrader / MT5</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Leverage: <strong>1:500</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Ideal: <strong>Traders</strong></span>
+                  </li>
+                </ul>
+              </div>
+
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block' }}>
+                Choose Plan &gt;
+              </a>
+            </div>
+
+            {/* Card 3: ECN Elite */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid rgba(212, 168, 75, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
+              <div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>ECN Elite</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$5,000</div>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Spreads: <strong>Raw Spreads</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Minimum Deposit: <strong>$5,000</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Commission: <strong>Up to $12 per lot</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Trading Platform: <strong>cTrader / MT5</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Leverage: <strong>1:200</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <span>Ideal: <strong>Professionals</strong></span>
+                  </li>
+                </ul>
+              </div>
+
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
+                Choose Plan &gt;
+              </a>
+            </div>
+
           </div>
-
-          {activeAccountTab === 'classic' && (
-            <div className="tab-content active">
-              <div className="grid-2 flex-align-center">
-                <div className="tab-info">
-                  <span className="gold-badge">Best for Starters</span>
-                  <h3>Classic Account</h3>
-                  <p className="offer-desc">Enter the global financial markets with minimal entry barriers and access all core features of the MetaTrader 5 platform.</p>
-                  <ul className="offer-specs">
-                    <li><i className="fa-solid fa-check gold-color"></i> Minimum Deposit: <strong>$100</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Spreads: <strong>From 1.2 Pips</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Leverage: <strong>Up to 1:500</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$0 (Zero Commission)</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Execution: <strong>Market Execution</strong></li>
-                  </ul>
-                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open Classic Account</a>
-                </div>
-                <div className="tab-mockup">
-                  <div className="glass-card metrics-card">
-                    <div className="metrics-row">
-                      <span className="metric-label">Min Deposit</span>
-                      <span className="metric-val">$100</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Spreads</span>
-                      <span className="metric-val">1.2 Pips</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Leverage</span>
-                      <span className="metric-val">1:500</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeAccountTab === 'prime' && (
-            <div className="tab-content active">
-              <div className="grid-2 flex-align-center">
-                <div className="tab-info">
-                  <span className="gold-badge">Most Popular</span>
-                  <h3>Prime VIP Account</h3>
-                  <p className="offer-desc">Experience optimal trading environments with premium liquidity pipelines, tighter spreads, and dedicated account manager support.</p>
-                  <ul className="offer-specs">
-                    <li><i className="fa-solid fa-check gold-color"></i> Minimum Deposit: <strong>$1,000</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Spreads: <strong>From 0.4 Pips</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Leverage: <strong>Up to 1:400</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$2 per side per lot</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Priority Withdrawal Processing: <strong>Yes</strong></li>
-                  </ul>
-                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open Prime Account</a>
-                </div>
-                <div className="tab-mockup">
-                  <div className="glass-card metrics-card VIP">
-                    <div className="metrics-row">
-                      <span className="metric-label">Min Deposit</span>
-                      <span className="metric-val">$1,000</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Spreads</span>
-                      <span className="metric-val">0.4 Pips</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Leverage</span>
-                      <span className="metric-val">1:400</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeAccountTab === 'ecn' && (
-            <div className="tab-content active">
-              <div className="grid-2 flex-align-center">
-                <div className="tab-info">
-                  <span className="gold-badge">Institutional Grade</span>
-                  <h3>ECN Pro Account</h3>
-                  <p className="offer-desc">Direct market access (DMA) directly to top-tier liquidity networks. Zero markups, raw interbank spreads, and absolute transparency.</p>
-                  <ul className="offer-specs">
-                    <li><i className="fa-solid fa-check gold-color"></i> Minimum Deposit: <strong>$5,000</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Spreads: <strong>Raw from 0.0 Pips</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Leverage: <strong>Up to 1:200</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$3 per side per lot</strong></li>
-                    <li><i className="fa-solid fa-check gold-color"></i> VPS Hosting Integration: <strong>Complimentary</strong></li>
-                  </ul>
-                  <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open ECN Pro Account</a>
-                </div>
-                <div className="tab-mockup">
-                  <div className="glass-card metrics-card ECN">
-                    <div className="metrics-row">
-                      <span className="metric-label">Min Deposit</span>
-                      <span className="metric-val">$5,000</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Spreads</span>
-                      <span className="metric-val">0.0 Pips</span>
-                    </div>
-                    <div className="metrics-row">
-                      <span className="metric-label">Leverage</span>
-                      <span className="metric-val">1:200</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
@@ -1907,6 +1928,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Join Magnate Capital Careers Section */}
+      <section className="careers-section" style={{ padding: '80px 0', background: 'linear-gradient(180deg, #1A0F2E 0%, #160B28 100%)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="container text-center">
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '10px' }}>Join Magnate Capital</h2>
+          <p style={{ fontSize: '1.2rem', color: '#fff', fontWeight: 600, marginBottom: '20px' }}>Empower Your Future in Finance</p>
+          <p style={{ maxWidth: '750px', margin: '0 auto 30px auto', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
+            Embark on a rewarding journey with Magnate Capital, a leader in the financial services space. We're on the lookout for enthusiastic individuals with a passion for trading, technology, and client engagement.
+          </p>
+          <div style={{ display: 'inline-block', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid var(--accent-gold)', padding: '14px 28px', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>
+            Share your CV at <a href="mailto:support@magnatefx.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>support@magnatefx.com</a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer>
         <div className="container">
@@ -1915,7 +1950,7 @@ export default function Home() {
               <div className="logo-area" style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
                 <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
               </div>
-              <p className="brand-desc">Magnate Capital is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
+              <p className="brand-desc">Global Magnate Capital Ltd. is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
               <div className="footer-socials" style={{ display: 'flex', gap: '14px', marginTop: '16px' }}>
                 <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-instagram"></i></a>
                 <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -1945,13 +1980,24 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Legal & Compliance Information Block (Panel 1 & 3) */}
+          <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '24px', margin: '30px 0', fontSize: '0.88rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+            <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.1rem', fontWeight: 800, marginBottom: '8px' }}>18. Contact Information</h4>
+            <p style={{ marginBottom: '14px' }}>For all legal, regulatory, or compliance-related correspondence, please contact:</p>
+            <p style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', marginBottom: '10px' }}>Global Magnate Capital Ltd. – Compliance & Legal Department</p>
+            <ul style={{ listStyle: 'disc', paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <li><strong>Email:</strong> <a href="mailto:compliance@magnatefx.com" style={{ color: 'var(--accent-gold)' }}>compliance@magnatefx.com</a></li>
+              <li><strong>Registered Address:</strong> Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia</li>
+              <li><strong>Company Registration Number:</strong> 2025-00329</li>
+            </ul>
+          </div>
+
           <div className="risk-warning">
             <p><strong>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange and CFD trading, and seek advice from an independent financial advisor if you have any doubts.</p>
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; 2026 Magnate Capital. All rights reserved. Registered under license regulations.</p>
-            <p>Created matching branding instructions.</p>
+            <p>&copy; 2026 Global Magnate Capital Ltd. All rights reserved. Registered under license regulations in Saint Lucia (Reg: 2025-00329).</p>
           </div>
         </div>
       </footer>
