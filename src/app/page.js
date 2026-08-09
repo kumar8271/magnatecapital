@@ -468,11 +468,39 @@ export default function Home() {
           <nav className={isMobileMenuOpen ? 'active' : ''}>
             <ul>
               <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About Us</a></li>
-              <li><a href="#live-rates" onClick={() => setIsMobileMenuOpen(false)}>Market Watch</a></li>
+              <li><a href="#live-rates" onClick={() => setIsMobileMenuOpen(false)}>Products</a></li>
+              <li>
+                <a href="#calculator" onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  Platform <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.6rem' }}></i>
+                </a>
+              </li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Accounts</a></li>
-              <li><a href="#calculator" onClick={() => setIsMobileMenuOpen(false)}>Calculator</a></li>
-              <li><a href="https://trade.magnatefx.com/login/" className="btn btn-outline" target="_blank" rel="noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Login</a></li>
-              <li><a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Open Account</a></li>
+              <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Partnership</a></li>
+              <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Promotions</a></li>
+              <li>
+                <a 
+                  href="https://trade.magnatefx.com/login/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn" 
+                  style={{ background: 'var(--accent-gold)', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '6px', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Login <i className="fa-solid fa-chevron-right" style={{ fontSize: '0.65rem' }}></i>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://trade.magnatefx.com/register/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn" 
+                  style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.4)', padding: '10px 20px', borderRadius: '6px', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign Up <i className="fa-solid fa-chevron-right" style={{ fontSize: '0.65rem' }}></i>
+                </a>
+              </li>
             </ul>
           </nav>
           <div className="menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
