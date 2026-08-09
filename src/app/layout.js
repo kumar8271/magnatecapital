@@ -31,7 +31,7 @@ export const metadata = {
     images: ["https://magnatecapital.com/logo.jpg"],
   },
   icons: {
-    icon: "/logo.jpg",
+    icon: "/favicon.png",
   }
 };
 
