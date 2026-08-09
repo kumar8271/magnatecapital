@@ -556,7 +556,7 @@ export default function Home() {
         <div className="hero-bg-overlay"></div>
         <div className="container hero-container">
           <div className="hero-content">
-            <div className="gold-badge">Official Multi-Asset Brokerage</div>
+            <div className="gold-badge">Trusted Multi-Asset Brokerage</div>
             <h1 className="text-shine">
               Magnate Capital<br />
               <span className="typewriter-text">{typewriterText}</span><span className="typewriter-cursor">|</span>
@@ -567,6 +567,24 @@ export default function Home() {
             <div className="hero-actions">
               <a href="#offers" className="btn btn-primary btn-lg">Explore Accounts</a>
               <a href="#calculator" className="btn btn-secondary btn-lg">Calculate Margin</a>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', marginTop: '50px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+              <div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>2020</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Founded</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>1000+</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Instruments</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>50+</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Countries</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>24/5</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Support</div>
+              </div>
             </div>
           </div>
           <div className="hero-visual">
@@ -784,7 +802,7 @@ export default function Home() {
         <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', alignItems: 'center' }}>
           {/* Left Column: Info Text */}
           <div>
-            <div className="accent-tag" style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '15px' }}>Next-Gen Technology</div>
+            <span className="section-label">Trading Infrastructure</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#fff', marginBottom: '25px', lineHeight: '1.2' }}>Trade with ECN Institutional Velocity</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '30px' }}>
               Connect directly to our deep liquidity pool via the MetaTrader 5 server bridge. Experience pricing built for professional scalpers, algorithmic traders, and high-frequency accounts.
@@ -929,6 +947,7 @@ export default function Home() {
       <section id="about" className="about-section">
         <div className="container">
           <div className="section-title text-center">
+            <span className="section-label">About Magnate Capital</span>
             <h2>About Magnate Capital</h2>
             <p className="subtitle">Designed for elite traders who demand precision, security, and velocity.</p>
           </div>
@@ -956,6 +975,7 @@ export default function Home() {
       <section id="offers" className="offers-section">
         <div className="container">
           <div className="section-title text-center">
+            <span className="section-label">Account Types</span>
             <h2>Exclusive Account Types</h2>
             <p className="subtitle">Flexible account configurations designed to match your specific trading scale and style.</p>
           </div>
@@ -1080,6 +1100,7 @@ export default function Home() {
       <section id="calculator" className="calculator-section">
         <div className="container">
           <div className="section-title text-center">
+            <span className="section-label">Trading Tools</span>
             <h2>Interactive Margin & Pip Calculator</h2>
             <p className="subtitle">Quickly evaluate contract details, margin requirements, and pip values before taking positions.</p>
           </div>
@@ -1137,6 +1158,7 @@ export default function Home() {
       <section id="markets" className="markets-section">
         <div className="container">
           <div className="section-title text-center">
+            <span className="section-label">Market Access</span>
             <h2>Trade Global Markets</h2>
             <p className="subtitle">Access hundreds of instruments across six asset classes with top-tier conditions.</p>
           </div>
@@ -1251,7 +1273,7 @@ export default function Home() {
       <section id="contact" className="contact-section">
         <div className="container grid-2">
           <div className="contact-info-block">
-            <span className="gold-badge">Get in Touch</span>
+            <span className="section-label">Get In Touch</span>
             <h2>Start Your Premium Investment Journey</h2>
             <p className="lead-text">Fill out the registration request, and a Magnate Capital broker representative will connect with you to complete your account setup.</p>
             
