@@ -798,7 +798,7 @@ export default function Home() {
       </section>
 
       {/* Execution Technology Section */}
-      <section className="tech-section" style={{ background: '#000', padding: '80px 0', borderTop: '1px solid var(--border-light)' }}>
+      <section className="tech-section" style={{ background: '#091220', padding: '80px 0', borderTop: '1px solid var(--border-light)' }}>
         <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', alignItems: 'center' }}>
           {/* Left Column: Info Text */}
           <div>
@@ -826,7 +826,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Attractive MT5 Dashboard Mock Window */}
-          <div className="floating-terminal" style={{ background: 'rgba(10, 10, 10, 0.7)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}>
+          <div className="floating-terminal" style={{ background: 'rgba(11, 20, 38, 0.75)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}>
             {/* macOS window control buttons header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #141414', paddingBottom: '15px', marginBottom: '25px' }}>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -837,7 +837,7 @@ export default function Home() {
               </div>
               
               {/* Interactive Tabs */}
-              <div style={{ display: 'flex', gap: '4px', background: '#080808', padding: '3px', borderRadius: '8px', border: '1px solid #111' }}>
+              <div style={{ display: 'flex', gap: '4px', background: '#091220', padding: '3px', borderRadius: '8px', border: '1px solid #111' }}>
                 <button 
                   onClick={() => setTechMode('spreads')} 
                   style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'spreads' ? 'var(--accent-gold)' : 'transparent', color: techMode === 'spreads' ? '#000' : 'var(--text-muted)', transition: 'all 0.3s' }}
@@ -1216,7 +1216,7 @@ export default function Home() {
                 }}
               >
                 {instaPosts.map((post) => (
-                  <div key={post.id} style={{ flex: '0 0 320px', background: '#000', borderRadius: '12px', border: '1px solid var(--border-light)', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }} className="insta-native-card">
+                  <div key={post.id} style={{ flex: '0 0 320px', background: '#091220', borderRadius: '12px', border: '1px solid var(--border-light)', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }} className="insta-native-card">
                     {/* Header */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px', borderBottom: '1px solid #141414' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1244,7 +1244,7 @@ export default function Home() {
                     </div>
 
                     {/* Live Comments Stream Box */}
-                    <div style={{ padding: '12px', background: '#050505', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ padding: '12px', background: '#0B1426', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent-gold)', fontWeight: 700, letterSpacing: '0.05em' }}>Live Comments</div>
                       {post.comments.map((comment, cIndex) => (
                         <div key={cIndex} style={{ fontSize: '0.75rem', lineBreak: 'anywhere' }}>
@@ -1410,7 +1410,7 @@ export default function Home() {
             </div>
 
             {/* Chat Messages Body */}
-            <div style={{ padding: '15px', background: '#050505', minHeight: '100px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ padding: '15px', background: '#0B1426', minHeight: '100px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #141414', borderRadius: '8px 8px 8px 0', padding: '10px', fontSize: '0.8rem', color: 'var(--text-secondary)', alignSelf: 'flex-start', maxWidth: '90%' }}>
                 Hello there! Welcome to Magnate Capital support. How can we assist you with your account setup today?
               </div>
@@ -1425,14 +1425,14 @@ export default function Home() {
                 setWaMessage('');
                 setIsWAChatOpen(false);
               }}
-              style={{ display: 'flex', borderTop: '1px solid #141414', background: '#000', padding: '10px', gap: '8px', alignItems: 'center' }}
+              style={{ display: 'flex', borderTop: '1px solid #141414', background: '#091220', padding: '10px', gap: '8px', alignItems: 'center' }}
             >
               <input 
                 type="text"
                 placeholder="Type your message..."
                 value={waMessage}
                 onChange={(e) => setWaMessage(e.target.value)}
-                style={{ flexGrow: 1, background: '#080808', border: '1px solid #1c1c1c', borderRadius: '8px', padding: '8px 12px', color: '#fff', fontSize: '0.8rem', outline: 'none' }}
+                style={{ flexGrow: 1, background: '#091220', border: '1px solid #1c1c1c', borderRadius: '8px', padding: '8px 12px', color: '#fff', fontSize: '0.8rem', outline: 'none' }}
                 required
               />
               <button 

@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-  --bg-primary: #0A0908;
-  --bg-secondary: #12100E;
-  --bg-card: rgba(20, 18, 16, 0.7);
+  --bg-primary: #0B1426;
+  --bg-secondary: #0F1B33;
+  --bg-card: rgba(15, 27, 51, 0.75);
   --accent-gold: #C5A059;
   --accent-gold-hover: #DFBA73;
   --accent-gold-muted: rgba(197, 160, 89, 0.12);
   --text-primary: #FFFFFF;
-  --text-secondary: #c8c5c0;
-  --text-muted: #7c7770;
+  --text-secondary: #B8C4D8;
+  --text-muted: #5E7291;
   --border-light: rgba(255, 255, 255, 0.08);
   --border-gold: rgba(197, 160, 89, 0.25);
   --font-sans: 'Inter', sans-serif;
@@ -156,7 +156,7 @@ p {
 
 /* Top Bar */
 .top-bar {
-  background: #000000;
+  background: #091220;
   border-bottom: 1px solid var(--border-light);
   padding: 8px 0;
   font-size: 0.8rem;
@@ -193,7 +193,7 @@ p {
 
 /* Header & Nav */
 header {
-  background: rgba(10, 9, 8, 0.85);
+  background: rgba(11, 20, 38, 0.9);
   backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
@@ -270,7 +270,7 @@ nav ul li a:hover {
 /* Live Market Ticker */
 .ticker-wrap {
   width: 100%;
-  background: #080808;
+  background: #091220;
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
   display: flex;
@@ -382,7 +382,7 @@ nav ul li a:hover {
 .hero {
   position: relative;
   padding: 160px 0 140px 0;
-  background: linear-gradient(180deg, #050505 0%, #0d0d0d 100%);
+  background: linear-gradient(180deg, #0B1426 0%, #0F1B33 100%);
   overflow: hidden;
 }
 
@@ -1307,7 +1307,7 @@ footer {
 
 .insta-card {
   position: relative;
-  background: #000;
+  background: #091220;
   border: 1px solid var(--border-light);
   border-radius: 8px;
   overflow: hidden;
@@ -1360,7 +1360,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #161616 0%, #080808 100%);
+  background: linear-gradient(135deg, #0F1B33 0%, #0B1426 100%);
   text-align: center;
   position: relative;
 }
