@@ -1464,19 +1464,19 @@ export default function Home() {
           {/* Core Values — PILLAR Framework Header */}
           <div className="text-center" style={{ marginBottom: '35px' }}>
             <span className="section-label">Core Values</span>
-            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>The "PILLAR" Framework</h3>
+            <h3 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-gold)' }}>Core Values of Magnate Capital — “PILLAR”</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px' }}>Six foundational principles guiding every solution we deliver.</p>
           </div>
 
-          {/* PILLAR 6-Grid */}
+          {/* PILLAR 6-Grid (Exact Copy from Panel 4) */}
           <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
-              { letter: 'P', title: 'Professionalism', desc: 'We act with expertise, integrity, and dedication to exceed client expectations.', icon: 'fa-user-tie' },
-              { letter: 'I', title: 'Integrity', desc: 'We maintain complete transparency, trust, and honesty in all transactions.', icon: 'fa-shield-heart' },
-              { letter: 'L', title: 'Legacy', desc: 'We build sustainable wealth and strategic value that lasts across generations.', icon: 'fa-building-columns' },
-              { letter: 'L', title: 'Leadership (Excellence)', desc: 'We lead the global market with top-tier execution and industry innovation.', icon: 'fa-award' },
-              { letter: 'A', title: 'Adaptability (Innovation)', desc: 'We leverage cutting-edge tools and Next-Gen platforms to stay ahead.', icon: 'fa-microchip' },
-              { letter: 'R', title: 'Relationships (Client-Centric)', desc: 'We tailor every trading solution directly to our clients’ unique goals.', icon: 'fa-handshake' }
+              { letter: 'P', title: 'Professionalism', desc: 'We uphold the highest standards of expertise and integrity, reflecting the prestige of the Magnate brand.', icon: 'fa-user-tie' },
+              { letter: 'I', title: 'Integrity', desc: 'Honesty and transparency guide every decision, building trust that lasts for generations.', icon: 'fa-shield-heart' },
+              { letter: 'L', title: 'Legacy', desc: 'We focus on long-term wealth and relationships that create a lasting impact.', icon: 'fa-building-columns' },
+              { letter: 'L', title: 'Leadership', desc: 'Excellence is our benchmark. Every client is treated with the royal standard they deserve.', icon: 'fa-award' },
+              { letter: 'A', title: 'Adaptability', desc: 'We stay ahead through innovation, using the latest tools and insights to navigate change.', icon: 'fa-microchip' },
+              { letter: 'R', title: 'Relationships', desc: 'Our client-first mindset shapes tailored strategies and enduring partnerships.', icon: 'fa-handshake' }
             ].map((pillar) => (
               <div key={pillar.title} className="glass-card" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.65)', border: '1px solid rgba(255,255,255,0.06)', transition: 'all 0.3s' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
@@ -1485,8 +1485,8 @@ export default function Home() {
                     <i className={`fa-solid ${pillar.icon}`} style={{ fontSize: '1rem' }}></i>
                   </div>
                 </div>
-                <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{pillar.title}</h4>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6' }}>{pillar.desc}</p>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{pillar.letter} – {pillar.title}</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.6' }}>{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -1509,6 +1509,27 @@ export default function Home() {
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '30px' }}>
               Looking to take it a step further? We also offer White Label Solutions — launch your own branded forex brokerage with our full support, infrastructure, and technology.
             </p>
+
+            {/* Monthly Volume Challenge (For Partners) Card - Panel 2 */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '24px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', marginTop: '20px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '6px' }}>
+                Grow Your Network, Grow Your Rewards
+              </span>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
+                Monthly Volume Challenge (For Partners)
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: '1.6', marginBottom: '14px' }}>
+                Each month, our top-performing partners earn exclusive bonuses based on their client trading volumes.
+              </p>
+              <ol style={{ paddingLeft: '20px', color: '#fff', fontSize: '0.9rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '14px' }}>
+                <li>Bonus Tiers</li>
+                <li>Cash Rewards</li>
+                <li>Performance Recognition</li>
+              </ol>
+              <div style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.9rem', fontStyle: 'italic' }}>
+                Let your referrals work for you.
+              </div>
+            </div>
             <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary">
                 Become an IB Partner →
