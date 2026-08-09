@@ -94,17 +94,17 @@ export default function Header() {
                   Products <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.6rem' }}></i>
                 </Link>
                 <div className={`nav-dropdown-menu ${activeDropdown === 'products' ? 'open' : ''}`}>
-                  <Link href="/products#forex" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-solid fa-arrow-trend-up" style={{ color: 'var(--accent-gold)' }}></i> Forex Currency Pairs
+                  <Link href="/products/forex" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    <i className="fa-solid fa-arrow-trend-up" style={{ color: 'var(--accent-gold)' }}></i> Forex
                   </Link>
-                  <Link href="/products#commodities" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-solid fa-coins" style={{ color: 'var(--accent-gold)' }}></i> Commodities & Gold
+                  <Link href="/products/precious-metals" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    <i className="fa-solid fa-coins" style={{ color: 'var(--accent-gold)' }}></i> Precious Metals
                   </Link>
-                  <Link href="/products#indices" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/products/indices" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
                     <i className="fa-solid fa-chart-line" style={{ color: 'var(--accent-gold)' }}></i> Stock Indices
                   </Link>
-                  <Link href="/products#crypto" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-brands fa-bitcoin" style={{ color: 'var(--accent-gold)' }}></i> Crypto CFDs
+                  <Link href="/products/cryptocurrencies" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    <i className="fa-brands fa-bitcoin" style={{ color: 'var(--accent-gold)' }}></i> Cryptocurrencies
                   </Link>
                 </div>
               </li>
