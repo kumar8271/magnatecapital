@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 export default function Footer() {
   const [selectedPolicyModal, setSelectedPolicyModal] = useState(null);
+  const [isWAChatOpen, setIsWAChatOpen] = useState(false);
+  const [waMessage, setWaMessage] = useState('');
 
   return (
     <>
@@ -72,6 +74,110 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Dialog & Toggle Button */}
+      <div style={{ position: 'fixed', bottom: '30px', right: '30px', zIndex: 99999 }}>
+        
+        {/* WhatsApp Chat Box Dialog Window */}
+        {isWAChatOpen && (
+          <div 
+            style={{
+              position: 'absolute',
+              bottom: '80px',
+              right: '0',
+              width: '320px',
+              borderRadius: '16px',
+              background: '#0a0a0a',
+              border: '1px solid rgba(255,255,255,0.1)',
+              overflow: 'hidden',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.85)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* Header */}
+            <div style={{ background: '#075E54', padding: '15px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <img src="/logo.png" alt="Support Agent" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)', background: '#120922', objectFit: 'contain', padding: '4px' }} />
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700 }}>Magnate VIP Desk</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#25D366', display: 'inline-block' }}></span>
+                    Online (Replies in minutes)
+                  </div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsWAChatOpen(false)} 
+                style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1rem', cursor: 'pointer' }}
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            {/* Chat Messages Body */}
+            <div style={{ padding: '15px', background: '#1A0F2E', minHeight: '100px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '8px 8px 8px 0', padding: '10px', fontSize: '0.8rem', color: 'var(--text-secondary)', alignSelf: 'flex-start', maxWidth: '90%' }}>
+                Hello there! Welcome to Magnate Capital support. How can we assist you with your account setup today?
+              </div>
+            </div>
+
+            {/* Input Form Footer */}
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!waMessage.trim()) return;
+                const encodedMsg = encodeURIComponent(waMessage);
+                window.open(`https://api.whatsapp.com/send?phone=971500000000&text=${encodedMsg}`, '_blank');
+                setWaMessage('');
+                setIsWAChatOpen(false);
+              }}
+              style={{ display: 'flex', borderTop: '1px solid rgba(255,255,255,0.08)', background: '#160B28', padding: '10px', gap: '8px', alignItems: 'center' }}
+            >
+              <input 
+                type="text"
+                placeholder="Type your message..."
+                value={waMessage}
+                onChange={(e) => setWaMessage(e.target.value)}
+                style={{ flexGrow: 1, background: '#160B28', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '8px 12px', color: '#fff', fontSize: '0.8rem', outline: 'none' }}
+                required
+              />
+              <button 
+                type="submit" 
+                style={{ background: '#25D366', border: 'none', color: '#fff', width: '32px', height: '32px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
+              >
+                <i className="fa-solid fa-paper-plane" style={{ fontSize: '0.8rem' }}></i>
+              </button>
+            </form>
+          </div>
+        )}
+
+        {/* Floating Toggle Button */}
+        <button 
+          onClick={() => setIsWAChatOpen(!isWAChatOpen)} 
+          className="whatsapp-float"
+          aria-label="Contact Support on WhatsApp"
+          style={{
+            width: '60px',
+            height: '60px',
+            background: '#25D366',
+            color: '#fff',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '32px',
+            boxShadow: '0 8px 24px rgba(37, 211, 102, 0.4)',
+            transition: 'all 0.3s ease-in-out',
+            cursor: 'pointer',
+            border: 'none',
+            outline: 'none',
+            position: 'relative'
+          }}
+        >
+          <i className="fa-brands fa-whatsapp"></i>
+        </button>
+      </div>
 
       {/* Interactive Policy Modal Drawer */}
       {selectedPolicyModal && (
