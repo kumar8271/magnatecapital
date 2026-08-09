@@ -1738,7 +1738,7 @@ export default function Home() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
                 <i className="fa-solid fa-crown"></i>
               </div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight 800, color: '#fff', marginBottom: '6px' }}>Partner Loyalty Program</h3>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '6px' }}>Partner Loyalty Program</h3>
               <div style={{ color: 'var(--accent-gold)', fontSize: '0.88rem', fontWeight: 700, fontStyle: 'italic', marginBottom: '12px' }}>“The Longer You Stay, The More You Earn”</div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '14px' }}>Our loyal IBs get rewarded with tiered benefits:</p>
               
@@ -1755,7 +1755,7 @@ export default function Home() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
                 <i className="fa-solid fa-chart-candlestick"></i>
               </div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight 800, color: '#fff', marginBottom: '12px' }}>Technical Analysis</h3>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Technical Analysis</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: '1.7' }}>
                 Magnate Capital trading platform offers a wide range of technical analysis tools that help traders make informed investment decisions. With real-time data, advanced charting capabilities, and customizable indicators.
               </p>
