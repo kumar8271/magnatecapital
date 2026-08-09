@@ -614,7 +614,7 @@ export default function Home() {
                 </a>
               </li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Accounts</a></li>
-              <li><a href="#calendar" onClick={() => setIsMobileMenuOpen(false)}>Economic Calendar</a></li>
+              <li><a href="/resources/economic-calendar" onClick={() => setIsMobileMenuOpen(false)}>Economic Calendar</a></li>
               <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Partnership</a></li>
               <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>Promotions</a></li>
               <li>
