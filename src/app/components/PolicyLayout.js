@@ -25,7 +25,7 @@ export default function PolicyLayout({ activeTab, children }) {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: '50px', alignItems: 'flex-start' }}>
+          <div className="policy-grid">
             
             {/* Left Sidebar Navigation (Matching exact screenshot styling) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', background: '#160B28', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>

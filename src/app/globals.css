@@ -1399,7 +1399,34 @@ footer {
   }
 }
 
+/* Policy Layout Grid Responsive Rule */
+.policy-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+@media (max-width: 868px) {
+  .policy-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
+  .top-bar-contact {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+  .top-bar .container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .logo-area img {
+    height: 44px !important;
+  }
   header {
     position: relative;
   }
@@ -1409,33 +1436,52 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(5, 5, 5, 0.98);
-    backdrop-filter: blur(15px);
+    background: rgba(14, 7, 28, 0.98);
+    backdrop-filter: blur(20px);
     border-bottom: 2px solid var(--accent-gold);
-    padding: 20px 0;
-    z-index: 99;
+    padding: 20px 15px;
+    z-index: 9999;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.9);
   }
   header nav.active {
     display: block;
   }
   header nav ul {
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 12px;
+    align-items: stretch;
     width: 100%;
   }
   header nav ul li {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
   header nav ul li a {
-    display: block;
-    padding: 10px 0;
-    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+  }
+  .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(212, 168, 75, 0.2) !important;
+    background: rgba(22, 11, 40, 0.95) !important;
+    margin-top: 8px;
+    padding: 8px !important;
+    border-radius: 8px !important;
   }
   .menu-toggle {
     display: block;
     color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
   }
   .grid-2 {
     grid-template-columns: 1fr;
@@ -1448,12 +1494,17 @@ footer {
   }
   .footer-bottom {
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
     text-align: center;
+    justify-content: center;
+  }
+  .footer-bottom > div {
+    justify-content: center !important;
   }
   /* Scale down hero typography on smaller devices */
   .hero-content h1 {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
+    line-height: 1.25;
   }
   .hero-lead {
     font-size: 1rem;
@@ -1463,13 +1514,15 @@ footer {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
-    gap: 10px;
+    gap: 12px;
   }
-  /* Horizontal scroll indicator for tables on mobile */
+  /* Horizontal touch scroll indicator for tables on mobile */
   .table-responsive {
     border: 1px solid var(--border-light);
-    border-radius: 4px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
