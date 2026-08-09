@@ -1,4 +1,6 @@
 /* CSS Design System for Magnate Capital */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap');
+
 :root {
   --bg-primary: #0A0908;
   --bg-secondary: #12100E;
@@ -11,8 +13,9 @@
   --text-muted: #7c7770;
   --border-light: rgba(255, 255, 255, 0.08);
   --border-gold: rgba(197, 160, 89, 0.25);
-  --font-sans: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --shadow-gold: 0 8px 32px 0 rgba(197, 160, 89, 0.08);
   --shadow-glow: 0 0 15px rgba(197, 160, 89, 0.35);
 }
@@ -45,6 +48,7 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
+  font-family: var(--font-serif);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -79,7 +83,9 @@ p {
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   transition: all 0.3s ease;
   cursor: pointer;
   text-align: center;
@@ -136,15 +142,16 @@ p {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-light);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 .glass-card:hover {
   border-color: var(--border-gold);
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
 }
 
 /* Top Bar */
@@ -186,12 +193,12 @@ p {
 
 /* Header & Nav */
 header {
-  background: rgba(5, 5, 5, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 15px 0;
 }
 
@@ -355,7 +362,7 @@ nav ul li a:hover {
 
 .ticker-val {
   color: var(--text-primary);
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 
 .ticker-change {
@@ -374,7 +381,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 120px 0 100px 0;
+  padding: 160px 0 140px 0;
   background: linear-gradient(180deg, #050505 0%, #0d0d0d 100%);
   overflow: hidden;
 }
@@ -397,9 +404,9 @@ nav ul li a:hover {
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
 .typewriter-text {
@@ -538,8 +545,18 @@ nav ul li a:hover {
 
 /* Sections General */
 section {
-  padding: 80px 0;
+  padding: 120px 0;
   border-bottom: 1px solid var(--border-light);
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .section-title {
@@ -901,10 +918,10 @@ section {
 
 /* Footer Section */
 footer {
-  background: #000000;
-  padding: 60px 0 20px 0;
+  background: #030303;
+  padding: 100px 0 40px 0;
   font-size: 0.85rem;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .footer-top {
@@ -1510,3 +1527,22 @@ footer {
 .floating-terminal {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-hover);
+}
+
