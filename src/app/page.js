@@ -93,10 +93,21 @@ export default function Home() {
   const characterIndexRef = useRef(0);
   const isDeletingRef = useRef(false);
 
-  // Interactive Calculator State
+  // Interactive Multi-Tool Calculator State
+  const [activeCalcTool, setActiveCalcTool] = useState('margin'); // 'margin', 'position', 'profit'
   const [calcAsset, setCalcAsset] = useState('EURUSD');
   const [calcLots, setCalcLots] = useState(1.00);
   const [calcLeverage, setCalcLeverage] = useState(500);
+
+  // Position Size & Risk Calculator State
+  const [riskBalance, setRiskBalance] = useState(10000);
+  const [riskPct, setRiskPct] = useState(1.0);
+  const [stopLossPips, setStopLossPips] = useState(30);
+
+  // Profit / Loss Estimator State
+  const [tradeDirection, setTradeDirection] = useState('BUY');
+  const [entryPrice, setEntryPrice] = useState(1.0850);
+  const [exitPrice, setExitPrice] = useState(1.0900);
 
   // Contact Form Inputs & Feedback
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', account: 'classic', message: '' });
@@ -531,9 +542,22 @@ export default function Home() {
   // --- CALCULATION LOGIC ---
   const activeAssetPrice = tickerItems[calcAsset.toLowerCase()]?.price || 1.0;
   const currentAssetConfig = calculatorOptions[calcAsset] || { pipSize: 0.0001, contract: 100000 };
+  
+  // 1. Margin & Pip Value
   const calculatedContractValue = calcLots * currentAssetConfig.contract * activeAssetPrice;
   const calculatedRequiredMargin = calculatedContractValue / calcLeverage;
   const calculatedPipValue = calcLots * currentAssetConfig.contract * currentAssetConfig.pipSize;
+
+  // 2. Position Size & Risk
+  const calculatedRiskAmount = (riskBalance * riskPct) / 100;
+  const singlePipVal = 100000 * currentAssetConfig.pipSize;
+  const calculatedPositionLots = stopLossPips > 0 ? (calculatedRiskAmount / (stopLossPips * singlePipVal)).toFixed(2) : '0.00';
+
+  // 3. Profit / Loss Estimator
+  const pipDiff = tradeDirection === 'BUY' 
+    ? (exitPrice - entryPrice) / currentAssetConfig.pipSize 
+    : (entryPrice - exitPrice) / currentAssetConfig.pipSize;
+  const calculatedProfitLoss = pipDiff * calcLots * (currentAssetConfig.contract * currentAssetConfig.pipSize);
 
   // --- HELPER FUNCTIONS ---
   function getSparklinePath(points, width, height) {
@@ -1382,61 +1406,182 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Interactive Calculator Section */}
+      {/* Interactive Multi-Tool Calculator Suite */}
       <section id="calculator" className="calculator-section">
         <div className="container">
           <div className="section-title text-center">
-            <span className="section-label">Trading Tools</span>
-            <h2>Interactive Margin & Pip Calculator</h2>
-            <p className="subtitle">Quickly evaluate contract details, margin requirements, and pip values before taking positions.</p>
+            <span className="section-label">Institutional Suite</span>
+            <h2>Forex & CFD Trading Calculators</h2>
+            <p className="subtitle">Evaluate margin requirements, optimal position sizing, risk exposure, and potential profit/loss in real-time.</p>
           </div>
 
-          <div className="calculator-grid">
-            <div className="glass-card calc-card">
-              <div className="form-group">
-                <label htmlFor="calc-asset">Select Instrument</label>
-                <select id="calc-asset" value={calcAsset} onChange={(e) => setCalcAsset(e.target.value)}>
-                  {Object.entries(calculatorOptions).map(([key, opt]) => (
-                    <option value={key} key={key}>{opt.label}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="calc-lots">Lot Size (Volume)</label>
-                <input type="number" id="calc-lots" min="0.01" max="100" step="0.01" value={calcLots} onChange={(e) => setCalcLots(parseFloat(e.target.value) || 0)} />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="calc-leverage">Leverage</label>
-                <select id="calc-leverage" value={calcLeverage} onChange={(e) => setCalcLeverage(parseInt(e.target.value) || 1)}>
-                  <option value="500">1:500</option>
-                  <option value="400">1:400</option>
-                  <option value="200">1:200</option>
-                  <option value="100">1:100</option>
-                  <option value="50">1:50</option>
-                  <option value="1">1:1 (No Leverage)</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="glass-card calc-results">
-              <h3>Calculation Output</h3>
-              <div className="result-row">
-                <span className="res-lbl">Contract Value:</span>
-                <span className="res-val">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedContractValue)}</span>
-              </div>
-              <div className="result-row highlight">
-                <span className="res-lbl">Required Margin:</span>
-                <span className="res-val gold-color">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRequiredMargin)}</span>
-              </div>
-              <div className="result-row">
-                <span className="res-lbl">Pip Value (USD):</span>
-                <span className="res-val">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedPipValue)}</span>
-              </div>
-              <p className="calc-note">*Values are calculated dynamically based on current market rates and leverage parameters.</p>
-            </div>
+          {/* Calculator Suite Tool Tabs */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '35px', flexWrap: 'wrap' }}>
+            <button 
+              className={`filter-pill ${activeCalcTool === 'margin' ? 'active' : ''}`}
+              onClick={() => setActiveCalcTool('margin')}
+              style={{ padding: '10px 20px', fontSize: '0.85rem' }}
+            >
+              <i className="fa-solid fa-scale-balanced" style={{ marginRight: '6px' }}></i> Margin & Pip Calculator
+            </button>
+            <button 
+              className={`filter-pill ${activeCalcTool === 'position' ? 'active' : ''}`}
+              onClick={() => setActiveCalcTool('position')}
+              style={{ padding: '10px 20px', fontSize: '0.85rem' }}
+            >
+              <i className="fa-solid fa-calculator" style={{ marginRight: '6px' }}></i> Position Size & Risk Calculator
+            </button>
+            <button 
+              className={`filter-pill ${activeCalcTool === 'profit' ? 'active' : ''}`}
+              onClick={() => setActiveCalcTool('profit')}
+              style={{ padding: '10px 20px', fontSize: '0.85rem' }}
+            >
+              <i className="fa-solid fa-chart-line" style={{ marginRight: '6px' }}></i> Profit / Loss Estimator
+            </button>
           </div>
+
+          {/* Tool 1: Margin & Pip Calculator */}
+          {activeCalcTool === 'margin' && (
+            <div className="calculator-grid">
+              <div className="glass-card calc-card tech-card-pulse">
+                <div className="form-group">
+                  <label htmlFor="calc-asset">Select Instrument</label>
+                  <select id="calc-asset" value={calcAsset} onChange={(e) => setCalcAsset(e.target.value)}>
+                    {Object.entries(calculatorOptions).map(([key, opt]) => (
+                      <option value={key} key={key}>{opt.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="calc-lots">Trade Volume (Lots)</label>
+                  <input type="number" id="calc-lots" min="0.01" max="100" step="0.01" value={calcLots} onChange={(e) => setCalcLots(parseFloat(e.target.value) || 0)} />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="calc-leverage">Account Leverage</label>
+                  <select id="calc-leverage" value={calcLeverage} onChange={(e) => setCalcLeverage(parseInt(e.target.value) || 1)}>
+                    <option value="500">1:500 (Max Leverage)</option>
+                    <option value="400">1:400</option>
+                    <option value="200">1:200</option>
+                    <option value="100">1:100</option>
+                    <option value="50">1:50</option>
+                    <option value="1">1:1 (No Leverage)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="glass-card calc-results tech-card-pulse">
+                <h3>Margin & Pip Output</h3>
+                <div className="result-row">
+                  <span className="res-lbl">Contract Nominal Value:</span>
+                  <span className="res-val">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedContractValue)}</span>
+                </div>
+                <div className="result-row highlight">
+                  <span className="res-lbl">Required Deposit Margin:</span>
+                  <span className="res-val gold-color">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRequiredMargin)}</span>
+                </div>
+                <div className="result-row">
+                  <span className="res-lbl">Pip Value (Per Pip):</span>
+                  <span className="res-val">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedPipValue)}</span>
+                </div>
+                <p className="calc-note">*Calculated dynamically with real-time interbank price feeds and leverage limits.</p>
+              </div>
+            </div>
+          )}
+
+          {/* Tool 2: Position Size & Risk Calculator */}
+          {activeCalcTool === 'position' && (
+            <div className="calculator-grid">
+              <div className="glass-card calc-card tech-card-pulse">
+                <div className="form-group">
+                  <label htmlFor="risk-balance">Account Balance ($)</label>
+                  <input type="number" id="risk-balance" min="100" step="500" value={riskBalance} onChange={(e) => setRiskBalance(parseFloat(e.target.value) || 0)} />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="risk-pct">Risk Tolerance (% of Account)</label>
+                  <input type="number" id="risk-pct" min="0.1" max="10" step="0.5" value={riskPct} onChange={(e) => setRiskPct(parseFloat(e.target.value) || 0)} />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="sl-pips">Stop Loss (Pips)</label>
+                  <input type="number" id="sl-pips" min="1" max="500" step="1" value={stopLossPips} onChange={(e) => setStopLossPips(parseFloat(e.target.value) || 0)} />
+                </div>
+              </div>
+
+              <div className="glass-card calc-results tech-card-pulse">
+                <h3>Recommended Sizing Output</h3>
+                <div className="result-row">
+                  <span className="res-lbl">Maximum Cash at Risk:</span>
+                  <span className="res-val" style={{ color: '#ef5350' }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRiskAmount)}</span>
+                </div>
+                <div className="result-row highlight">
+                  <span className="res-lbl">Recommended Lot Size:</span>
+                  <span className="res-val gold-color" style={{ fontSize: '1.4rem' }}>{calculatedPositionLots} Lots</span>
+                </div>
+                <div className="result-row">
+                  <span className="res-lbl">Position Units:</span>
+                  <span className="res-val">{(parseFloat(calculatedPositionLots) * 100000).toLocaleString()} Units</span>
+                </div>
+                <p className="calc-note">*Helps protect your trading capital by ensuring risk stays within strict money management rules.</p>
+              </div>
+            </div>
+          )}
+
+          {/* Tool 3: Profit / Loss Estimator */}
+          {activeCalcTool === 'profit' && (
+            <div className="calculator-grid">
+              <div className="glass-card calc-card tech-card-pulse">
+                <div className="form-group">
+                  <label>Order Direction</label>
+                  <div style={{ display: 'flex', gap: '10px' }}>
+                    <button 
+                      type="button"
+                      className={`filter-pill ${tradeDirection === 'BUY' ? 'active' : ''}`}
+                      onClick={() => setTradeDirection('BUY')}
+                      style={{ flex: 1, padding: '10px', background: tradeDirection === 'BUY' ? '#2ecc71' : 'transparent', color: '#fff', borderColor: '#2ecc71' }}
+                    >
+                      ▲ BUY (Long)
+                    </button>
+                    <button 
+                      type="button"
+                      className={`filter-pill ${tradeDirection === 'SELL' ? 'active' : ''}`}
+                      onClick={() => setTradeDirection('SELL')}
+                      style={{ flex: 1, padding: '10px', background: tradeDirection === 'SELL' ? '#ef5350' : 'transparent', color: '#fff', borderColor: '#ef5350' }}
+                    >
+                      ▼ SELL (Short)
+                    </button>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="entry-p">Entry Open Price</label>
+                  <input type="number" id="entry-p" step="0.0001" value={entryPrice} onChange={(e) => setEntryPrice(parseFloat(e.target.value) || 0)} />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="exit-p">Target Exit Price</label>
+                  <input type="number" id="exit-p" step="0.0001" value={exitPrice} onChange={(e) => setExitPrice(parseFloat(e.target.value) || 0)} />
+                </div>
+              </div>
+
+              <div className="glass-card calc-results tech-card-pulse">
+                <h3>Estimated P/L Output</h3>
+                <div className="result-row">
+                  <span className="res-lbl">Price Distance (Pips):</span>
+                  <span className="res-val">{pipDiff.toFixed(1)} Pips</span>
+                </div>
+                <div className="result-row highlight">
+                  <span className="res-lbl">Net Profit / Loss Estimate:</span>
+                  <span className={`res-val ${calculatedProfitLoss >= 0 ? 'val-better' : 'val-worse'}`} style={{ fontSize: '1.4rem' }}>
+                    {calculatedProfitLoss >= 0 ? '+' : ''}${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedProfitLoss)}
+                  </span>
+                </div>
+                <p className="calc-note">*P/L estimates do not include swap rates or raw spread costs.</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
