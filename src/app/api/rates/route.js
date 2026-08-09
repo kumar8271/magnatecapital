@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 15; // Edge CDN caching for 15 seconds
 
 export async function GET() {
   try {
-    // 1. Fetch Crypto & Gold from Binance API
+    // 1. Fetch Crypto & Gold from Binance API with 15-second Next.js cache
     let cryptoData = [];
     try {
       const resBinance = await fetch(
         'https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","PAXGUSDT"]',
-        { cache: 'no-store' }
+        { next: { revalidate: 15 } }
       );
       if (resBinance.ok) {
         cryptoData = await resBinance.json();
@@ -19,10 +18,10 @@ export async function GET() {
       console.warn('Binance API fetch failed:', err);
     }
 
-    // 2. Fetch Fiat Forex Rates from ExchangeRate API
+    // 2. Fetch Fiat Forex Rates from ExchangeRate API with 15-second Next.js cache
     let forexRates = {};
     try {
-      const resForex = await fetch('https://open.er-api.com/v6/latest/USD', { cache: 'no-store' });
+      const resForex = await fetch('https://open.er-api.com/v6/latest/USD', { next: { revalidate: 15 } });
       if (resForex.ok) {
         const forexJson = await resForex.json();
         forexRates = forexJson.rates || {};
@@ -49,37 +48,36 @@ export async function GET() {
     const btcPrice = btcItem ? parseFloat(btcItem.lastPrice) : 65223.99;
     const btcChange = btcItem ? parseFloat(btcItem.priceChangePercent) : 0.30;
 
-    const ethPrice = ethItem ? parseFloat(ethItem.lastPrice) : 1925.05;
-    const ethChange = ethItem ? parseFloat(ethItem.priceChangePercent) : 0.24;
+    const ethPrice = ethItem ? parseFloat(ethItem.lastPrice) : 3480.12;
+    const ethChange = ethItem ? parseFloat(ethItem.priceChangePercent) : -0.15;
 
-    const goldPrice = paxgItem ? parseFloat(paxgItem.lastPrice) : 2024.11;
-    const goldChange = paxgItem ? parseFloat(paxgItem.priceChangePercent) : 0.01;
+    const paxgPrice = paxgItem ? parseFloat(paxgItem.lastPrice) : 2024.11;
 
-    // Compute Forex Pairs
-    const eurusd = 1 / eurRate;
-    const gbpusd = 1 / gbpRate;
+    // Derived FX Rates & Calculations
+    const eurusd = parseFloat((1 / eurRate).toFixed(4));
+    const gbpusd = parseFloat((1 / gbpRate).toFixed(4));
     const usdjpy = jpyRate;
-    const eurjpy = jpyRate / eurRate;
-    const eurnzd = nzdRate / eurRate;
+    const eurjpy = parseFloat((eurusd * jpyRate).toFixed(2));
+    const eurnzd = parseFloat((eurusd * nzdRate).toFixed(4));
 
     const tickerData = {
       eurusd: {
         symbol: 'EURUSD',
-        price: parseFloat(eurusd.toFixed(4)),
-        change: -0.02,
-        isUp: false
+        price: eurusd,
+        change: 0.12,
+        isUp: true
       },
       gbpusd: {
         symbol: 'GBPUSD',
-        price: parseFloat(gbpusd.toFixed(4)),
+        price: gbpusd,
         change: 0.22,
         isUp: true
       },
       gold: {
         symbol: 'GOLD',
-        price: parseFloat(goldPrice.toFixed(2)),
-        change: parseFloat(goldChange.toFixed(2)),
-        isUp: goldChange >= 0
+        price: parseFloat(paxgPrice.toFixed(2)),
+        change: 0.01,
+        isUp: true
       },
       btcusd: {
         symbol: 'BTCUSD',
@@ -89,21 +87,21 @@ export async function GET() {
       },
       usoil: {
         symbol: 'USOIL',
-        price: 74.18,
-        change: -0.02,
+        price: 78.45,
+        change: -0.35,
         isUp: false
       },
       spx500: {
         symbol: 'SPX500',
-        price: 4848.41,
-        change: -0.03,
-        isUp: false
+        price: 5088.80,
+        change: 0.45,
+        isUp: true
       },
       eurjpy: {
         symbol: 'EURJPY',
         price: parseFloat(eurjpy.toFixed(2)),
-        change: -0.15,
-        isUp: false
+        change: 0.18,
+        isUp: true
       },
       usdjpy: {
         symbol: 'USDJPY',
@@ -131,22 +129,29 @@ export async function GET() {
       }
     };
 
-    return NextResponse.json({
-      success: true,
-      timestamp: new Date().toISOString(),
-      rates: tickerData,
-      forexRates: {
-        INR: inrRate,
-        EUR: eurRate,
-        USD: 1,
-        JPY: jpyRate,
-        GBP: gbpRate,
-        CHF: chfRate,
-        AUD: audRate,
-        CAD: cadRate,
-        NZD: nzdRate
+    return NextResponse.json(
+      {
+        success: true,
+        timestamp: new Date().toISOString(),
+        rates: tickerData,
+        forexRates: {
+          INR: inrRate,
+          EUR: eurRate,
+          USD: 1,
+          JPY: jpyRate,
+          GBP: gbpRate,
+          CHF: chfRate,
+          AUD: audRate,
+          CAD: cadRate,
+          NZD: nzdRate
+        }
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, max-age=10, s-maxage=15, stale-while-revalidate=30'
+        }
       }
-    });
+    );
   } catch (error) {
     console.error('Error fetching live rates:', error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });

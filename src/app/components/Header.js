@@ -48,7 +48,7 @@ export default function Header() {
       }
     }
     fetchLiveMarketRates();
-    const interval = setInterval(fetchLiveMarketRates, 3500);
+    const interval = setInterval(fetchLiveMarketRates, 12000);
     return () => clearInterval(interval);
   }, []);
 

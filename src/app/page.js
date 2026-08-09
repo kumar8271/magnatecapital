@@ -387,8 +387,8 @@ export default function Home() {
     // Initial fetch
     fetchLiveMarketRates();
 
-    // Poll live market endpoint every 3.5 seconds
-    const interval = setInterval(fetchLiveMarketRates, 3500);
+    // Poll live market endpoint every 12 seconds
+    const interval = setInterval(fetchLiveMarketRates, 12000);
 
     return () => clearInterval(interval);
   }, []);
