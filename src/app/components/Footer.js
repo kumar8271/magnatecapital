@@ -10,63 +10,140 @@ export default function Footer() {
 
   return (
     <>
-      <footer>
+      <footer style={{ background: '#120922', borderTop: '1px solid rgba(212, 168, 75, 0.2)', padding: '70px 0 30px 0', color: '#fff' }}>
         <div className="container">
-          <div className="footer-top grid-3">
-            <div className="footer-brand">
-              <div className="logo-area" style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
-              </div>
-              <p className="brand-desc">Global Magnate Capital Ltd. is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
-              <div className="footer-socials" style={{ display: 'flex', gap: '14px', marginTop: '16px' }}>
-                <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-telegram"></i></a>
-                <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}><i className="fa-brands fa-youtube"></i></a>
+          
+          {/* Top Grid: 4 Organized Columns */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px', marginBottom: '50px' }}>
+            
+            {/* Col 1: Brand & Identity */}
+            <div>
+              <Link href="/" style={{ display: 'inline-block', marginBottom: '18px' }}>
+                <img src="/logo.png" alt="Magnate Capital" style={{ height: '42px', width: 'auto', display: 'block' }} />
+              </Link>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7', marginBottom: '20px' }}>
+                Global Magnate Capital Ltd. is a tier-1 multi-asset broker delivering raw ECN liquidity, co-located MT5 execution, and tailored institutional solutions worldwide.
+              </p>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                {[
+                  { icon: 'fa-instagram', href: 'https://www.instagram.com/magnatecapital/', label: 'Instagram' },
+                  { icon: 'fa-x-twitter', href: 'https://x.com/MagnateCapital', label: 'X' },
+                  { icon: 'fa-facebook-f', href: 'https://www.facebook.com/profile.php?id=61577696182180', label: 'Facebook' },
+                  { icon: 'fa-linkedin-in', href: 'https://www.linkedin.com/in/magnate-capital-320425371/', label: 'LinkedIn' },
+                  { icon: 'fa-telegram', href: 'https://t.me/magnatecapital', label: 'Telegram' },
+                  { icon: 'fa-youtube', href: 'https://www.youtube.com/@MagnateCapital', label: 'YouTube' }
+                ].map((s) => (
+                  <a 
+                    key={s.label}
+                    href={s.href} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    title={s.label}
+                    style={{ 
+                      width: '36px', 
+                      height: '36px', 
+                      borderRadius: '50%', 
+                      background: 'rgba(255,255,255,0.05)', 
+                      border: '1px solid rgba(255,255,255,0.1)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      color: 'var(--accent-gold)', 
+                      fontSize: '0.95rem',
+                      transition: 'all 0.3s' 
+                    }}
+                  >
+                    <i className={`fa-brands ${s.icon}`}></i>
+                  </a>
+                ))}
               </div>
             </div>
+
+            {/* Col 2: Trading Markets */}
             <div>
-              <h4>Trading Markets</h4>
-              <ul className="footer-links">
-                <li><Link href="/products/forex">Forex Trading</Link></li>
-                <li><Link href="/products/precious-metals">Precious Metals</Link></li>
-                <li><Link href="/products/indices">Stock Indices</Link></li>
-                <li><Link href="/products/cryptocurrencies">Crypto CFDs</Link></li>
+              <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '18px' }}>
+                Trading Markets
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem' }}>
+                <li><Link href="/products/forex" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Forex Currencies</Link></li>
+                <li><Link href="/products/precious-metals" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Precious Metals (Gold/Silver)</Link></li>
+                <li><Link href="/products/indices" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Stock Indices</Link></li>
+                <li><Link href="/products/cryptocurrencies" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Cryptocurrency CFDs</Link></li>
+                <li><Link href="/products" style={{ color: 'var(--accent-gold)', textDecoration: 'none', fontWeight: 700 }}>View All Asset Classes →</Link></li>
               </ul>
             </div>
+
+            {/* Col 3: Accounts & Platforms */}
             <div>
-              <h4>Quick Links & Legal</h4>
-              <ul className="footer-links">
-                <li><Link href="/about">About Our Firm</Link></li>
-                <li><Link href="/accounts">Account Compare</Link></li>
-                <li><Link href="/resources/calculator">Trading Calculator</Link></li>
-                <li><Link href="/kyc-policy">KYC Policy</Link></li>
-                <li><Link href="/aml-policy">AML Policy</Link></li>
-                <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
-                <li><Link href="/legal-document">Legal Document</Link></li>
+              <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '18px' }}>
+                Account Types
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem' }}>
+                <li><Link href="/accounts/classic-noble" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Classic Noble ($50 Min)</Link></li>
+                <li><Link href="/accounts/prime-crown" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Prime Crown ($500 Min)</Link></li>
+                <li><Link href="/accounts/ecn-elite" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>ECN Elite ($5,000 Min)</Link></li>
+                <li><Link href="/partnership" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>IB Partnership Program</Link></li>
+                <li><Link href="/promotions" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Monthly Promotions &amp; Bonuses</Link></li>
               </ul>
+            </div>
+
+            {/* Col 4: Legal & Resources */}
+            <div>
+              <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '18px' }}>
+                Resources &amp; Legal
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem' }}>
+                <li><Link href="/resources/economic-calendar" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Economic Calendar</Link></li>
+                <li><Link href="/resources/calculator" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Trading Calculators Suite</Link></li>
+                <li><Link href="/kyc-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>KYC Policy &amp; Verification</Link></li>
+                <li><Link href="/aml-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Anti-Money Laundering (AML)</Link></li>
+                <li><Link href="/terms-and-conditions" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Terms &amp; Conditions</Link></li>
+                <li><Link href="/legal-document" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Regulatory Legal Documentation</Link></li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Legal Compliance Block (Sleek Frosted Glass Box) */}
+          <div style={{ background: 'rgba(212, 168, 75, 0.04)', border: '1px solid rgba(212, 168, 75, 0.25)', borderRadius: '16px', padding: '28px', marginBottom: '35px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', flexWrap: 'wrap', gap: '10px' }}>
+              <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.1rem', fontWeight: 800, margin: 0 }}>
+                <i className="fa-solid fa-building-shield" style={{ marginRight: '8px' }}></i> Compliance &amp; Legal Desk
+              </h4>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, background: 'rgba(212, 168, 75, 0.15)', color: 'var(--accent-gold)', padding: '4px 12px', borderRadius: '12px', border: '1px solid rgba(212,168,75,0.3)', textTransform: 'uppercase' }}>
+                Reg: 2025-00329
+              </span>
+            </div>
+            
+            <p style={{ marginBottom: '14px' }}>
+              For all legal, regulatory, or compliance-related correspondence, please contact: <strong>Global Magnate Capital Ltd. – Compliance &amp; Legal Department</strong>
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
+              <div>
+                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Legal Support Email:</strong>
+                <a href="mailto:compliance@magnatefx.com" style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>compliance@magnatefx.com</a>
+              </div>
+              <div>
+                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Client Operations Email:</strong>
+                <a href="mailto:support@magnatefx.com" style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>support@magnatefx.com</a>
+              </div>
+              <div>
+                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Registered Jurisdiction:</strong>
+                Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia
+              </div>
             </div>
           </div>
 
-          {/* Legal Compliance Block */}
-          <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '24px', margin: '30px 0', fontSize: '0.88rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
-            <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.1rem', fontWeight: 800, marginBottom: '8px' }}>18. Contact Information</h4>
-            <p style={{ marginBottom: '14px' }}>For all legal, regulatory, or compliance-related correspondence, please contact:</p>
-            <p style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', marginBottom: '10px' }}>Global Magnate Capital Ltd. – Compliance & Legal Department</p>
-            <ul style={{ listStyle: 'disc', paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <li><strong>Email:</strong> <a href="mailto:compliance@magnatefx.com" style={{ color: 'var(--accent-gold)' }}>compliance@magnatefx.com</a></li>
-              <li><strong>Registered Address:</strong> Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia</li>
-              <li><strong>Company Registration Number:</strong> 2025-00329</li>
-            </ul>
+          {/* High Risk Warning Statement */}
+          <div style={{ background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '20px', marginBottom: '30px', fontSize: '0.82rem', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
+            <p style={{ margin: 0 }}>
+              <strong style={{ color: '#ef5350' }}>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.
+            </p>
           </div>
 
-          <div className="risk-warning">
-            <p><strong>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.</p>
-          </div>
-
-          <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', marginTop: '30px', fontSize: '0.85rem' }}>
+          {/* Bottom Bar: Single Horizontal Line */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', fontSize: '0.85rem' }}>
             <div style={{ color: 'var(--text-secondary)' }}>
               &copy; 2026 Global Magnate Capital Ltd. All rights reserved. | Designed &amp; Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
             </div>
@@ -79,13 +156,12 @@ export default function Footer() {
               <Link href="/legal-document" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Risk Disclosure</Link>
             </div>
           </div>
+
         </div>
       </footer>
 
       {/* Floating WhatsApp Dialog & Toggle Button */}
       <div style={{ position: 'fixed', bottom: '30px', right: '30px', zIndex: 99999 }}>
-        
-        {/* WhatsApp Chat Box Dialog Window */}
         {isWAChatOpen && (
           <div 
             style={{
@@ -102,7 +178,6 @@ export default function Footer() {
               flexDirection: 'column'
             }}
           >
-            {/* Header */}
             <div style={{ background: '#075E54', padding: '15px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <img src="/logo.png" alt="Support Agent" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)', background: '#120922', objectFit: 'contain', padding: '4px' }} />
@@ -114,22 +189,17 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <button 
-                onClick={() => setIsWAChatOpen(false)} 
-                style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1rem', cursor: 'pointer' }}
-              >
+              <button onClick={() => setIsWAChatOpen(false)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1rem', cursor: 'pointer' }}>
                 <i className="fa-solid fa-xmark"></i>
               </button>
             </div>
 
-            {/* Chat Messages Body */}
             <div style={{ padding: '15px', background: '#1A0F2E', minHeight: '100px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '8px 8px 8px 0', padding: '10px', fontSize: '0.8rem', color: 'var(--text-secondary)', alignSelf: 'flex-start', maxWidth: '90%' }}>
                 Hello there! Welcome to Magnate Capital support. How can we assist you with your account setup today?
               </div>
             </div>
 
-            {/* Input Form Footer */}
             <form 
               onSubmit={(e) => {
                 e.preventDefault();
@@ -149,17 +219,13 @@ export default function Footer() {
                 style={{ flexGrow: 1, background: '#160B28', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '8px 12px', color: '#fff', fontSize: '0.8rem', outline: 'none' }}
                 required
               />
-              <button 
-                type="submit" 
-                style={{ background: '#25D366', border: 'none', color: '#fff', width: '32px', height: '32px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
-              >
+              <button type="submit" style={{ background: '#25D366', border: 'none', color: '#fff', width: '32px', height: '32px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}>
                 <i className="fa-solid fa-paper-plane" style={{ fontSize: '0.8rem' }}></i>
               </button>
             </form>
           </div>
         )}
 
-        {/* Floating Toggle Button */}
         <button 
           onClick={() => setIsWAChatOpen(!isWAChatOpen)} 
           className="whatsapp-float"
