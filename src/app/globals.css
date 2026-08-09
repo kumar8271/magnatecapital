@@ -498,6 +498,50 @@ nav ul li a:hover {
   100% { transform: translateY(100%); }
 }
 
+/* Animated Forex Liquidity Radar Nodes */
+.liquidity-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 12px var(--accent-gold);
+  pointer-events: none;
+}
+
+.liquidity-node::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 75, 0.5);
+  transform: translate(-50%, -50%);
+  animation: radar-pulse 3s ease-out infinite;
+}
+
+@keyframes radar-pulse {
+  0% { width: 8px; height: 8px; opacity: 1; }
+  100% { width: 55px; height: 55px; opacity: 0; }
+}
+
+.forex-tech-bg::before {
+  content: 'EUR/USD 1.0842  •  GBP/USD 1.2674  •  XAU/USD 2,022.89  •  USD/JPY 154.20  •  ECN BRIDGE ACTIVE';
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: rgba(212, 168, 75, 0.22);
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;

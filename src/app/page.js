@@ -296,6 +296,11 @@ export default function Home() {
             return prev;
           });
         }
+      } catch (err) {
+        console.error('Error parsing WebSocket message:', err);
+      }
+    };
+
     ws.onerror = (err) => {
       // Handle socket error gracefully
     };
@@ -567,6 +572,12 @@ export default function Home() {
           <div className="tech-data-stream" style={{ left: '20%', animationDelay: '0s' }}></div>
           <div className="tech-data-stream" style={{ left: '50%', animationDelay: '1.5s' }}></div>
           <div className="tech-data-stream" style={{ left: '80%', animationDelay: '3s' }}></div>
+          
+          {/* Liquidity Radar Pulse Nodes */}
+          <div className="liquidity-node" style={{ top: '25%', left: '30%' }}></div>
+          <div className="liquidity-node" style={{ top: '60%', right: '25%' }}></div>
+          <div className="liquidity-node" style={{ top: '40%', right: '45%' }}></div>
+
           <div className="tech-glow-orb gold" style={{ width: '400px', height: '400px', top: '-100px', left: '10%' }}></div>
           <div className="tech-glow-orb purple" style={{ width: '500px', height: '500px', top: '50px', right: '5%' }}></div>
           
