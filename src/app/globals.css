@@ -155,6 +155,12 @@ p {
   font-size: 0.8rem;
 }
 
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+}
+
 .top-bar-content {
   display: flex;
   justify-content: space-between;
