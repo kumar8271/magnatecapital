@@ -636,7 +636,7 @@ export default function Home() {
                           {isUp ? '+' : ''}{item.change.toFixed(2)}%
                         </td>
                         <td style={{ textAlign: 'right' }}>
-                          <a href="https://account.kama-capital.com/Account/Register/Client" target="_blank" rel="noreferrer" className="btn-trading" style={{ borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>Trade</a>
+                          <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn-trading" style={{ borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>Trade</a>
                         </td>
                       </tr>
                     );
@@ -650,7 +650,7 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <a href="https://account.kama-capital.com/Account/Register/Client" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1rem', letterSpacing: '0.05em' }}>
+            <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1rem', letterSpacing: '0.05em' }}>
               Open Live Account &rarr;
             </a>
           </div>
