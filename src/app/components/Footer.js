@@ -28,10 +28,10 @@ export default function Footer() {
             <div>
               <h4>Trading Markets</h4>
               <ul className="footer-links">
-                <li><Link href="/products#forex">Forex Trading</Link></li>
-                <li><Link href="/products#commodities">Commodities & Gold</Link></li>
-                <li><Link href="/products#indices">Stock Indices</Link></li>
-                <li><Link href="/products#crypto">Crypto CFDs</Link></li>
+                <li><Link href="/products/forex">Forex Trading</Link></li>
+                <li><Link href="/products/precious-metals">Precious Metals</Link></li>
+                <li><Link href="/products/indices">Stock Indices</Link></li>
+                <li><Link href="/products/cryptocurrencies">Crypto CFDs</Link></li>
               </ul>
             </div>
             <div>
@@ -40,9 +40,10 @@ export default function Footer() {
                 <li><Link href="/about">About Our Firm</Link></li>
                 <li><Link href="/accounts">Account Compare</Link></li>
                 <li><Link href="/resources/calculator">Trading Calculator</Link></li>
-                <li><button type="button" onClick={() => setSelectedPolicyModal('kyc')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit' }}>KYC Policy</button></li>
-                <li><button type="button" onClick={() => setSelectedPolicyModal('aml')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit' }}>AML Policy</button></li>
-                <li><button type="button" onClick={() => setSelectedPolicyModal('terms')} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', padding: 0, cursor: 'pointer', fontSize: 'inherit' }}>Terms & Conditions</button></li>
+                <li><Link href="/kyc-policy">KYC Policy</Link></li>
+                <li><Link href="/aml-policy">AML Policy</Link></li>
+                <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
+                <li><Link href="/legal-document">Legal Document</Link></li>
               </ul>
             </div>
           </div>
@@ -63,8 +64,11 @@ export default function Footer() {
             <p><strong>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.</p>
           </div>
 
-          <div className="footer-bottom">
+          <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px', marginTop: '20px' }}>
             <p>&copy; 2026 Global Magnate Capital Ltd. All rights reserved. Registered under license regulations in Saint Lucia (Reg: 2025-00329).</p>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+              Designed & Developed by <a href="https://www.echoweb.in" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>www.echoweb.in</a>
+            </p>
           </div>
         </div>
       </footer>
