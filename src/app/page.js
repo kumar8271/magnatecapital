@@ -296,12 +296,17 @@ export default function Home() {
             return prev;
           });
         }
-      } catch (err) {
-        console.error('Error parsing WebSocket message:', err);
-      }
+    ws.onerror = (err) => {
+      // Handle socket error gracefully
     };
 
-    return () => ws.close();
+    return () => {
+      if (ws.readyState === WebSocket.CONNECTING) {
+        ws.onopen = () => ws.close();
+      } else if (ws.readyState === WebSocket.OPEN) {
+        ws.close();
+      }
+    };
   }, []);
 
   // 4. Forex/Gold/Oil Market Live Updates & Fluctuations
@@ -1046,7 +1051,7 @@ export default function Home() {
               <p>Our server infrastructure in London and New York ensures execution speed under 15 milliseconds.</p>
             </div>
             <div className="about-card">
-              <div className="icon-wrap"><i class="fa-solid fa-headset"></i></div>
+              <div className="icon-wrap"><i className="fa-solid fa-headset"></i></div>
               <h3>VIP Support 24/5</h3>
               <p>Access your dedicated relationship manager around the clock in multiple languages.</p>
             </div>
@@ -1149,11 +1154,11 @@ export default function Home() {
                   <h3>ECN Pro Account</h3>
                   <p className="offer-desc">Direct market access (DMA) directly to top-tier liquidity networks. Zero markups, raw interbank spreads, and absolute transparency.</p>
                   <ul className="offer-specs">
-                    <li><i class="fa-solid fa-check gold-color"></i> Minimum Deposit: <strong>$5,000</strong></li>
-                    <li><i class="fa-solid fa-check gold-color"></i> Spreads: <strong>Raw from 0.0 Pips</strong></li>
-                    <li><i class="fa-solid fa-check gold-color"></i> Leverage: <strong>Up to 1:200</strong></li>
-                    <li><i class="fa-solid fa-check gold-color"></i> Commission: <strong>$3 per side per lot</strong></li>
-                    <li><i class="fa-solid fa-check gold-color"></i> VPS Hosting Integration: <strong>Complimentary</strong></li>
+                    <li><i className="fa-solid fa-check gold-color"></i> Minimum Deposit: <strong>$5,000</strong></li>
+                    <li><i className="fa-solid fa-check gold-color"></i> Spreads: <strong>Raw from 0.0 Pips</strong></li>
+                    <li><i className="fa-solid fa-check gold-color"></i> Leverage: <strong>Up to 1:200</strong></li>
+                    <li><i className="fa-solid fa-check gold-color"></i> Commission: <strong>$3 per side per lot</strong></li>
+                    <li><i className="fa-solid fa-check gold-color"></i> VPS Hosting Integration: <strong>Complimentary</strong></li>
                   </ul>
                   <a href="https://trade.magnatefx.com/register/" className="btn btn-primary" target="_blank" rel="noreferrer">Open ECN Pro Account</a>
                 </div>
