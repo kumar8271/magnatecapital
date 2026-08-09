@@ -462,12 +462,8 @@ export default function Home() {
       {/* Header / Navigation */}
       <header>
         <div className="container header-container">
-          <div className="logo-area">
-            <img src="/logo.jpg" alt="Magnate Capital Logo" className="logo-img" />
-            <div className="logo-text">
-              <span className="logo-title">MAGNATE</span>
-              <span className="logo-subtitle">CAPITAL</span>
-            </div>
+          <div className="logo-area" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
           </div>
           <nav className={isMobileMenuOpen ? 'active' : ''}>
             <ul>
@@ -1169,7 +1165,7 @@ export default function Home() {
                     {/* Header */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px', borderBottom: '1px solid #141414' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <img src="/logo.jpg" alt="Magnate Avatar" style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-gold)' }} />
+                        <img src="/favicon.png" alt="Magnate Avatar" style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-gold)' }} />
                         <div>
                           <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>magnatecapital</div>
                           <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Dubai, UAE</div>
@@ -1282,12 +1278,8 @@ export default function Home() {
         <div className="container">
           <div className="footer-top grid-3">
             <div className="footer-brand">
-              <div className="logo-area">
-                <img src="/logo.jpg" alt="Magnate Capital Logo" className="logo-img" />
-                <div className="logo-text">
-                  <span className="logo-title">MAGNATE</span>
-                  <span className="logo-subtitle">CAPITAL</span>
-                </div>
+              <div className="logo-area" style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
               </div>
               <p className="brand-desc">Magnate Capital is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
             </div>
@@ -1345,7 +1337,7 @@ export default function Home() {
             {/* Header */}
             <div style={{ background: '#075E54', padding: '15px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <img src="/logo.jpg" alt="Support Agent" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)' }} />
+                <img src="/favicon.png" alt="Support Agent" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid var(--accent-gold)' }} />
                 <div>
                   <div style={{ fontSize: '0.85rem', fontWeight: 700 }}>Magnate VIP Desk</div>
                   <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', gap: '4px' }}>
