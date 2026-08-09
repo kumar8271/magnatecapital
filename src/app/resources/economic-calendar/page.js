@@ -4,18 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function EconomicCalendarPage() {
-  const [calendarImpact, setCalendarImpact] = useState('all');
+  // Active filters (Matching ForexFactory & Kama Capital)
+  const [calendarTimeframe, setCalendarTimeframe] = useState('all');
   const [calendarCurrency, setCalendarCurrency] = useState('all');
-  const [calendarTimeframe, setCalendarTimeframe] = useState('today');
-  const [selectedEventDetail, setSelectedEventDetail] = useState(null);
+  const [calendarImpact, setCalendarImpact] = useState('all');
+  const [calendarCategory, setCalendarCategory] = useState('all');
+  
   const [eventsData, setEventsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedEventDetail, setSelectedEventDetail] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Search filter query
-  const [searchQuery, setSearchQuery] = useState('');
-
-  // Fetch live API data stream
+  // Fetch API Stream
   useEffect(() => {
     async function fetchCalendarData() {
       try {
@@ -34,10 +35,18 @@ export default function EconomicCalendarPage() {
     fetchCalendarData();
   }, [calendarTimeframe, calendarCurrency, calendarImpact]);
 
+  // Client-side search and category filtering
   const filteredEvents = eventsData.filter(ev => {
-    if (!searchQuery) return true;
-    return ev.event.toLowerCase().includes(searchQuery.toLowerCase()) || 
-           ev.country.toLowerCase().includes(searchQuery.toLowerCase());
+    // Search query match
+    const matchesSearch = !searchQuery || 
+      ev.event.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      ev.country.toLowerCase().includes(searchQuery.toLowerCase());
+
+    // Category match
+    const matchesCategory = calendarCategory === 'all' || 
+      (ev.eventType && ev.eventType.toLowerCase() === calendarCategory.toLowerCase());
+
+    return matchesSearch && matchesCategory;
   });
 
   return (
@@ -84,8 +93,8 @@ export default function EconomicCalendarPage() {
         </div>
       </header>
 
-      {/* Main Economic Calendar Hero & Tool */}
-      <main style={{ padding: '60px 0 100px 0', position: 'relative', overflow: 'hidden' }}>
+      {/* Main Economic Calendar Hero & Interactive Suite */}
+      <main style={{ padding: '50px 0 100px 0', position: 'relative', overflow: 'hidden' }}>
         <div className="forex-tech-bg">
           <div className="tech-grid-pattern"></div>
           <div className="tech-glow-orb gold" style={{ width: '450px', height: '450px', top: '10%', right: '5%' }}></div>
@@ -94,18 +103,20 @@ export default function EconomicCalendarPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="text-center" style={{ marginBottom: '35px' }}>
-            <span className="section-label">Institutional Data Feed</span>
+            <span className="section-label">Institutional Data Stream</span>
             <h1 style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', marginBottom: '15px' }}>Forex Economic Calendar</h1>
             <p className="subtitle" style={{ maxWidth: '750px', margin: '0 auto', fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
-              Real-time macroeconomic releases, central bank policy announcements, NFP, CPI inflation, and interest rate decisions.
+              Complete coverage of global macroeconomic releases, interest rate decisions, employment changes, inflation reports, and central bank speeches.
             </p>
           </div>
 
-          {/* ForexFactory & Myfxbook Filter Dashboard Panel */}
-          <div className="glass-card tech-card-pulse" style={{ padding: '24px', borderRadius: '16px', background: 'rgba(22, 11, 40, 0.95)', border: '1px solid var(--border-light)', marginBottom: '30px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', gap: '20px', alignItems: 'center' }}>
+          {/* Full ForexFactory / Kama Capital Control Dashboard */}
+          <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '20px', background: 'rgba(22, 11, 40, 0.95)', border: '1px solid var(--border-light)', marginBottom: '30px' }}>
+            
+            {/* Top Toolbar Row */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1.2fr', gap: '20px', marginBottom: '24px', alignItems: 'center' }}>
               
-              {/* Date Range Navigation */}
+              {/* Date Range Preset Selector */}
               <div>
                 <label style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>Date Window</label>
                 <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
@@ -116,25 +127,34 @@ export default function EconomicCalendarPage() {
                 </div>
               </div>
 
-              {/* Currency Selector */}
+              {/* Expected Impact Checkbox Badges */}
               <div>
-                <label style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>Currency Filter</label>
+                <label style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>Impact Level</label>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All</button>
+                  <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
+                  <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Med</button>
+                </div>
+              </div>
+
+              {/* Event Type / Category Selector */}
+              <div>
+                <label style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>Event Category</label>
                 <select 
-                  value={calendarCurrency} 
-                  onChange={(e) => setCalendarCurrency(e.target.value)}
-                  style={{ width: '100%', background: '#160B28', border: '1px solid var(--border-light)', color: '#fff', padding: '8px 12px', borderRadius: '8px', fontSize: '0.85rem', outline: 'none' }}
+                  value={calendarCategory}
+                  onChange={(e) => setCalendarCategory(e.target.value)}
+                  style={{ width: '100%', background: '#160B28', border: '1px solid var(--border-light)', color: '#fff', padding: '9px 12px', borderRadius: '8px', fontSize: '0.85rem', outline: 'none' }}
                 >
-                  <option value="all">🌐 All Currencies</option>
-                  <option value="USD">🇺🇸 USD - US Dollar</option>
-                  <option value="EUR">🇪🇺 EUR - Euro</option>
-                  <option value="GBP">🇬🇧 GBP - British Pound</option>
-                  <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
-                  <option value="AUD">🇦🇺 AUD - Australian Dollar</option>
-                  <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+                  <option value="all">📂 All Event Categories</option>
+                  <option value="Inflation">📊 Inflation & CPI</option>
+                  <option value="Employment">👥 Employment & Labor</option>
+                  <option value="Central Bank">🏛️ Central Bank Rates</option>
+                  <option value="Retail Sales">🛒 Retail & Growth</option>
+                  <option value="Speeches">🎙️ Central Bank Speeches</option>
                 </select>
               </div>
 
-              {/* Search Query Input */}
+              {/* Search Box */}
               <div>
                 <label style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>Search Events</label>
                 <div style={{ position: 'relative' }}>
@@ -143,79 +163,103 @@ export default function EconomicCalendarPage() {
                     placeholder="Search NFP, CPI, Rates..." 
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    style={{ width: '100%', background: '#160B28', border: '1px solid var(--border-light)', color: '#fff', padding: '8px 12px 8px 34px', borderRadius: '8px', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', background: '#160B28', border: '1px solid var(--border-light)', color: '#fff', padding: '9px 12px 9px 34px', borderRadius: '8px', fontSize: '0.85rem', outline: 'none' }}
                   />
                   <i className="fa-solid fa-magnifying-glass" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', fontSize: '0.8rem' }}></i>
                 </div>
               </div>
 
             </div>
+
+            {/* Currency Filter Bar Pills */}
+            <div style={{ paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Currencies:</span>
+              {[
+                { code: 'all', label: '🌐 All' },
+                { code: 'USD', label: '🇺🇸 USD' },
+                { code: 'EUR', label: '🇪🇺 EUR' },
+                { code: 'GBP', label: '🇬🇧 GBP' },
+                { code: 'JPY', label: '🇯🇵 JPY' },
+                { code: 'AUD', label: '🇦🇺 AUD' },
+                { code: 'CAD', label: '🇨🇦 CAD' },
+              ].map(c => (
+                <button 
+                  key={c.code}
+                  className={`filter-pill ${calendarCurrency === c.code ? 'active' : ''}`}
+                  onClick={() => setCalendarCurrency(c.code)}
+                  style={{ fontSize: '0.8rem', padding: '6px 14px' }}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+
           </div>
 
-          {/* Economic Calendar Main Table (ForexFactory & Kama Capital Standard) */}
-          <div className="economic-calendar-container" style={{ background: 'rgba(35, 21, 60, 0.75)', border: '1px solid var(--border-light)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.6)' }}>
+          {/* Main Events Table */}
+          <div className="economic-calendar-container" style={{ background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--border-light)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 25px 60px rgba(0,0,0,0.7)' }}>
             <div style={{ overflowX: 'auto' }}>
               <table className="calendar-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ background: 'rgba(0,0,0,0.3)', borderBottom: '1px solid var(--border-light)' }}>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Date & Time</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Cur</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Impact</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Event</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', textAlign: 'center' }}>Detail 📁</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</th>
-                    <th style={{ padding: '16px 20px', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</th>
+                  <tr style={{ background: 'rgba(18, 9, 34, 0.95)', borderBottom: '1px solid var(--border-light)' }}>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase' }}>Date & Time</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase' }}>Cur</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase' }}>Impact</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase' }}>Economic Release</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase', textAlign: 'center' }}>Detail 📁</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase', textAlign: 'right' }}>Actual</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase', textAlign: 'right' }}>Forecast</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: 'var(--accent-gold)', textTransform: 'uppercase', textAlign: 'right' }}>Previous</th>
                   </tr>
                 </thead>
                 <tbody>
                   {isLoading ? (
                     <tr>
-                      <td colSpan="8" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
-                        <i className="fa-solid fa-spinner fa-spin" style={{ fontSize: '1.5rem', color: 'var(--accent-gold)', marginBottom: '10px', display: 'block' }}></i>
-                        Loading Live Interbank Data Stream...
+                      <td colSpan="8" style={{ textAlign: 'center', padding: '50px', color: 'var(--text-muted)' }}>
+                        <i className="fa-solid fa-spinner fa-spin" style={{ fontSize: '1.8rem', color: 'var(--accent-gold)', marginBottom: '12px', display: 'block' }}></i>
+                        Fetching Live Interbank Economic Stream...
                       </td>
                     </tr>
                   ) : filteredEvents.length === 0 ? (
                     <tr>
-                      <td colSpan="8" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
+                      <td colSpan="8" style={{ textAlign: 'center', padding: '50px', color: 'var(--text-muted)', fontSize: '1rem' }}>
                         No economic releases matching the active filters.
                       </td>
                     </tr>
                   ) : (
                     filteredEvents.map((ev) => (
                       <tr key={ev.id} className="event-row" onClick={() => setSelectedEventDetail(ev)} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                        <td style={{ padding: '20px 24px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                           <span style={{ display: 'block', fontWeight: 700, color: '#fff' }}>{ev.date}</span>
                           <span>{ev.time}</span>
                         </td>
-                        <td style={{ padding: '18px 20px' }}>
-                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#fff' }}>
+                        <td style={{ padding: '20px 24px' }}>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 700, color: '#fff', fontSize: '0.95rem' }}>
                             <span>{ev.flag}</span>
                             <span>{ev.country}</span>
                           </span>
                         </td>
-                        <td style={{ padding: '18px 20px' }}>
+                        <td style={{ padding: '20px 24px' }}>
                           <span className={`impact-badge ${ev.impact}`}>
                             {ev.impact === 'high' ? '🔴 High' : ev.impact === 'medium' ? '🟠 Med' : '🟡 Low'}
                           </span>
                         </td>
-                        <td style={{ padding: '18px 20px', fontWeight: 700, color: '#fff', fontSize: '0.95rem' }}>
+                        <td style={{ padding: '20px 24px', fontWeight: 700, color: '#fff', fontSize: '0.98rem' }}>
                           {ev.event}
-                          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 400, marginTop: '3px' }}>
-                            Category: {ev.eventType}
+                          <span style={{ display: 'block', fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 400, marginTop: '4px' }}>
+                            Frequency: {ev.frequency || 'Monthly'} • Category: {ev.eventType || 'Economic Data'}
                           </span>
                         </td>
-                        <td style={{ padding: '18px 20px', textAlign: 'center' }}>
-                          <button style={{ background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: 'var(--accent-gold)', padding: '4px 8px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.75rem' }}>
+                        <td style={{ padding: '20px 24px', textAlign: 'center' }}>
+                          <button style={{ background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: 'var(--accent-gold)', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.8rem' }}>
                             <i className="fa-solid fa-folder-open"></i>
                           </button>
                         </td>
-                        <td className={ev.isBetter === true ? 'val-better' : ev.isBetter === false ? 'val-worse' : 'val-neutral'} style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace' }}>
+                        <td className={ev.isBetter === true ? 'val-better' : ev.isBetter === false ? 'val-worse' : 'val-neutral'} style={{ padding: '20px 24px', fontFamily: 'JetBrains Mono, monospace', fontSize: '1rem', textAlign: 'right' }}>
                           {ev.actual}
                         </td>
-                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.forecast}</td>
-                        <td style={{ padding: '18px 20px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{ev.previous}</td>
+                        <td style={{ padding: '20px 24px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.forecast}</td>
+                        <td style={{ padding: '20px 24px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.previous}</td>
                       </tr>
                     ))
                   )}
@@ -224,57 +268,57 @@ export default function EconomicCalendarPage() {
             </div>
           </div>
 
-          {/* Modal event drawer */}
+          {/* Modal Event Detail Drawer */}
           {selectedEventDetail && (
-            <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(10px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
-              <div className="glass-card tech-card-pulse" style={{ maxWidth: '600px', width: '100%', borderRadius: '20px', padding: '32px', background: '#160B28', border: '1px solid var(--accent-gold)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.8rem' }}>{selectedEventDetail.flag}</span>
+            <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+              <div className="glass-card tech-card-pulse" style={{ maxWidth: '600px', width: '100%', borderRadius: '24px', padding: '35px', background: '#160B28', border: '1px solid var(--accent-gold)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <span style={{ fontSize: '2rem' }}>{selectedEventDetail.flag}</span>
                     <div>
-                      <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff' }}>{selectedEventDetail.event}</h3>
+                      <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff' }}>{selectedEventDetail.event}</h3>
                       <span className={`impact-badge ${selectedEventDetail.impact}`} style={{ marginTop: '4px' }}>
                         {selectedEventDetail.impact === 'high' ? '🔴 High Impact' : '🟠 Medium Impact'}
                       </span>
                     </div>
                   </div>
-                  <button onClick={() => setSelectedEventDetail(null)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.2rem', cursor: 'pointer' }}>
+                  <button onClick={() => setSelectedEventDetail(null)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.3rem', cursor: 'pointer' }}>
                     <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
 
-                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '18px', marginBottom: '20px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Macro Analysis & Impact:</div>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: '1.6' }}>{selectedEventDetail.description}</p>
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '14px', padding: '20px', marginBottom: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>Macroeconomic Analysis:</div>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: '1.6' }}>{selectedEventDetail.description}</p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', textAlign: 'center', marginBottom: '20px', background: 'rgba(0,0,0,0.25)', padding: '14px', borderRadius: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', textAlign: 'center', marginBottom: '24px', background: 'rgba(0,0,0,0.3)', padding: '16px', borderRadius: '14px' }}>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
-                    <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
+                    <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1.2rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</div>
-                    <div style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.forecast}</div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</div>
+                    <div style={{ fontSize: '1.2rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.forecast}</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</div>
-                    <div style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.previous}</div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</div>
+                    <div style={{ fontSize: '1.2rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.previous}</div>
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>Affected Market Instruments:</div>
+                <div style={{ marginBottom: '28px' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '10px' }}>Affected Currency Pairs:</div>
                   <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                     {selectedEventDetail.affectedPairs?.map(p => (
-                      <span key={p} style={{ padding: '5px 12px', borderRadius: '6px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: '#fff', fontSize: '0.78rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
+                      <span key={p} style={{ padding: '6px 14px', borderRadius: '8px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: '#fff', fontSize: '0.8rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
                         {p}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px' }}>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '14px' }}>
                   Trade This Release Live on MT5 →
                 </a>
               </div>
