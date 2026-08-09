@@ -1438,6 +1438,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
       {/* Economic Calendar Section */}
       <section id="calendar" className="calendar-section" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="forex-tech-bg">
