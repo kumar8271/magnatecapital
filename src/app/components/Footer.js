@@ -66,11 +66,18 @@ export default function Footer() {
             <p><strong>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.</p>
           </div>
 
-          <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px', marginTop: '20px' }}>
-            <p>&copy; 2026 Global Magnate Capital Ltd. All rights reserved. Registered under license regulations in Saint Lucia (Reg: 2025-00329).</p>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
-              Designed & Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
-            </p>
+          <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', marginTop: '30px', fontSize: '0.85rem' }}>
+            <div style={{ color: 'var(--text-secondary)' }}>
+              &copy; 2026 Global Magnate Capital Ltd. All rights reserved. | Designed &amp; Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-gold)', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
+            </div>
+
+            <div style={{ display: 'flex', gap: '22px', flexWrap: 'wrap', color: 'var(--text-secondary)', fontWeight: 500 }}>
+              <Link href="/kyc-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Privacy Policy</Link>
+              <Link href="/terms-and-conditions" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Terms of Use</Link>
+              <Link href="/aml-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>AML Policy</Link>
+              <Link href="/kyc-policy" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>KYC Policy</Link>
+              <Link href="/legal-document" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Risk Disclosure</Link>
+            </div>
           </div>
         </div>
       </footer>
