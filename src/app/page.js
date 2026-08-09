@@ -588,39 +588,54 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="glass-card trading-preview">
-              <div className="card-header">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-                <span className="title">MT5 Live Dashboard</span>
-              </div>
-              <div className="card-body">
-                <div className="chart-mock">
-                  <div className="bar" style={{ height: '40%' }}></div>
-                  <div className="bar" style={{ height: '60%' }}></div>
-                  <div className="bar" style={{ height: '55%' }}></div>
-                  <div className="bar" style={{ height: '80%' }}></div>
-                  <div className="bar" style={{ height: '70%' }}></div>
-                  <div className="bar" style={{ height: '95%' }}></div>
-                  <div className="bar" style={{ height: '110%' }}></div>
-                  <div className="grid-line line-1"></div>
-                  <div className="grid-line line-2"></div>
-                  <div className="price-bubble">${tickerItems.xauusd.price.toFixed(2)}</div>
+            <div className="glass-card trading-preview" style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(197,160,89,0.15)' }}>
+              <div className="card-header" style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span className="dot red"></span>
+                  <span className="dot yellow"></span>
+                  <span className="dot green"></span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em' }}>MT5 Live Dashboard</span>
                 </div>
-                <div className="live-stats">
-                  <div className="stat-item">
-                    <span className="label">Spread</span>
-                    <span className="value gold-color">From 0.0 Pips</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span className="live-badge-dot"></span>
+                  <span style={{ fontSize: '0.65rem', color: 'var(--accent-gold)', fontWeight: 700 }}>LIVE</span>
+                </div>
+              </div>
+
+              {/* Live Pairs Row */}
+              <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {[
+                  { pair: 'XAU/USD', icon: '🥇', price: tickerItems.xauusd.price.toFixed(2), change: '+0.42%', up: true },
+                  { pair: 'EUR/USD', icon: '💶', price: '1.0842', change: '+0.15%', up: true },
+                  { pair: 'BTC/USD', icon: '₿', price: '67,420', change: '-1.22%', up: false },
+                  { pair: 'GBP/USD', icon: '💷', price: '1.2674', change: '+0.08%', up: true },
+                ].map((item) => (
+                  <div key={item.pair} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', borderRadius: '10px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)', transition: 'all 0.3s' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ fontSize: '1.1rem' }}>{item.icon}</span>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>{item.pair}</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>${item.price}</span>
+                      <span style={{ fontSize: '0.7rem', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: item.up ? 'rgba(46,204,113,0.12)' : 'rgba(239,83,80,0.12)', color: item.up ? '#2ecc71' : '#ef5350' }}>{item.change}</span>
+                    </div>
                   </div>
-                  <div className="stat-item">
-                    <span className="label">Speed</span>
-                    <span className="value">&lt; 15 ms</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="label">Leverage</span>
-                    <span className="value">Up to 1:500</span>
-                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Stats Strip */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.15)' }}>
+                <div style={{ padding: '14px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Spreads</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>0.0 Pips</div>
+                </div>
+                <div style={{ padding: '14px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Execution</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#2ecc71', fontFamily: 'JetBrains Mono, monospace' }}>&lt; 15ms</div>
+                </div>
+                <div style={{ padding: '14px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Leverage</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>1:500</div>
                 </div>
               </div>
             </div>
@@ -628,12 +643,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Market Watch - Forex Live Prices Feed Section (Kama Feed style) */}
+      {/* Market Watch - Forex Live Prices Feed Section */}
       <section id="live-rates" className="live-rates-section">
         <div className="container">
           <div className="section-title text-center">
             <h2>Market Watch</h2>
-            <p className="subtitle">Live bid prices from the Kama feed. Last available prices stay visible if the feed pauses.</p>
+            <p className="subtitle">Live bid prices from the Magnate Capital feed. Last available prices stay visible if the feed pauses.</p>
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
