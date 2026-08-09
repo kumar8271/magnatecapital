@@ -763,15 +763,19 @@ export default function Home() {
           <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'center' }}>
             <div>
               <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '10px' }}>
-                {activeCommodityTab === 'commodities' ? 'Trade In commodities' : activeCommodityTab === 'forex' ? 'Trade Forex Currencies' : activeCommodityTab === 'indices' ? 'Trade Global Indices' : 'Trade Crypto CFDs'}
+                {activeCommodityTab === 'commodities' ? 'Precious Metals' : activeCommodityTab === 'forex' ? 'Forex' : activeCommodityTab === 'indices' ? 'Indices' : 'Cryptocurrencies'}
               </h2>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', marginBottom: '20px' }}>
-                {activeCommodityTab === 'commodities' ? 'Fuel Your Portfolio with Gold, Oil, and More' : activeCommodityTab === 'forex' ? 'Access 50+ Currency Pairs with Tight Raw Spreads' : activeCommodityTab === 'indices' ? 'Trade S&P 500, NASDAQ, Dow Jones & DAX' : '24/7 Digital Asset Trading with Institutional Liquidity'}
+                {activeCommodityTab === 'commodities' ? 'Gold, Silver, Platinum and Palladium. Perfect for hedging risk.' : activeCommodityTab === 'forex' ? 'Trade majors, minors, and exotic pairs with low spreads and high leverage.' : activeCommodityTab === 'indices' ? 'Trade top global indices including S&P 500, Nasdaq, and FTSE 100.' : 'Trade Bitcoin, Ethereum, and other digital assets 24/7 without wallet'}
               </h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '30px' }}>
                 {activeCommodityTab === 'commodities' 
-                  ? 'Access a wide range of global commodities — from precious metals to energy and agriculture — all on one powerful trading platform designed for performance and precision.'
-                  : 'Access major, minor, and exotic currency pairs with ultra-fast execution, low latency, and zero commission options tailored to your trading strategy.'}
+                  ? 'Gold, Silver, Platinum and Palladium. Perfect for hedging risk. Access deep institutional liquidity with institutional speed under 15ms.'
+                  : activeCommodityTab === 'forex'
+                  ? 'Trade majors, minors, and exotic pairs with low spreads and high leverage up to 1:500 on MT5 & cTrader terminals.'
+                  : activeCommodityTab === 'indices'
+                  ? 'Trade top global indices including S&P 500, Nasdaq, and FTSE 100 with raw spreads and instant execution.'
+                  : 'Trade Bitcoin, Ethereum, and other digital assets 24/7 without wallet. Institutional security with zero withdrawal delay.'}
               </p>
               <div style={{ display: 'flex', gap: '15px' }}>
                 <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '12px 28px' }}>
@@ -780,24 +784,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Asset Feature Cards Grid (Panel 1 Exact Copy) */}
+            {/* Asset Feature Cards Grid */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
                 <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
-                  <i className="fa-solid fa-chart-column"></i>
+                  <i className="fa-solid fa-coins"></i>
                 </div>
-                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Commodities</h4>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Gold, Silver, Copper, WTI, etc</p>
-                <a href="#live-rates" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Precious Metals</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Gold, Silver, Platinum and Palladium. Perfect for hedging risk.</p>
+                <a href="/products#commodities" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
               </div>
 
               <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
                 <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
-                  <i className="fa-solid fa-bolt"></i>
+                  <i className="fa-solid fa-arrow-trend-up"></i>
                 </div>
-                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Energies</h4>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Oil, Gas, and all Energies</p>
-                <a href="#live-rates" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Forex</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Trade majors, minors, and exotic pairs with low spreads and high leverage.</p>
+                <a href="/products#forex" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
               </div>
             </div>
           </div>
