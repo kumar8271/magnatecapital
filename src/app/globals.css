@@ -1526,6 +1526,36 @@ footer {
   }
 }
 
+@media (max-width: 576px) {
+  .top-bar {
+    display: none;
+  }
+  .ticker-wrap {
+    font-size: 0.72rem;
+    padding: 6px 0;
+  }
+  .hero-section {
+    padding: 40px 0 60px 0;
+  }
+  .hero-content h1 {
+    font-size: 1.85rem !important;
+    margin-bottom: 1rem;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-title h2 {
+    font-size: 1.65rem !important;
+  }
+  .glass-card, .tech-card-pulse, .about-card, .market-item {
+    padding: 20px 16px !important;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
 /* Pulsing Live Badge Dot */
 .live-badge-dot {
   width: 8px;
