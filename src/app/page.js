@@ -518,13 +518,18 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Decorative Blur Background Orbs */}
+      <div className="glow-orb orb-1"></div>
+      <div className="glow-orb orb-2"></div>
+      <div className="glow-orb orb-3"></div>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg-overlay"></div>
         <div className="container hero-container">
           <div className="hero-content">
             <div className="gold-badge">Official Multi-Asset Brokerage</div>
-            <h1>
+            <h1 className="text-shine">
               Magnate Capital<br />
               <span className="typewriter-text">{typewriterText}</span><span className="typewriter-cursor">|</span>
             </h1>
@@ -775,7 +780,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Attractive MT5 Dashboard Mock Window */}
-          <div style={{ background: 'rgba(10, 10, 10, 0.7)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}>
+          <div className="floating-terminal" style={{ background: 'rgba(10, 10, 10, 0.7)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}>
             {/* macOS window control buttons header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #141414', paddingBottom: '15px', marginBottom: '25px' }}>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
