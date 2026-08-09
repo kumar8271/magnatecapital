@@ -42,7 +42,6 @@ export default function RootLayout({ children }) {
     "name": "Magnate Capital",
     "image": "https://magnatecapital.com/logo.jpg",
     "url": "https://magnatecapital.com",
-    "telephone": "+97141234567",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
@@ -70,7 +69,12 @@ export default function RootLayout({ children }) {
       "closes": "23:59"
     },
     "sameAs": [
-      "https://www.instagram.com/magnatecapital/"
+      "https://www.instagram.com/magnatecapital/",
+      "https://x.com/MagnateCapital",
+      "https://www.facebook.com/profile.php?id=61577696182180",
+      "https://www.linkedin.com/in/magnate-capital-320425371/",
+      "https://t.me/magnatecapital",
+      "https://www.youtube.com/@MagnateCapital"
     ]
   };
 

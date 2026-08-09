@@ -380,9 +380,9 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
+  background: linear-gradient(#0b1426 0%, #0f1b33 100%);
+  padding: 20px 0 60px;
   position: relative;
-  padding: 80px 0 60px 0;
-  background: linear-gradient(180deg, #0B1426 0%, #0F1B33 100%);
   overflow: hidden;
 }
 

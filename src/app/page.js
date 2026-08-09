@@ -448,13 +448,13 @@ export default function Home() {
           <div className="top-bar-item">
             <i className="fa-solid fa-envelope"></i> <span>support@magnatecapital.com</span>
           </div>
-          <div className="top-bar-item">
-            <i className="fa-solid fa-phone"></i> <span>+971 4 123 4567 (Dubai Office)</span>
-          </div>
           <div className="top-bar-socials">
-            <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i className="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)"><i className="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram"><i className="fa-brands fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube"><i className="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -1301,10 +1301,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="detail-item">
-                <i className="fa-solid fa-phone gold-color"></i>
+                <i className="fa-solid fa-envelope gold-color"></i>
                 <div>
-                  <h5>Phone Support</h5>
-                  <p>+971 4 123 4567 (Direct VIP Desk)</p>
+                  <h5>Email Support</h5>
+                  <p>support@magnatecapital.com</p>
                 </div>
               </div>
             </div>
@@ -1352,6 +1352,14 @@ export default function Home() {
                 <img src="/logo.png" alt="Magnate Capital" style={{ height: '40px', width: 'auto', display: 'block' }} />
               </div>
               <p className="brand-desc">Magnate Capital is a tier-1 multi-asset broker providing advanced retail and institutional solutions globally.</p>
+              <div className="footer-socials" style={{ display: 'flex', gap: '14px', marginTop: '16px' }}>
+                <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" title="Instagram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/MagnateCapital" target="_blank" rel="noreferrer" title="X (Twitter)" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577696182180" target="_blank" rel="noreferrer" title="Facebook" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/magnate-capital-320425371/" target="_blank" rel="noreferrer" title="LinkedIn" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://t.me/magnatecapital" target="_blank" rel="noreferrer" title="Telegram" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-telegram"></i></a>
+                <a href="https://www.youtube.com/@MagnateCapital" target="_blank" rel="noreferrer" title="YouTube" style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', transition: 'color 0.3s' }}><i className="fa-brands fa-youtube"></i></a>
+              </div>
             </div>
             <div>
               <h4>Trading Markets</h4>
@@ -1436,7 +1444,7 @@ export default function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 if (!waMessage.trim()) return;
-                window.open(`https://wa.me/97141234567?text=${encodeURIComponent(waMessage)}`, '_blank');
+                window.open('https://trade.magnatefx.com/register/', '_blank');
                 setWaMessage('');
                 setIsWAChatOpen(false);
               }}
