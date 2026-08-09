@@ -582,10 +582,10 @@ export default function Home() {
           <div className="tech-glow-orb purple" style={{ width: '500px', height: '500px', top: '50px', right: '5%' }}></div>
           
           {/* Floating Forex Tech Ticker Tags */}
-          <div className="floating-ticker-tag" style={{ top: '15%', left: '8%', animationDelay: '0s' }}>
+          <div className="floating-ticker-tag" style={{ top: '15%', left: '44%', animationDelay: '0s' }}>
             <span style={{ color: '#2ecc71' }}>▲ XAU/USD</span> <span>$2,022.89</span>
           </div>
-          <div className="floating-ticker-tag" style={{ top: '65%', left: '4%', animationDelay: '2s' }}>
+          <div className="floating-ticker-tag" style={{ top: '53%', left: '43%', animationDelay: '2s' }}>
             <span style={{ color: 'var(--accent-gold)' }}>⚡ ECN Bridge</span> <span>0.0 Pips</span>
           </div>
           <div className="floating-ticker-tag" style={{ top: '22%', right: '10%', animationDelay: '4s' }}>
