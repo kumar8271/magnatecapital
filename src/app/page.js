@@ -554,7 +554,68 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg-overlay"></div>
-        <div className="container hero-container">
+
+        {/* Forex Tech & Matrix Overlay */}
+        <div className="forex-tech-bg">
+          <div className="tech-grid-pattern"></div>
+          <div className="tech-scanline"></div>
+          <div className="tech-glow-orb gold" style={{ width: '400px', height: '400px', top: '-100px', left: '10%' }}></div>
+          <div className="tech-glow-orb purple" style={{ width: '500px', height: '500px', top: '50px', right: '5%' }}></div>
+          
+          {/* Floating Forex Tech Ticker Tags */}
+          <div className="floating-ticker-tag" style={{ top: '15%', left: '8%', animationDelay: '0s' }}>
+            <span style={{ color: '#2ecc71' }}>▲ XAU/USD</span> <span>$2,022.89</span>
+          </div>
+          <div className="floating-ticker-tag" style={{ top: '65%', left: '4%', animationDelay: '2s' }}>
+            <span style={{ color: 'var(--accent-gold)' }}>⚡ ECN Bridge</span> <span>0.0 Pips</span>
+          </div>
+          <div className="floating-ticker-tag" style={{ top: '22%', right: '10%', animationDelay: '4s' }}>
+            <span style={{ color: '#9358f7' }}>🌐 FIX API 4.4</span> <span>&lt;15ms</span>
+          </div>
+
+          {/* SVG Forex Candlestick Chart Watermark */}
+          <svg className="candlestick-watermark" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', right: '3%', top: '15%', width: '480px', height: '300px', opacity: 0.08, pointerEvents: 'none' }}>
+            {/* Grid lines */}
+            <line x1="0" y1="50" x2="500" y2="50" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
+            <line x1="0" y1="120" x2="500" y2="120" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
+            <line x1="0" y1="190" x2="500" y2="190" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
+            <line x1="0" y1="260" x2="500" y2="260" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
+            
+            {/* Candlesticks */}
+            {/* Candle 1: Bull */}
+            <line x1="40" y1="180" x2="40" y2="240" stroke="#2ecc71" strokeWidth="1.5" />
+            <rect x="34" y="195" width="12" height="30" fill="#2ecc71" rx="1" />
+
+            {/* Candle 2: Bull */}
+            <line x1="90" y1="150" x2="90" y2="210" stroke="#2ecc71" strokeWidth="1.5" />
+            <rect x="84" y="165" width="12" height="32" fill="#2ecc71" rx="1" />
+
+            {/* Candle 3: Bear */}
+            <line x1="140" y1="170" x2="140" y2="230" stroke="#ef5350" strokeWidth="1.5" />
+            <rect x="134" y="180" width="12" height="35" fill="#ef5350" rx="1" />
+
+            {/* Candle 4: Bull */}
+            <line x1="190" y1="120" x2="190" y2="190" stroke="#2ecc71" strokeWidth="1.5" />
+            <rect x="184" y="130" width="12" height="45" fill="#2ecc71" rx="1" />
+
+            {/* Candle 5: Bull Big Breakout */}
+            <line x1="240" y1="60" x2="240" y2="150" stroke="#2ecc71" strokeWidth="1.5" />
+            <rect x="234" y="75" width="12" height="60" fill="#2ecc71" rx="1" />
+
+            {/* Candle 6: Bear */}
+            <line x1="290" y1="80" x2="290" y2="140" stroke="#ef5350" strokeWidth="1.5" />
+            <rect x="284" y="90" width="12" height="30" fill="#ef5350" rx="1" />
+
+            {/* Candle 7: Bull */}
+            <line x1="340" y1="40" x2="340" y2="110" stroke="#2ecc71" strokeWidth="1.5" />
+            <rect x="334" y="50" width="12" height="45" fill="#2ecc71" rx="1" />
+
+            {/* Trend Line Path */}
+            <path d="M 40 210 Q 140 195 240 105 T 440 30" fill="none" stroke="#D4A84B" strokeWidth="2" strokeDasharray="3 3" />
+          </svg>
+        </div>
+
+        <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="hero-content">
             <div className="gold-badge">Trusted Multi-Asset Brokerage</div>
             <h1 className="text-shine">
@@ -813,8 +874,12 @@ export default function Home() {
       </section>
 
       {/* Execution Technology Section */}
-      <section className="tech-section" style={{ background: '#160B28', padding: '80px 0', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', alignItems: 'center' }}>
+      <section className="tech-section" style={{ background: '#160B28', padding: '80px 0', borderTop: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
+        <div className="forex-tech-bg">
+          <div className="tech-grid-pattern"></div>
+          <div className="tech-glow-orb gold" style={{ width: '350px', height: '350px', bottom: '-50px', right: '10%' }}></div>
+        </div>
+        <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', alignItems: 'center', position: 'relative', zIndex: 2 }}>
           {/* Left Column: Info Text */}
           <div>
             <span className="section-label">Trading Infrastructure</span>

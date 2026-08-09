@@ -392,8 +392,81 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle at 70% 30%, rgba(212, 168, 75, 0.12) 0%, transparent 60%);
   pointer-events: none;
+}
+
+/* Tech Forex Background Overlays */
+.forex-tech-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tech-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(212, 168, 75, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 75, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 85%);
+}
+
+.tech-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.tech-glow-orb.gold {
+  background: radial-gradient(circle, rgba(212, 168, 75, 0.35) 0%, transparent 70%);
+}
+
+.tech-glow-orb.purple {
+  background: radial-gradient(circle, rgba(147, 88, 247, 0.3) 0%, transparent 70%);
+}
+
+.tech-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.5), transparent);
+  animation: scanline-anim 7s ease-in-out infinite;
+}
+
+@keyframes scanline-anim {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.floating-ticker-tag {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(35, 21, 60, 0.7);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  color: var(--accent-gold);
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: float-tag 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-tag {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
 }
 
 .hero-container {
