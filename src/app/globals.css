@@ -75,6 +75,30 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Numbered Step Badges (Kama Capital Style) */
+.hero-step-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #1A0F2E;
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;

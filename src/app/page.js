@@ -551,179 +551,131 @@ export default function Home() {
       <div className="glow-orb orb-2"></div>
       <div className="glow-orb orb-3"></div>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-bg-overlay"></div>
-
-        {/* Forex Tech & Matrix Overlay */}
-        <div className="forex-tech-bg">
-          <div className="tech-grid-pattern"></div>
-          <div className="tech-scanline"></div>
-          <div className="tech-data-stream" style={{ left: '20%', animationDelay: '0s' }}></div>
-          <div className="tech-data-stream" style={{ left: '50%', animationDelay: '1.5s' }}></div>
-          <div className="tech-data-stream" style={{ left: '80%', animationDelay: '3s' }}></div>
-          
-          {/* Liquidity Radar Pulse Nodes */}
-          <div className="liquidity-node" style={{ top: '25%', left: '30%' }}></div>
-          <div className="liquidity-node" style={{ top: '60%', right: '25%' }}></div>
-          <div className="liquidity-node" style={{ top: '40%', right: '45%' }}></div>
-
-          <div className="tech-glow-orb gold" style={{ width: '400px', height: '400px', top: '-100px', left: '10%' }}></div>
-          <div className="tech-glow-orb purple" style={{ width: '500px', height: '500px', top: '50px', right: '5%' }}></div>
-          
-          {/* Floating Forex Tech Ticker Tags */}
-          <div className="floating-ticker-tag" style={{ top: '15%', left: '44%', animationDelay: '0s' }}>
-            <span style={{ color: '#2ecc71' }}>▲ XAU/USD</span> <span>$2,022.89</span>
-          </div>
-          <div className="floating-ticker-tag" style={{ top: '53%', left: '43%', animationDelay: '2s' }}>
-            <span style={{ color: 'var(--accent-gold)' }}>⚡ ECN Bridge</span> <span>0.0 Pips</span>
-          </div>
-          <div className="floating-ticker-tag" style={{ top: '22%', right: '10%', animationDelay: '4s' }}>
-            <span style={{ color: '#9358f7' }}>🌐 FIX API 4.4</span> <span>&lt;15ms</span>
-          </div>
-
-          {/* SVG Forex Candlestick Chart Watermark */}
-          <svg className="candlestick-watermark" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', right: '3%', top: '15%', width: '480px', height: '300px', opacity: 0.08, pointerEvents: 'none' }}>
-            {/* Grid lines */}
-            <line x1="0" y1="50" x2="500" y2="50" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
-            <line x1="0" y1="120" x2="500" y2="120" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
-            <line x1="0" y1="190" x2="500" y2="190" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
-            <line x1="0" y1="260" x2="500" y2="260" stroke="#D4A84B" strokeWidth="0.5" strokeDasharray="4 4" />
-            
-            {/* Candlesticks */}
-            {/* Candle 1: Bull */}
-            <line x1="40" y1="180" x2="40" y2="240" stroke="#2ecc71" strokeWidth="1.5" />
-            <rect x="34" y="195" width="12" height="30" fill="#2ecc71" rx="1" />
-
-            {/* Candle 2: Bull */}
-            <line x1="90" y1="150" x2="90" y2="210" stroke="#2ecc71" strokeWidth="1.5" />
-            <rect x="84" y="165" width="12" height="32" fill="#2ecc71" rx="1" />
-
-            {/* Candle 3: Bear */}
-            <line x1="140" y1="170" x2="140" y2="230" stroke="#ef5350" strokeWidth="1.5" />
-            <rect x="134" y="180" width="12" height="35" fill="#ef5350" rx="1" />
-
-            {/* Candle 4: Bull */}
-            <line x1="190" y1="120" x2="190" y2="190" stroke="#2ecc71" strokeWidth="1.5" />
-            <rect x="184" y="130" width="12" height="45" fill="#2ecc71" rx="1" />
-
-            {/* Candle 5: Bull Big Breakout */}
-            <line x1="240" y1="60" x2="240" y2="150" stroke="#2ecc71" strokeWidth="1.5" />
-            <rect x="234" y="75" width="12" height="60" fill="#2ecc71" rx="1" />
-
-            {/* Candle 6: Bear */}
-            <line x1="290" y1="80" x2="290" y2="140" stroke="#ef5350" strokeWidth="1.5" />
-            <rect x="284" y="90" width="12" height="30" fill="#ef5350" rx="1" />
-
-            {/* Candle 7: Bull */}
-            <line x1="340" y1="40" x2="340" y2="110" stroke="#2ecc71" strokeWidth="1.5" />
-            <rect x="334" y="50" width="12" height="45" fill="#2ecc71" rx="1" />
-
-            {/* Trend Line Path */}
-            <path d="M 40 210 Q 140 195 240 105 T 440 30" fill="none" stroke="#D4A84B" strokeWidth="2" strokeDasharray="3 3" />
-          </svg>
-        </div>
+      {/* Refined Uncluttered Hero Section (Kama Capital Benchmark Standard) */}
+      <section className="hero" style={{ padding: '80px 0 90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', position: 'relative', overflow: 'hidden' }}>
+        
+        {/* Subtle Ambient Background Grid & Glow */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(212,168,75,0.08) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', top: '10%', left: '20%', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(212,168,75,0.06) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
 
         <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="hero-content">
-            <div className="gold-badge">Official Multi-Asset Brokerage</div>
-            <h1 className="text-shine">
-              Magnate Capital<br />
-              <span className="typewriter-text">{typewriterText}</span><span className="typewriter-cursor">|</span>
-            </h1>
-            <p className="hero-lead">
-              Experience the art of trading at its finest — tailored solutions, institutional power, royal treatment. Connect directly to global financial liquidity with razor-sharp execution.
-            </p>
-            <div className="hero-actions">
-              <a href="https://trade.magnatefx.com/register/" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">Start Trading</a>
-              <a href="#about" className="btn btn-secondary btn-lg">Learn More</a>
+            
+            <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <span className="live-badge-dot"></span> Globally Licensed &amp; Regulated Broker
             </div>
 
-            {/* Key Highlights Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '40px', paddingTop: '25px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <i className="fa-solid fa-shield-halved" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
-                <div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Regulated Broker</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Ensuring transparency & trust in every transaction.</div>
-                </div>
+            <h1 style={{ fontSize: '3.5rem', lineHeight: '1.12', fontWeight: 800, color: '#fff', marginBottom: '18px', fontFamily: 'var(--font-serif)' }}>
+              TRADE GLOBAL MARKETS<br />
+              <span style={{ color: 'var(--accent-gold)' }}>WITH CONFIDENCE</span>
+            </h1>
+
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '540px', lineHeight: '1.7', marginBottom: '28px' }}>
+              Access CFDs on Forex, Metals, Commodities, Stock Indices and Cryptocurrencies with zero deposit fees, raw ECN liquidity, and institutional execution.
+            </p>
+
+            {/* 3 Numbered Steps (Kama Capital Benchmark) */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '34px' }}>
+              <div className="hero-step-item">
+                <div className="hero-step-badge">1</div>
+                <span>Fund your account easily with no deposit fees</span>
               </div>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <i className="fa-solid fa-laptop-code" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
-                <div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Advanced Platforms</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Access to MT4, MT5, and cTrader for seamless execution.</div>
-                </div>
+              <div className="hero-step-item">
+                <div className="hero-step-badge">2</div>
+                <span>Withdraw fast, without friction</span>
               </div>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <i className="fa-solid fa-chart-line" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
-                <div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>Diverse Asset Classes</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Trade Forex, Commodities, Indices, Stocks & Crypto.</div>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <i className="fa-solid fa-headset" style={{ color: 'var(--accent-gold)', marginTop: '4px', fontSize: '1rem' }}></i>
-                <div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>24/5 Dedicated Support</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>Our team is here to assist you every step of the way.</div>
-                </div>
+              <div className="hero-step-item">
+                <div className="hero-step-badge">3</div>
+                <span>One account. Full access to global markets</span>
               </div>
             </div>
+
+            {/* Clean CTA Action Buttons */}
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '34px' }}>
+              <a 
+                href="https://trade.magnatefx.com/register/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn btn-primary"
+                style={{ padding: '14px 32px', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              >
+                Open Account <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
+              </a>
+              <a 
+                href="https://trade.magnatefx.com/register/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn"
+                style={{ border: '1.5px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '14px 30px', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700 }}
+              >
+                Free Demo Account
+              </a>
+            </div>
+
+            {/* Clean Regulatory Trust Row */}
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 600, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px' }}>
+              <span><i className="fa-solid fa-shield-halved" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> Globally Licensed &amp; Regulated</span>
+              <span><i className="fa-solid fa-building-columns" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> Reg: 2025-00329</span>
+              <span><i className="fa-solid fa-bolt" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> &lt;15ms Execution</span>
+            </div>
+
           </div>
+
+          {/* Right Column: Clean Live Market Watch Stage */}
           <div className="hero-visual">
-            <div className="glass-card trading-preview tech-card-pulse" style={{ borderRadius: '16px', overflow: 'hidden' }}>
-              <div className="card-header" style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div className="glass-card trading-preview" style={{ borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(212,168,75,0.25)', background: 'rgba(22, 11, 40, 0.95)', boxShadow: '0 25px 60px rgba(0,0,0,0.7)' }}>
+              <div className="card-header" style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span className="dot red"></span>
                   <span className="dot yellow"></span>
                   <span className="dot green"></span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em' }}>MT5 Live Dashboard</span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', letterSpacing: '0.05em' }}>MT5 Market Dashboard</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span className="live-badge-dot"></span>
-                  <span style={{ fontSize: '0.65rem', color: 'var(--accent-gold)', fontWeight: 700 }}>LIVE</span>
+                  <span style={{ fontSize: '0.7rem', color: 'var(--accent-gold)', fontWeight: 800 }}>LIVE</span>
                 </div>
               </div>
 
-              {/* Live Pairs Row */}
-              <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {/* Live Pairs List */}
+              <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {[
-                  { pair: 'XAU/USD', icon: '🥇', price: tickerItems.xauusd.price.toFixed(2), change: '+0.42%', up: true },
-                  { pair: 'EUR/USD', icon: '💶', price: '1.0842', change: '+0.15%', up: true },
-                  { pair: 'BTC/USD', icon: '₿', price: '67,420', change: '-1.22%', up: false },
-                  { pair: 'GBP/USD', icon: '💷', price: '1.2674', change: '+0.08%', up: true },
+                  { pair: 'XAU/USD', name: 'Gold vs Dollar', price: tickerItems.xauusd.price.toFixed(2), change: '+0.42%', up: true },
+                  { pair: 'EUR/USD', name: 'Euro vs Dollar', price: tickerItems.eurusd.price.toFixed(4), change: '+0.15%', up: true },
+                  { pair: 'BTC/USD', name: 'Bitcoin CFD', price: tickerItems.btcusd.price.toLocaleString(), change: '-1.22%', up: false },
+                  { pair: 'GBP/USD', name: 'Pound vs Dollar', price: tickerItems.gbpusd.price.toFixed(4), change: '+0.08%', up: true },
                 ].map((item) => (
-                  <div key={item.pair} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', borderRadius: '10px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)', transition: 'all 0.3s' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontSize: '1.1rem' }}>{item.icon}</span>
-                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>{item.pair}</span>
+                  <div key={item.pair} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.3s' }}>
+                    <div>
+                      <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#fff' }}>{item.pair}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{item.name}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>${item.price}</span>
-                      <span style={{ fontSize: '0.7rem', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: item.up ? 'rgba(46,204,113,0.12)' : 'rgba(239,83,80,0.12)', color: item.up ? '#2ecc71' : '#ef5350' }}>{item.change}</span>
+                      <span style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>${item.price}</span>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '4px 10px', borderRadius: '6px', background: item.up ? 'rgba(46,204,113,0.15)' : 'rgba(239,83,80,0.15)', color: item.up ? '#2ecc71' : '#ef5350' }}>{item.change}</span>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Bottom Stats Strip */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.15)' }}>
-                <div style={{ padding: '14px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Spreads</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>0.0 Pips</div>
+              {/* Execution Metrics Bar */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}>
+                <div style={{ padding: '16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Spreads</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>0.0 Pips</div>
                 </div>
-                <div style={{ padding: '14px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Execution</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#2ecc71', fontFamily: 'JetBrains Mono, monospace' }}>&lt; 15ms</div>
+                <div style={{ padding: '16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Execution</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#2ecc71', fontFamily: 'JetBrains Mono, monospace' }}>&lt; 15ms</div>
                 </div>
-                <div style={{ padding: '14px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Leverage</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>1:500</div>
+                <div style={{ padding: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Leverage</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace' }}>1:500</div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
