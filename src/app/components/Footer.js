@@ -83,8 +83,7 @@ export default function Footer() {
                 <li><Link href="/accounts/classic-noble" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Classic Noble ($50 Min)</Link></li>
                 <li><Link href="/accounts/prime-crown" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Prime Crown ($500 Min)</Link></li>
                 <li><Link href="/accounts/ecn-elite" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>ECN Elite ($5,000 Min)</Link></li>
-                <li><Link href="/partnership" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>IB Partnership Program</Link></li>
-                <li><Link href="/promotions" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Monthly Promotions &amp; Bonuses</Link></li>
+                <li><Link href="/accounts" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>All Account Types</Link></li>
               </ul>
             </div>
 

@@ -156,14 +156,6 @@ export default function Header() {
               </li>
 
               <li>
-                <Link href="/partnership" onClick={() => setIsMobileMenuOpen(false)}>Partnership</Link>
-              </li>
-
-              <li>
-                <Link href="/promotions" onClick={() => setIsMobileMenuOpen(false)}>Promotions</Link>
-              </li>
-
-              <li>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </li>
 
