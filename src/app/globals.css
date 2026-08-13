@@ -2,22 +2,24 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 :root {
-  --bg-primary: #1A0F2E;
-  --bg-secondary: #23153C;
-  --bg-card: rgba(35, 21, 60, 0.75);
-  --accent-gold: #D4A84B;
-  --accent-gold-hover: #E5C158;
-  --accent-gold-muted: rgba(212, 168, 75, 0.12);
+  --bg-primary: #010108;
+  --bg-secondary: #0A0D1D;
+  --bg-card: rgba(10, 13, 29, 0.85);
+  --accent-gold: #0040E9;
+  --accent-gold-hover: #1D58F6;
+  --accent-gold-muted: rgba(0, 64, 233, 0.15);
+  --accent-blue: #0040E9;
+  --accent-cyan: #00D2FF;
   --text-primary: #FFFFFF;
-  --text-secondary: #E3DCF5;
-  --text-muted: #A89DC4;
-  --border-light: rgba(255, 255, 255, 0.12);
-  --border-gold: rgba(212, 168, 75, 0.35);
+  --text-secondary: #E2E8F0;
+  --text-muted: #8896AB;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(0, 64, 233, 0.35);
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --shadow-gold: 0 8px 32px 0 rgba(212, 168, 75, 0.08);
-  --shadow-glow: 0 0 15px rgba(212, 168, 75, 0.35);
+  --shadow-gold: 0 8px 32px 0 rgba(0, 64, 233, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 64, 233, 0.5);
 }
 
 * {
@@ -65,7 +67,7 @@ p {
   display: inline-block;
   background: var(--accent-gold-muted);
   border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
+  color: #38BDF8;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -75,19 +77,20 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Numbered Step Badges (Kama Capital Style) */
+/* Numbered Step Badges (Elefin / Modern Style) */
 .hero-step-badge {
   width: 26px;
   height: 26px;
   border-radius: 50%;
   background: var(--accent-gold);
-  color: #1A0F2E;
+  color: #FFFFFF;
   font-weight: 800;
   font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 64, 233, 0.5);
 }
 
 .hero-step-item {
@@ -108,7 +111,7 @@ p {
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -116,14 +119,16 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-gold), #b89028);
-  color: #000000;
+  background: #0040E9;
+  color: #FFFFFF;
   border: none;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 64, 233, 0.4);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--accent-gold-hover), var(--accent-gold));
-  box-shadow: var(--shadow-glow);
+  background: #1D58F6;
+  box-shadow: 0 6px 22px rgba(0, 64, 233, 0.65);
   transform: translateY(-2px);
 }
 
@@ -134,7 +139,7 @@ p {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 64, 233, 0.15);
   border-color: var(--accent-gold);
   transform: translateY(-2px);
 }
@@ -180,7 +185,7 @@ p {
 
 /* Top Bar */
 .top-bar {
-  background: #160B28;
+  background: #010108;
   border-bottom: 1px solid var(--border-light);
   padding: 8px 0;
   font-size: 0.8rem;
@@ -217,12 +222,12 @@ p {
 
 /* Header & Nav */
 header {
-  background: rgba(26, 15, 46, 0.9);
+  background: rgba(1, 1, 8, 0.92);
   backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 15px 0;
 }
 
@@ -295,10 +300,10 @@ nav ul li a:hover {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #1A0F2E;
-  border: 1px solid rgba(212, 168, 75, 0.4);
+  background: #080A16;
+  border: 1px solid rgba(0, 64, 233, 0.4);
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 64, 233, 0.2);
   padding: 10px 0;
   display: flex;
   flex-direction: column;
@@ -332,8 +337,8 @@ nav ul li a:hover {
 }
 
 .dropdown-item:hover {
-  background: rgba(212, 168, 75, 0.15);
-  color: var(--accent-gold) !important;
+  background: rgba(0, 64, 233, 0.18);
+  color: #38BDF8 !important;
   transform: translateX(4px);
 }
 
@@ -346,7 +351,7 @@ nav ul li a:hover {
 /* Live Market Ticker */
 .ticker-wrap {
   width: 100%;
-  background: #160B28;
+  background: #05060D;
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
   display: flex;
@@ -456,7 +461,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(#1A0F2E 0%, #23153C 100%);
+  background: linear-gradient(#010108 0%, #0A0D1D 100%);
   padding: 20px 0 60px;
   position: relative;
   overflow: hidden;
@@ -468,7 +473,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(212, 168, 75, 0.12) 0%, transparent 60%);
+  background: radial-gradient(circle at 70% 30%, rgba(0, 64, 233, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -485,8 +490,8 @@ nav ul li a:hover {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(212, 168, 75, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 168, 75, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(0, 64, 233, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 64, 233, 0.08) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 85%);
@@ -500,11 +505,11 @@ nav ul li a:hover {
 }
 
 .tech-glow-orb.gold {
-  background: radial-gradient(circle, rgba(212, 168, 75, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 64, 233, 0.4) 0%, transparent 70%);
 }
 
 .tech-glow-orb.purple {
-  background: radial-gradient(circle, rgba(147, 88, 247, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, transparent 70%);
 }
 
 .tech-scanline {
@@ -513,7 +518,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 64, 233, 0.6), transparent);
   animation: scanline-anim 7s ease-in-out infinite;
 }
 
@@ -531,12 +536,12 @@ nav ul li a:hover {
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 20px;
-  background: rgba(35, 21, 60, 0.7);
-  border: 1px solid rgba(212, 168, 75, 0.25);
-  color: var(--accent-gold);
+  background: rgba(10, 13, 29, 0.8);
+  border: 1px solid rgba(0, 64, 233, 0.35);
+  color: #38BDF8;
   pointer-events: none;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(0, 64, 233, 0.2);
   animation: float-tag 6s ease-in-out infinite alternate;
 }
 
@@ -548,14 +553,14 @@ nav ul li a:hover {
 /* High-Tech Card & Pulse Enhancements */
 .tech-card-pulse {
   position: relative;
-  border: 1px solid rgba(212, 168, 75, 0.35) !important;
-  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 168, 75, 0.18) !important;
+  border: 1px solid rgba(0, 64, 233, 0.35) !important;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 64, 233, 0.2) !important;
   transition: all 0.4s ease;
 }
 
 .tech-card-pulse:hover {
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 168, 75, 0.35) !important;
-  border-color: rgba(212, 168, 75, 0.6) !important;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 64, 233, 0.45) !important;
+  border-color: rgba(0, 64, 233, 0.7) !important;
 }
 
 .tech-data-stream {
@@ -563,10 +568,10 @@ nav ul li a:hover {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(180deg, transparent 0%, rgba(212, 168, 75, 0.4) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 64, 233, 0.5) 50%, transparent 100%);
   animation: stream-flow 4s linear infinite;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 @keyframes stream-flow {
@@ -580,8 +585,8 @@ nav ul li a:hover {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-gold);
-  box-shadow: 0 0 12px var(--accent-gold);
+  background: #0040E9;
+  box-shadow: 0 0 12px #0040E9;
   pointer-events: none;
 }
 
@@ -593,7 +598,7 @@ nav ul li a:hover {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 168, 75, 0.5);
+  border: 1px solid rgba(0, 64, 233, 0.5);
   transform: translate(-50%, -50%);
   animation: radar-pulse 3s ease-out infinite;
 }
@@ -612,7 +617,7 @@ nav ul li a:hover {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.25em;
-  color: rgba(212, 168, 75, 0.22);
+  color: rgba(0, 64, 233, 0.35);
   text-align: center;
   text-transform: uppercase;
   pointer-events: none;
@@ -1599,7 +1604,7 @@ footer {
 
 /* Instagram Live Feed Grid */
 .instagram-section {
-  background: #090909;
+  background: #010108;
   padding: 60px 0;
   border-top: 1px solid var(--border-light);
 }
@@ -1612,9 +1617,9 @@ footer {
 
 .insta-card {
   position: relative;
-  background: #160B28;
+  background: #0A0D1D;
   border: 1px solid var(--border-light);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1624,6 +1629,7 @@ footer {
 .insta-card:hover {
   transform: translateY(-5px);
   border-color: var(--border-gold);
+  box-shadow: 0 10px 30px rgba(0, 64, 233, 0.25);
 }
 
 .insta-header {
@@ -1631,7 +1637,7 @@ footer {
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
-  border-bottom: 1px solid #141414;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .insta-avatar {
@@ -1650,7 +1656,7 @@ footer {
 .insta-image-wrapper {
   position: relative;
   aspect-ratio: 1 / 1;
-  background: #111;
+  background: #05060D;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1665,7 +1671,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #23153C 0%, #1A0F2E 100%);
+  background: linear-gradient(135deg, #0A0D1D 0%, #010108 100%);
   text-align: center;
   position: relative;
 }
@@ -1756,10 +1762,10 @@ footer {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 15px rgba(0, 64, 233, 0.3);
   }
   50% {
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 25px rgba(0, 64, 233, 0.6);
   }
 }
 
@@ -1794,7 +1800,7 @@ footer {
 
 /* Premium Design Upgrades */
 .text-shine {
-  background: linear-gradient(135deg, #FFFFFF 40%, #E5C158 100%);
+  background: linear-gradient(135deg, #FFFFFF 40%, #38BDF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -1805,7 +1811,7 @@ footer {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, rgba(212, 175, 55, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 64, 233, 0.12) 0%, rgba(0, 64, 233, 0) 70%);
   filter: blur(100px);
   pointer-events: none;
   z-index: 0;
@@ -1819,8 +1825,8 @@ footer {
 }
 
 .glass-card:hover, .insta-native-card:hover, .about-card:hover, .market-item:hover {
-  border-color: rgba(212, 175, 55, 0.45) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(0, 64, 233, 0.45) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 64, 233, 0.25) !important;
   transform: translateY(-6px);
 }
 
@@ -1856,18 +1862,18 @@ footer {
    ========================================================================== */
 
 .economic-calendar-container {
-  background: rgba(35, 21, 60, 0.85);
-  border: 1px solid rgba(212, 168, 75, 0.25);
+  background: rgba(10, 13, 29, 0.9);
+  border: 1px solid rgba(0, 64, 233, 0.3);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 64, 233, 0.15);
   backdrop-filter: blur(15px);
   margin-top: 20px;
 }
 
 .calendar-filter-bar {
   padding: 22px 28px;
-  background: rgba(22, 11, 40, 0.95);
+  background: rgba(5, 6, 13, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-wrap: wrap;
@@ -1900,18 +1906,18 @@ footer {
 }
 
 .filter-pill:hover {
-  background: rgba(212, 168, 75, 0.15);
+  background: rgba(0, 64, 233, 0.2);
   border-color: var(--accent-gold);
   color: #fff;
   transform: translateY(-2px);
 }
 
 .filter-pill.active {
-  background: var(--accent-gold) !important;
-  border-color: var(--accent-gold) !important;
-  color: #1A0F2E !important;
+  background: #0040E9 !important;
+  border-color: #0040E9 !important;
+  color: #FFFFFF !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 15px rgba(212, 168, 75, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 64, 233, 0.45);
 }
 
 /* Economic Calendar Table Styling */
@@ -1925,10 +1931,10 @@ footer {
   padding: 18px 24px;
   font-size: 0.78rem;
   font-weight: 800;
-  color: var(--accent-gold);
+  color: #38BDF8;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: rgba(18, 9, 34, 0.85);
+  background: rgba(5, 6, 13, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -1945,7 +1951,7 @@ footer {
 }
 
 .event-row:hover {
-  background: rgba(212, 168, 75, 0.08) !important;
+  background: rgba(0, 64, 233, 0.1) !important;
 }
 
 .impact-badge {

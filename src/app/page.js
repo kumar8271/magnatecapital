@@ -551,12 +551,12 @@ export default function Home() {
       <div className="glow-orb orb-2"></div>
       <div className="glow-orb orb-3"></div>
 
-      {/* Refined Uncluttered Hero Section (Kama Capital Benchmark Standard) */}
-      <section className="hero" style={{ padding: '80px 0 90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', position: 'relative', overflow: 'hidden' }}>
+      {/* Refined Uncluttered Hero Section (Elefin Inspired Theme) */}
+      <section className="hero" style={{ padding: '80px 0 90px 0', background: 'linear-gradient(180deg, #010108 0%, #0A0D1D 100%)', position: 'relative', overflow: 'hidden' }}>
         
         {/* Subtle Ambient Background Grid & Glow */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(212,168,75,0.08) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
-        <div style={{ position: 'absolute', top: '10%', left: '20%', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(212,168,75,0.06) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', top: '10%', left: '20%', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(0,64,233,0.15) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
 
         <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="hero-content">
@@ -567,14 +567,14 @@ export default function Home() {
 
             <h1 style={{ fontSize: '3.5rem', lineHeight: '1.12', fontWeight: 800, color: '#fff', marginBottom: '18px', fontFamily: 'var(--font-serif)' }}>
               TRADE GLOBAL MARKETS<br />
-              <span style={{ color: 'var(--accent-gold)' }}>WITH CONFIDENCE</span>
+              <span style={{ color: '#38BDF8' }}>WITH CONFIDENCE</span>
             </h1>
 
             <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '540px', lineHeight: '1.7', marginBottom: '28px' }}>
               Access CFDs on Forex, Metals, Commodities, Stock Indices and Cryptocurrencies with zero deposit fees, raw ECN liquidity, and institutional execution.
             </p>
 
-            {/* 3 Numbered Steps (Kama Capital Benchmark) */}
+            {/* 3 Numbered Steps */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '34px' }}>
               <div className="hero-step-item">
                 <div className="hero-step-badge">1</div>
@@ -606,7 +606,7 @@ export default function Home() {
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn"
-                style={{ border: '1.5px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '14px 30px', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700 }}
+                style={{ border: '1.5px solid #0040E9', color: '#38BDF8', padding: '14px 30px', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, background: 'rgba(0,64,233,0.1)' }}
               >
                 Free Demo Account
               </a>
@@ -614,16 +614,16 @@ export default function Home() {
 
             {/* Clean Regulatory Trust Row */}
             <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 600, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px' }}>
-              <span><i className="fa-solid fa-shield-halved" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> Globally Licensed &amp; Regulated</span>
-              <span><i className="fa-solid fa-building-columns" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> Reg: 2025-00329</span>
-              <span><i className="fa-solid fa-bolt" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> &lt;15ms Execution</span>
+              <span><i className="fa-solid fa-shield-halved" style={{ color: '#0040E9', marginRight: '6px' }}></i> Globally Licensed &amp; Regulated</span>
+              <span><i className="fa-solid fa-building-columns" style={{ color: '#0040E9', marginRight: '6px' }}></i> Reg: 2025-00329</span>
+              <span><i className="fa-solid fa-bolt" style={{ color: '#38BDF8', marginRight: '6px' }}></i> &lt;15ms Execution</span>
             </div>
 
           </div>
 
           {/* Right Column: Clean Live Market Watch Stage */}
           <div className="hero-visual">
-            <div className="glass-card trading-preview" style={{ borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(212,168,75,0.25)', background: 'rgba(22, 11, 40, 0.95)', boxShadow: '0 25px 60px rgba(0,0,0,0.7)' }}>
+            <div className="glass-card trading-preview" style={{ borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,64,233,0.35)', background: 'rgba(8, 11, 24, 0.95)', boxShadow: '0 25px 60px rgba(0,0,0,0.8), 0 0 30px rgba(0,64,233,0.2)' }}>
               <div className="card-header" style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span className="dot red"></span>
@@ -633,7 +633,7 @@ export default function Home() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span className="live-badge-dot"></span>
-                  <span style={{ fontSize: '0.7rem', color: 'var(--accent-gold)', fontWeight: 800 }}>LIVE</span>
+                  <span style={{ fontSize: '0.7rem', color: '#38BDF8', fontWeight: 800 }}>LIVE</span>
                 </div>
               </div>
 
@@ -659,10 +659,10 @@ export default function Home() {
               </div>
 
               {/* Execution Metrics Bar */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.3)' }}>
                 <div style={{ padding: '16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
                   <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Spreads</div>
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>0.0 Pips</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace' }}>0.0 Pips</div>
                 </div>
                 <div style={{ padding: '16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.04)' }}>
                   <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Execution</div>
@@ -679,8 +679,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trade In Commodities & Asset Classes Section (Panel 1 & Panel 2 from image) */}
-      <section id="commodities-trading" className="commodities-trading-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', borderTop: '1px solid var(--border-light)' }}>
+      {/* Trade In Commodities & Asset Classes Section */}
+      <section id="commodities-trading" className="commodities-trading-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #05060D 0%, #010108 100%)', borderTop: '1px solid var(--border-light)' }}>
         <div className="container">
           
           {/* Tab Navigation Pill Header */}
@@ -697,12 +697,13 @@ export default function Home() {
                 style={{ 
                   padding: '10px 24px', 
                   borderRadius: '6px', 
-                  border: activeCommodityTab === tab.id ? '1px solid var(--accent-gold)' : '1px solid rgba(255,255,255,0.2)', 
-                  background: activeCommodityTab === tab.id ? 'var(--accent-gold)' : 'transparent', 
-                  color: activeCommodityTab === tab.id ? '#1A0F2E' : '#fff', 
+                  border: activeCommodityTab === tab.id ? '1px solid #0040E9' : '1px solid rgba(255,255,255,0.15)', 
+                  background: activeCommodityTab === tab.id ? '#0040E9' : 'transparent', 
+                  color: activeCommodityTab === tab.id ? '#FFFFFF' : '#fff', 
                   fontWeight: 700, 
                   fontSize: '0.9rem', 
                   cursor: 'pointer',
+                  boxShadow: activeCommodityTab === tab.id ? '0 0 15px rgba(0,64,233,0.5)' : 'none',
                   transition: 'all 0.3s'
                 }}
               >
@@ -714,7 +715,7 @@ export default function Home() {
           {/* Tab Content Display */}
           <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '10px' }}>
+              <h2 style={{ fontSize: '3rem', fontWeight: 800, color: '#38BDF8', marginBottom: '10px' }}>
                 {activeCommodityTab === 'commodities' ? 'Precious Metals' : activeCommodityTab === 'forex' ? 'Forex' : activeCommodityTab === 'indices' ? 'Indices' : 'Cryptocurrencies'}
               </h2>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', marginBottom: '20px' }}>
@@ -738,38 +739,38 @@ export default function Home() {
 
             {/* Asset Feature Cards Grid */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
-                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
+              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)' }}>
+                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.3rem', marginBottom: '14px' }}>
                   <i className="fa-solid fa-coins"></i>
                 </div>
-                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Precious Metals</h4>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#38BDF8', marginBottom: '8px' }}>Precious Metals</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Gold, Silver, Platinum and Palladium. Perfect for hedging risk.</p>
-                <a href="/products#commodities" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+                <a href="/products#commodities" style={{ color: '#38BDF8', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
               </div>
 
-              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.8)', border: '1px solid var(--accent-gold)' }}>
-                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '14px' }}>
+              <div className="glass-card tech-card-pulse" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)' }}>
+                <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.3rem', marginBottom: '14px' }}>
                   <i className="fa-solid fa-arrow-trend-up"></i>
                 </div>
-                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '8px' }}>Forex</h4>
+                <h4 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#38BDF8', marginBottom: '8px' }}>Forex</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '12px' }}>Trade majors, minors, and exotic pairs with low spreads and high leverage.</p>
-                <a href="/products#forex" style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
+                <a href="/products#forex" style={{ color: '#38BDF8', fontWeight: 700, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Read More &rarr;</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MOST POPULAR FX PAIRS Cross Matrix Section (Panel 4 from image) */}
-      <section className="fx-matrix-section" style={{ padding: '80px 0', background: '#0D061A', borderTop: '1px solid var(--border-light)' }}>
+      {/* MOST POPULAR FX PAIRS Cross Matrix Section */}
+      <section className="fx-matrix-section" style={{ padding: '80px 0', background: '#010108', borderTop: '1px solid var(--border-light)' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '40px' }}>
             <span className="section-label">Live Exchange Matrix</span>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>MOST POPULAR FX PAIRS</h2>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>MOST POPULAR FX PAIRS</h2>
             <p className="subtitle">Real-time cross-currency exchange matrix for global currency pairs.</p>
           </div>
 
-          <div className="glass-card" style={{ padding: '20px', borderRadius: '18px', background: '#120922', border: '1px solid rgba(255,255,255,0.08)', overflowX: 'auto' }}>
+          <div className="glass-card" style={{ padding: '20px', borderRadius: '18px', background: '#080B1A', border: '1px solid rgba(0,64,233,0.25)', overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', fontFamily: 'JetBrains Mono, monospace', color: '#fff', textAlign: 'center' }}>
               <thead>
                 <tr style={{ background: 'rgba(0,0,0,0.5)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
@@ -812,7 +813,7 @@ export default function Home() {
                         key={idx} 
                         style={{ 
                           padding: '12px', 
-                          background: r.highlight === idx ? '#900C27' : val === '—' ? 'rgba(255,255,255,0.02)' : 'transparent', 
+                          background: r.highlight === idx ? '#0040E9' : val === '—' ? 'rgba(255,255,255,0.02)' : 'transparent', 
                           color: r.highlight === idx ? '#fff' : val === '—' ? 'var(--text-muted)' : '#fff',
                           fontWeight: r.highlight === idx ? 800 : 500
                         }}
@@ -828,11 +829,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Monthly Promotions Hero Banner (Panel 5 from image) */}
-      <section className="monthly-promotions-banner" style={{ padding: '80px 0', background: 'radial-gradient(circle at center, #2C184A 0%, #160B28 100%)', borderTop: '1px solid var(--border-light)', textCenter: 'center', position: 'relative' }}>
+      {/* Monthly Promotions Hero Banner */}
+      <section className="monthly-promotions-banner" style={{ padding: '80px 0', background: 'radial-gradient(circle at center, #0B1333 0%, #010108 100%)', borderTop: '1px solid var(--border-light)', textAlign: 'center', position: 'relative' }}>
         <div className="container text-center">
-          <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '12px' }}>
-            Monthly Promotions for Partners & Traders
+          <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '12px' }}>
+            Monthly Promotions for Partners &amp; Traders
           </span>
           <h2 style={{ fontSize: '3.2rem', fontWeight: 900, color: '#fff', marginBottom: '16px', lineHeight: 1.15 }}>
             Unlock Rewards. Elevate Your Experience.
@@ -1014,7 +1015,7 @@ export default function Home() {
       </section>
 
       {/* Execution Technology Section */}
-      <section className="tech-section" style={{ background: '#160B28', padding: '80px 0', borderTop: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
+      <section className="tech-section" style={{ background: '#05060D', padding: '80px 0', borderTop: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
         <div className="forex-tech-bg">
           <div className="tech-grid-pattern"></div>
           <div className="tech-glow-orb gold" style={{ width: '350px', height: '350px', bottom: '-50px', right: '10%' }}></div>
@@ -1029,14 +1030,14 @@ export default function Home() {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                <div style={{ color: 'var(--accent-gold)', fontSize: '1.3rem' }}><i className="fa-solid fa-circle-check"></i></div>
+                <div style={{ color: '#38BDF8', fontSize: '1.3rem' }}><i className="fa-solid fa-circle-check"></i></div>
                 <div>
                   <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: '5px' }}>Direct Equinix LD4 Server Bridge</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Servers co-located in London for low-latency sub-15ms execution pipelines.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
-                <div style={{ color: 'var(--accent-gold)', fontSize: '1.3rem' }}><i className="fa-solid fa-circle-check"></i></div>
+                <div style={{ color: '#38BDF8', fontSize: '1.3rem' }}><i className="fa-solid fa-circle-check"></i></div>
                 <div>
                   <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: '5px' }}>Raw Spreads from 0.0 Pips</h4>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Institutional interbank liquidity routing guarantees minimal spreads during peak volatility.</p>
@@ -1046,9 +1047,9 @@ export default function Home() {
           </div>
 
           {/* Right Column: Attractive MT5 Dashboard Mock Window */}
-          <div className="floating-terminal" style={{ background: 'rgba(26, 15, 46, 0.75)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}>
+          <div className="floating-terminal" style={{ background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.3)', borderRadius: '16px', padding: '30px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 25px rgba(0,64,233,0.15)' }}>
             {/* macOS window control buttons header */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #141414', paddingBottom: '15px', marginBottom: '25px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '15px', marginBottom: '25px' }}>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
                 <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }}></span>
@@ -1057,16 +1058,16 @@ export default function Home() {
               </div>
               
               {/* Interactive Tabs */}
-              <div style={{ display: 'flex', gap: '4px', background: '#160B28', padding: '3px', borderRadius: '8px', border: '1px solid #111' }}>
+              <div style={{ display: 'flex', gap: '4px', background: '#05060D', padding: '3px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <button 
                   onClick={() => setTechMode('spreads')} 
-                  style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'spreads' ? 'var(--accent-gold)' : 'transparent', color: techMode === 'spreads' ? '#000' : 'var(--text-muted)', transition: 'all 0.3s' }}
+                  style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'spreads' ? '#0040E9' : 'transparent', color: techMode === 'spreads' ? '#fff' : 'var(--text-muted)', transition: 'all 0.3s' }}
                 >
                   Live Spreads
                 </button>
                 <button 
                   onClick={() => setTechMode('latency')} 
-                  style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'latency' ? 'var(--accent-gold)' : 'transparent', color: techMode === 'latency' ? '#000' : 'var(--text-muted)', transition: 'all 0.3s' }}
+                  style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'latency' ? '#0040E9' : 'transparent', color: techMode === 'latency' ? '#fff' : 'var(--text-muted)', transition: 'all 0.3s' }}
                 >
                   Execution Latency
                 </button>
@@ -1074,7 +1075,7 @@ export default function Home() {
             </div>
 
             {/* Live Chart Visualizer */}
-            <div style={{ position: 'relative', height: '240px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', padding: '20px 10px 10px 10px', borderBottom: '1px solid #141414', marginBottom: '25px' }}>
+            <div style={{ position: 'relative', height: '240px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', padding: '20px 10px 10px 10px', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: '25px' }}>
               
               {/* Y Axis Grid Labels */}
               <div style={{ position: 'absolute', left: '-5px', top: '15%', fontSize: '0.6rem', color: 'var(--text-muted)' }}>{techMode === 'spreads' ? '1.0 Pip' : '20 ms'}</div>
@@ -1082,9 +1083,9 @@ export default function Home() {
               <div style={{ position: 'absolute', left: '-5px', top: '85%', fontSize: '0.6rem', color: 'var(--text-muted)' }}>{techMode === 'spreads' ? '0.0 Pip' : '0 ms'}</div>
 
               {/* Horizontal dotted grid lines */}
-              <div style={{ position: 'absolute', width: '100%', top: '20%', borderTop: '1px dashed #141414', zIndex: 0 }}></div>
-              <div style={{ position: 'absolute', width: '100%', top: '55%', borderTop: '1px dashed #141414', zIndex: 0 }}></div>
-              <div style={{ position: 'absolute', width: '100%', top: '88%', borderTop: '1px dashed #141414', zIndex: 0 }}></div>
+              <div style={{ position: 'absolute', width: '100%', top: '20%', borderTop: '1px dashed rgba(255,255,255,0.06)', zIndex: 0 }}></div>
+              <div style={{ position: 'absolute', width: '100%', top: '55%', borderTop: '1px dashed rgba(255,255,255,0.06)', zIndex: 0 }}></div>
+              <div style={{ position: 'absolute', width: '100%', top: '88%', borderTop: '1px dashed rgba(255,255,255,0.06)', zIndex: 0 }}></div>
 
               {/* Bar Graph Column Render */}
               {[
@@ -1114,7 +1115,7 @@ export default function Home() {
                   >
                     {/* Active tooltip overlay */}
                     {isActive && (
-                      <div style={{ position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)', background: 'var(--accent-gold)', color: '#000', padding: '5px 10px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap', boxShadow: '0 5px 15px rgba(212, 175, 55, 0.4)', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <div style={{ position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)', background: '#0040E9', color: '#fff', padding: '5px 10px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap', boxShadow: '0 5px 15px rgba(0, 64, 233, 0.4)', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <span style={{ fontSize: '0.55rem', textTransform: 'uppercase', opacity: 0.8 }}>{bar.name}</span>
                         <span>{bar.price} ({bar.val})</span>
                       </div>
@@ -1126,19 +1127,19 @@ export default function Home() {
                         width: '100%', 
                         height: `${bar.pct}%`, 
                         background: isActive 
-                          ? 'linear-gradient(to top, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.95))'
-                          : 'linear-gradient(to top, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.7))', 
+                          ? 'linear-gradient(to top, rgba(0, 64, 233, 0.3), #0040E9)'
+                          : 'linear-gradient(to top, rgba(0, 64, 233, 0.1), rgba(0, 64, 233, 0.6))', 
                         borderRadius: '6px 6px 0 0', 
                         transition: 'all 0.4s ease-out', 
-                        boxShadow: isActive ? '0 0 15px rgba(212, 175, 55, 0.4)' : 'none',
-                        border: isActive ? '1px solid var(--accent-gold)' : '1px solid transparent',
+                        boxShadow: isActive ? '0 0 15px rgba(0, 64, 233, 0.5)' : 'none',
+                        border: isActive ? '1px solid #38BDF8' : '1px solid transparent',
                         borderBottom: 'none'
                       }} 
                       className={`tech-bar ${isActive ? 'active' : ''}`}
                     ></div>
 
                     {/* X Axis Label */}
-                    <span style={{ fontSize: '0.65rem', fontWeight: 700, color: isActive ? 'var(--accent-gold)' : 'var(--text-muted)', marginTop: '8px', transition: 'color 0.3s' }}>{bar.label}</span>
+                    <span style={{ fontSize: '0.65rem', fontWeight: 700, color: isActive ? '#38BDF8' : 'var(--text-muted)', marginTop: '8px', transition: 'color 0.3s' }}>{bar.label}</span>
                   </div>
                 );
               })}
@@ -1148,11 +1149,11 @@ export default function Home() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', textAlign: 'center' }}>
               <div>
                 <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '1px', marginBottom: '5px' }}>SPREAD</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--accent-gold)' }}>From 0.0 Pips</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#38BDF8' }}>From 0.0 Pips</div>
               </div>
-              <div style={{ borderLeft: '1px solid #141414', borderRight: '1px solid #141414' }}>
+              <div style={{ borderLeft: '1px solid rgba(255,255,255,0.06)', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '1px', marginBottom: '5px' }}>SPEED</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff' }}>&lt; 15 ms</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#2ecc71' }}>&lt; 15 ms</div>
               </div>
               <div>
                 <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '1px', marginBottom: '5px' }}>LEVERAGE</div>
@@ -1172,14 +1173,14 @@ export default function Home() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           
-          {/* Panel 3 Featured Card: About Magnate Capital */}
-          <div className="glass-card tech-card-pulse" style={{ padding: '45px', borderRadius: '20px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', marginBottom: '60px' }}>
+          {/* Featured Card: About Magnate Capital */}
+          <div className="glass-card tech-card-pulse" style={{ padding: '45px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0,64,233,0.35)', marginBottom: '60px' }}>
             <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '40px', alignItems: 'center' }}>
               <div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   About Us
                 </span>
-                <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '16px', lineHeight: 1.15 }}>
+                <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#38BDF8', marginBottom: '16px', lineHeight: 1.15 }}>
                   About Magnate Capital
                 </h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
@@ -1187,19 +1188,19 @@ export default function Home() {
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '28px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9', fontSize: '1.1rem' }}></i>
                     <span>Regulated Broker</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9', fontSize: '1.1rem' }}></i>
                     <span>Advanced Trading Platforms</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9', fontSize: '1.1rem' }}></i>
                     <span>Diverse Asset Classes</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)', fontSize: '1.1rem' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9', fontSize: '1.1rem' }}></i>
                     <span>24/5 Dedicated Support</span>
                   </div>
                 </div>
@@ -1208,9 +1209,9 @@ export default function Home() {
                 </a>
               </div>
 
-              <div style={{ textCenter: 'center', display: 'flex', justifyContent: 'center' }}>
-                <div style={{ width: '220px', height: '220px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(212,168,75,0.2) 0%, rgba(26,15,46,0) 70%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212,168,75,0.3)' }}>
-                  <i className="fa-solid fa-building-columns" style={{ fontSize: '5rem', color: 'var(--accent-gold)' }}></i>
+              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ width: '220px', height: '220px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,64,233,0.25) 0%, rgba(1,1,8,0) 70%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0,64,233,0.4)', boxShadow: '0 0 35px rgba(0,64,233,0.3)' }}>
+                  <i className="fa-solid fa-building-columns" style={{ fontSize: '5rem', color: '#38BDF8' }}></i>
                 </div>
               </div>
             </div>
@@ -1224,10 +1225,10 @@ export default function Home() {
 
           {/* Vision & Mission 2-Column Grid */}
           <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.75)' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', marginBottom: '16px' }}>
-                <i className="fa-solid fa-compass" style={{ color: 'var(--accent-gold)', fontSize: '0.85rem' }}></i>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR VISION</span>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.35)', marginBottom: '16px' }}>
+                <i className="fa-solid fa-compass" style={{ color: '#38BDF8', fontSize: '0.85rem' }}></i>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR VISION</span>
               </div>
               <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Benchmark in Elite Trading</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.7' }}>
@@ -1235,10 +1236,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.75)' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', marginBottom: '16px' }}>
-                <i className="fa-solid fa-bullseye" style={{ color: 'var(--accent-gold)', fontSize: '0.85rem' }}></i>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR MISSION</span>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.35)', marginBottom: '16px' }}>
+                <i className="fa-solid fa-bullseye" style={{ color: '#38BDF8', fontSize: '0.85rem' }}></i>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>OUR MISSION</span>
               </div>
               <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Lasting Wealth & Transparency</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.7' }}>
@@ -1250,11 +1251,11 @@ export default function Home() {
           {/* Core Values — PILLAR Framework Header */}
           <div className="text-center" style={{ marginBottom: '35px' }}>
             <span className="section-label">Core Values</span>
-            <h3 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-gold)' }}>Core Values of Magnate Capital — “PILLAR”</h3>
+            <h3 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#38BDF8' }}>Core Values of Magnate Capital — “PILLAR”</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px' }}>Six foundational principles guiding every solution we deliver.</p>
           </div>
 
-          {/* PILLAR 6-Grid (Exact Copy from Panel 4) */}
+          {/* PILLAR 6-Grid */}
           <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
               { letter: 'P', title: 'Professionalism', desc: 'We uphold the highest standards of expertise and integrity, reflecting the prestige of the Magnate brand.', icon: 'fa-user-tie' },
@@ -1264,10 +1265,10 @@ export default function Home() {
               { letter: 'A', title: 'Adaptability', desc: 'We stay ahead through innovation, using the latest tools and insights to navigate change.', icon: 'fa-microchip' },
               { letter: 'R', title: 'Relationships', desc: 'Our client-first mindset shapes tailored strategies and enduring partnerships.', icon: 'fa-handshake' }
             ].map((pillar) => (
-              <div key={pillar.title} className="glass-card" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.65)', border: '1px solid rgba(255,255,255,0.06)', transition: 'all 0.3s' }}>
+              <div key={pillar.title} className="glass-card" style={{ padding: '28px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.75)', border: '1px solid rgba(255,255,255,0.06)', transition: 'all 0.3s' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                  <span style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', lineHeight: 1 }}>{pillar.letter}</span>
-                  <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.1)', border: '1px solid rgba(212, 168, 75, 0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
+                  <span style={{ fontSize: '2.2rem', fontWeight: 900, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', lineHeight: 1 }}>{pillar.letter}</span>
+                  <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8' }}>
                     <i className={`fa-solid ${pillar.icon}`} style={{ fontSize: '1rem' }}></i>
                   </div>
                 </div>
@@ -1279,11 +1280,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* IB Program & White Label Solutions Section (Panel 2 from image) */}
-      <section id="partnership" className="ib-partnership-section" style={{ padding: '90px 0', background: 'rgba(22, 11, 40, 0.95)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
+      {/* IB Program & White Label Solutions Section */}
+      <section id="partnership" className="ib-partnership-section" style={{ padding: '90px 0', background: 'rgba(8, 11, 24, 0.95)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
         <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'center' }}>
           <div>
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '10px' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '10px' }}>
               Partner with Us – Earn More with Every Trade
             </span>
             <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: '20px' }}>
@@ -1296,9 +1297,9 @@ export default function Home() {
               Looking to take it a step further? We also offer White Label Solutions — launch your own branded forex brokerage with our full support, infrastructure, and technology.
             </p>
 
-            {/* Monthly Volume Challenge (For Partners) Card - Panel 2 */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '24px', borderRadius: '16px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', marginTop: '20px' }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '6px' }}>
+            {/* Monthly Volume Challenge (For Partners) Card */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '24px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)', marginTop: '20px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '6px' }}>
                 Grow Your Network, Grow Your Rewards
               </span>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
@@ -1312,22 +1313,22 @@ export default function Home() {
                 <li>Cash Rewards</li>
                 <li>Performance Recognition</li>
               </ol>
-              <div style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.9rem', fontStyle: 'italic' }}>
+              <div style={{ color: '#38BDF8', fontWeight: 700, fontSize: '0.9rem', fontStyle: 'italic' }}>
                 Let your referrals work for you.
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginTop: '25px' }}>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary">
                 Become an IB Partner →
               </a>
-              <a href="#contact" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)' }}>
+              <a href="#contact" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8' }}>
                 White Label Solutions
               </a>
             </div>
           </div>
 
-          <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)', textAlign: 'center' }}>
-            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px auto', fontSize: '2rem', color: 'var(--accent-gold)' }}>
+          <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)', textAlign: 'center' }}>
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px auto', fontSize: '2rem', color: '#38BDF8' }}>
               <i className="fa-solid fa-handshake-angle"></i>
             </div>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Tier-1 IB Rebate Network</h3>
@@ -1337,7 +1338,7 @@ export default function Home() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', background: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '12px' }}>
               <div>
                 <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Max IB Rebate</div>
-                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>Up to $12/Lot</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace' }}>Up to $12/Lot</div>
               </div>
               <div>
                 <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Payout Speed</div>
@@ -1349,7 +1350,7 @@ export default function Home() {
       </section>
 
       {/* Account Offers Compare Section */}
-      <section id="offers" className="offers-section">
+      <section id="offers" className="offers-section" style={{ background: '#010108' }}>
         <div className="container">
           <div className="section-title text-center">
             <span className="section-label">Account Types</span>
@@ -1361,82 +1362,82 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
             
             {/* Card 1: Classic Noble */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid rgba(212, 168, 75, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
               <div>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Classic Noble</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$50</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$50</div>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Spreads: <strong>Starting From 1.5 pips</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Minimum Deposit: <strong>$50</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Commission: <strong>No Commission</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Trading Platform: <strong>cTrader / MT5</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Leverage: <strong>1:500</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Ideal: <strong>Beginners</strong></span>
                   </li>
                 </ul>
               </div>
 
-              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
                 Choose Plan &gt;
               </a>
             </div>
 
             {/* Card 2: Prime Crown */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.95)', border: '2px solid var(--accent-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center', boxShadow: '0 0 30px rgba(212, 168, 75, 0.2)', transform: 'translateY(-6px)' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.95)', border: '2px solid #0040E9', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center', boxShadow: '0 0 30px rgba(0, 64, 233, 0.35)', transform: 'translateY(-6px)' }}>
               <div>
                 <span className="gold-badge" style={{ marginBottom: '10px', display: 'inline-block' }}>Most Popular</span>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Prime Crown</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$500</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$500</div>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Spreads: <strong>Starting From 0.8 pips</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Minimum Deposit: <strong>$500</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Commission: <strong>No Commission</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Trading Platform: <strong>cTrader / MT5</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Leverage: <strong>1:500</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Ideal: <strong>Traders</strong></span>
                   </li>
                 </ul>
@@ -1448,44 +1449,44 @@ export default function Home() {
             </div>
 
             {/* Card 3: ECN Elite */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid rgba(212, 168, 75, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px 28px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center' }}>
               <div>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>ECN Elite</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$5,000</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$5,000</div>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Spreads: <strong>Raw Spreads</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Minimum Deposit: <strong>$5,000</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Commission: <strong>Up to $12 per lot</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Trading Platform: <strong>cTrader / MT5</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Leverage: <strong>1:200</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Assets Available: <strong>Forex, Commodities, Indices, Cryptocurrencies</strong></span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-circle-check" style={{ color: 'var(--accent-gold)' }}></i>
+                    <i className="fa-solid fa-circle-check" style={{ color: '#0040E9' }}></i>
                     <span>Ideal: <strong>Professionals</strong></span>
                   </li>
                 </ul>
               </div>
 
-              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, width: '100%', display: 'block', transition: 'all 0.3s' }}>
                 Choose Plan &gt;
               </a>
             </div>
@@ -1494,8 +1495,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Promotions & Partner Loyalty Program Section (Panel 5 & Panel 1 from image) */}
-      <section id="promotions" className="promotions-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #160B28 0%, #1A0F2E 100%)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
+      {/* Promotions & Partner Loyalty Program Section */}
+      <section id="promotions" className="promotions-section" style={{ padding: '90px 0', background: 'linear-gradient(180deg, #05060D 0%, #010108 100%)', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
         <div className="container">
           <div className="section-title text-center">
             <span className="section-label">Exclusive Incentives</span>
@@ -1506,8 +1507,8 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
             
             {/* Card 1: First Deposit Bonus */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
-              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', marginBottom: '20px' }}>
                 <i className="fa-solid fa-gift"></i>
               </div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>First Deposit Bonus (New Traders)</h3>
@@ -1519,13 +1520,13 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Card 2: Partner Loyalty Program (Panel 5 Exact Points) */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
-              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+            {/* Card 2: Partner Loyalty Program */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', marginBottom: '20px' }}>
                 <i className="fa-solid fa-crown"></i>
               </div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '6px' }}>Partner Loyalty Program</h3>
-              <div style={{ color: 'var(--accent-gold)', fontSize: '0.88rem', fontWeight: 700, fontStyle: 'italic', marginBottom: '12px' }}>“The Longer You Stay, The More You Earn”</div>
+              <div style={{ color: '#38BDF8', fontSize: '0.88rem', fontWeight: 700, fontStyle: 'italic', marginBottom: '12px' }}>“The Longer You Stay, The More You Earn”</div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '14px' }}>Our loyal IBs get rewarded with tiered benefits:</p>
               
               <ol style={{ paddingLeft: '20px', color: '#fff', fontSize: '0.9rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -1536,9 +1537,9 @@ export default function Home() {
               </ol>
             </div>
 
-            {/* Card 3: Technical Analysis (Panel 1 Exact Text) */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid var(--accent-gold)' }}>
-              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.4rem', marginBottom: '20px' }}>
+            {/* Card 3: Technical Analysis */}
+            <div className="glass-card tech-card-pulse" style={{ padding: '35px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', marginBottom: '20px' }}>
                 <i className="fa-solid fa-chart-candlestick"></i>
               </div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '12px' }}>Technical Analysis</h3>
@@ -1624,7 +1625,7 @@ export default function Home() {
                 </div>
                 <div className="result-row highlight">
                   <span className="res-lbl">Required Deposit Margin:</span>
-                  <span className="res-val gold-color">${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRequiredMargin)}</span>
+                  <span className="res-val" style={{ color: '#38BDF8' }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRequiredMargin)}</span>
                 </div>
                 <div className="result-row">
                   <span className="res-lbl">Pip Value (Per Pip):</span>
@@ -1663,7 +1664,7 @@ export default function Home() {
                 </div>
                 <div className="result-row highlight">
                   <span className="res-lbl">Recommended Lot Size:</span>
-                  <span className="res-val gold-color" style={{ fontSize: '1.4rem' }}>{calculatedPositionLots} Lots</span>
+                  <span className="res-val" style={{ color: '#38BDF8', fontSize: '1.4rem' }}>{calculatedPositionLots} Lots</span>
                 </div>
                 <div className="result-row">
                   <span className="res-lbl">Position Units:</span>
@@ -1749,7 +1750,7 @@ export default function Home() {
             <div className="calendar-filter-bar">
               {/* Timeframe Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Timeframe:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Timeframe:</span>
                 <button className={`filter-pill ${calendarTimeframe === 'today' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('today')}>Today</button>
                 <button className={`filter-pill ${calendarTimeframe === 'tomorrow' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('tomorrow')}>Tomorrow</button>
                 <button className={`filter-pill ${calendarTimeframe === 'all' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('all')}>All Week</button>
@@ -1757,7 +1758,7 @@ export default function Home() {
 
               {/* Currency Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Currency:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Currency:</span>
                 {['all', 'USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD'].map((curr) => (
                   <button key={curr} className={`filter-pill ${calendarCurrency === curr ? 'active' : ''}`} onClick={() => setCalendarCurrency(curr)}>
                     {curr === 'all' ? 'All' : curr}
@@ -1767,7 +1768,7 @@ export default function Home() {
 
               {/* Impact Filters */}
               <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginRight: '6px' }}>Impact:</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Impact:</span>
                 <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All Impact</button>
                 <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
                 <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Medium</button>
@@ -1778,7 +1779,7 @@ export default function Home() {
             <div style={{ overflowX: 'auto' }}>
               <table className="calendar-table">
                 <thead>
-                  <tr style={{ background: 'rgba(18, 9, 34, 0.85)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <tr style={{ background: 'rgba(5, 6, 13, 0.95)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
                     <th style={{ padding: '16px 20px', width: '120px' }}>Time</th>
                     <th style={{ padding: '16px 20px', width: '100px' }}>Cur</th>
                     <th style={{ padding: '16px 20px', width: '110px' }}>Impact</th>
@@ -1823,7 +1824,7 @@ export default function Home() {
           {/* Event Detail Modal Window when clicked */}
           {selectedEventDetail && (
             <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(10px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
-              <div className="glass-card tech-card-pulse" style={{ maxWidth: '550px', width: '100%', borderRadius: '20px', padding: '30px', background: '#160B28', border: '1px solid var(--accent-gold)' }}>
+              <div className="glass-card tech-card-pulse" style={{ maxWidth: '550px', width: '100%', borderRadius: '20px', padding: '30px', background: '#0A0D1D', border: '1px solid #0040E9' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <span style={{ fontSize: '1.5rem' }}>{selectedEventDetail.flag}</span>
@@ -1843,7 +1844,7 @@ export default function Home() {
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>{selectedEventDetail.impactInfo}</p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', textAlign: 'center', marginBottom: '20px', background: 'rgba(0,0,0,0.2)', padding: '12px', borderRadius: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', textAlign: 'center', marginBottom: '20px', background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '10px' }}>
                   <div>
                     <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
                     <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
@@ -1859,10 +1860,10 @@ export default function Home() {
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '8px' }}>Affected Market Instruments:</div>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginBottom: '8px' }}>Affected Market Instruments:</div>
                   <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                     {selectedEventDetail.affectedPairs.map(p => (
-                      <span key={p} style={{ padding: '4px 10px', borderRadius: '6px', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid rgba(212, 168, 75, 0.3)', color: '#fff', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
+                      <span key={p} style={{ padding: '4px 10px', borderRadius: '6px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.35)', color: '#fff', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
                         {p}
                       </span>
                     ))}
@@ -1889,22 +1890,22 @@ export default function Home() {
 
           <div className="grid-4">
             <div className="market-item">
-              <i className="fa-solid fa-coins market-icon"></i>
+              <i className="fa-solid fa-coins market-icon" style={{ color: '#38BDF8' }}></i>
               <h4>Forex</h4>
               <p>Trade majors, minors, and exotic pairs with low spreads and high leverage.</p>
             </div>
             <div className="market-item">
-              <i className="fa-solid fa-gem market-icon"></i>
+              <i className="fa-solid fa-gem market-icon" style={{ color: '#38BDF8' }}></i>
               <h4>Precious Metals</h4>
               <p>Gold, Silver, Platinum and Palladium. Perfect for hedging risk.</p>
             </div>
             <div className="market-item">
-              <i className="fa-solid fa-chart-line market-icon"></i>
+              <i className="fa-solid fa-chart-line market-icon" style={{ color: '#38BDF8' }}></i>
               <h4>Indices</h4>
               <p>Trade top global indices including S&P 500, Nasdaq, and FTSE 100.</p>
             </div>
             <div className="market-item">
-              <i className="fa-solid fa-link market-icon"></i>
+              <i className="fa-solid fa-link market-icon" style={{ color: '#38BDF8' }}></i>
               <h4>Cryptocurrencies</h4>
               <p>Trade Bitcoin, Ethereum, and other digital assets 24/7 without wallets.</p>
             </div>
@@ -1917,14 +1918,14 @@ export default function Home() {
         <div className="container">
           <div className="section-title text-center">
             <h2>Live Instagram Feed</h2>
-            <p className="subtitle">Stay updated with latest announcements and market signals directly from our official account <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" className="gold-color">@magnatecapital</a></p>
+            <p className="subtitle">Stay updated with latest announcements and market signals directly from our official account <a href="https://www.instagram.com/magnatecapital/" target="_blank" rel="noreferrer" style={{ color: '#38BDF8' }}>@magnatecapital</a></p>
           </div>
           
           <div style={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'center' }}>
             {/* Left Button */}
             <button 
               onClick={prevSlide} 
-              style={{ position: 'absolute', left: '-15px', zIndex: 10, background: 'rgba(5,5,5,0.85)', border: '1px solid var(--border-gold)', color: 'var(--accent-gold)', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
+              style={{ position: 'absolute', left: '-15px', zIndex: 10, background: '#0A0D1D', border: '1px solid rgba(0,64,233,0.4)', color: '#38BDF8', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
             >
               <i className="fa-solid fa-chevron-left"></i>
             </button>
@@ -1940,17 +1941,17 @@ export default function Home() {
                 }}
               >
                 {instaPosts.map((post) => (
-                  <div key={post.id} style={{ flex: '0 0 320px', background: '#160B28', borderRadius: '12px', border: '1px solid var(--border-light)', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }} className="insta-native-card">
+                  <div key={post.id} style={{ flex: '0 0 320px', background: '#0A0D1D', borderRadius: '12px', border: '1px solid var(--border-light)', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }} className="insta-native-card">
                     {/* Header */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px', borderBottom: '1px solid #141414' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <img src="/favicon.png" alt="Magnate Avatar" style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-gold)' }} />
+                        <img src="/favicon.png" alt="Magnate Avatar" style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid #0040E9' }} />
                         <div>
                           <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>magnatecapital</div>
                           <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Dubai, UAE</div>
                         </div>
                       </div>
-                      <a href={post.link} target="_blank" rel="noreferrer" className="btn-trading" style={{ padding: '4px 12px', fontSize: '0.7rem', borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>View Post</a>
+                      <a href={post.link} target="_blank" rel="noreferrer" className="btn-trading" style={{ padding: '4px 12px', fontSize: '0.7rem', borderColor: '#0040E9', color: '#38BDF8' }}>View Post</a>
                     </div>
 
                     {/* Image Area with Overlay */}
@@ -1962,14 +1963,14 @@ export default function Home() {
                     </div>
 
                     {/* Likes & Comments Counters */}
-                    <div style={{ display: 'flex', gap: '15px', padding: '12px', fontSize: '0.8rem', borderBottom: '1px solid #111', color: 'var(--text-primary)', fontWeight: 600 }}>
-                      <span><i className="fa-solid fa-heart" style={{ color: 'var(--accent-gold)', marginRight: '5px' }}></i>{post.likes}</span>
-                      <span><i className="fa-solid fa-comment" style={{ color: 'var(--accent-gold)', marginRight: '5px' }}></i>{post.commentsCount}</span>
+                    <div style={{ display: 'flex', gap: '15px', padding: '12px', fontSize: '0.8rem', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'var(--text-primary)', fontWeight: 600 }}>
+                      <span><i className="fa-solid fa-heart" style={{ color: '#38BDF8', marginRight: '5px' }}></i>{post.likes}</span>
+                      <span><i className="fa-solid fa-comment" style={{ color: '#38BDF8', marginRight: '5px' }}></i>{post.commentsCount}</span>
                     </div>
 
                     {/* Live Comments Stream Box */}
-                    <div style={{ padding: '12px', background: '#1A0F2E', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent-gold)', fontWeight: 700, letterSpacing: '0.05em' }}>Live Comments</div>
+                    <div style={{ padding: '12px', background: '#05060D', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#38BDF8', fontWeight: 700, letterSpacing: '0.05em' }}>Live Comments</div>
                       {post.comments.map((comment, cIndex) => (
                         <div key={cIndex} style={{ fontSize: '0.75rem', lineBreak: 'anywhere' }}>
                           <strong style={{ color: 'var(--text-primary)', marginRight: '5px' }}>@{comment.user}:</strong>
@@ -1985,7 +1986,7 @@ export default function Home() {
             {/* Right Button */}
             <button 
               onClick={nextSlide} 
-              style={{ position: 'absolute', right: '-15px', zIndex: 10, background: 'rgba(5,5,5,0.85)', border: '1px solid var(--border-gold)', color: 'var(--accent-gold)', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
+              style={{ position: 'absolute', right: '-15px', zIndex: 10, background: '#0A0D1D', border: '1px solid rgba(0,64,233,0.4)', color: '#38BDF8', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}
             >
               <i className="fa-solid fa-chevron-right"></i>
             </button>
@@ -1994,7 +1995,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact-section">
+      <section id="contact" className="contact-section" style={{ background: '#010108' }}>
         <div className="container grid-2">
           <div className="contact-info-block">
             <span className="section-label">Get In Touch</span>
@@ -2003,14 +2004,14 @@ export default function Home() {
             
             <div className="contact-details">
               <div className="detail-item">
-                <i className="fa-solid fa-location-dot gold-color"></i>
+                <i className="fa-solid fa-location-dot" style={{ color: '#38BDF8' }}></i>
                 <div>
                   <h5>Headquarters</h5>
                   <p>Al Fattan Currency House, DIFC, Dubai, UAE</p>
                 </div>
               </div>
               <div className="detail-item">
-                <i className="fa-solid fa-envelope gold-color"></i>
+                <i className="fa-solid fa-envelope" style={{ color: '#38BDF8' }}></i>
                 <div>
                   <h5>Email Support</h5>
                   <p>support@magnatecapital.com</p>
@@ -2019,7 +2020,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="glass-card contact-form-card">
+          <div className="glass-card contact-form-card" style={{ background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0,64,233,0.3)' }}>
             <h3>Request Account Callback</h3>
             <form onSubmit={handleContactSubmit}>
               <div className="form-group">
@@ -2053,15 +2054,15 @@ export default function Home() {
       </section>
 
       {/* Join Magnate Capital Careers Section */}
-      <section className="careers-section" style={{ padding: '80px 0', background: 'linear-gradient(180deg, #1A0F2E 0%, #160B28 100%)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="careers-section" style={{ padding: '80px 0', background: 'linear-gradient(180deg, #010108 0%, #05060D 100%)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="container text-center">
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '10px' }}>Join Magnate Capital</h2>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38BDF8', marginBottom: '10px' }}>Join Magnate Capital</h2>
           <p style={{ fontSize: '1.2rem', color: '#fff', fontWeight: 600, marginBottom: '20px' }}>Empower Your Future in Finance</p>
           <p style={{ maxWidth: '750px', margin: '0 auto 30px auto', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
             Embark on a rewarding journey with Magnate Capital, a leader in the financial services space. We're on the lookout for enthusiastic individuals with a passion for trading, technology, and client engagement.
           </p>
-          <div style={{ display: 'inline-block', background: 'rgba(212, 168, 75, 0.12)', border: '1px solid var(--accent-gold)', padding: '14px 28px', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>
-            Share your CV at <a href="mailto:support@magnatefx.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>support@magnatefx.com</a>
+          <div style={{ display: 'inline-block', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', padding: '14px 28px', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, color: '#fff', boxShadow: '0 0 20px rgba(0,64,233,0.3)' }}>
+            Share your CV at <a href="mailto:support@magnatefx.com" style={{ color: '#38BDF8', textDecoration: 'underline' }}>support@magnatefx.com</a>
           </div>
         </div>
       </section>
