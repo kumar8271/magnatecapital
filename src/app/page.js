@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HeroBackgroundVisual from './components/HeroBackgroundVisual';
 
 export default function Home() {
   // --- STATE MANAGEMENT ---
@@ -553,6 +554,10 @@ export default function Home() {
 
       {/* 1. HERO SECTION (Elefin Structure & Copy) */}
       <section className="hero" style={{ padding: '90px 0 100px 0', background: 'linear-gradient(180deg, #010108 0%, #0A0D1D 100%)', position: 'relative', overflow: 'hidden' }}>
+        
+        {/* 3D Bitcoin & Indian Rupee Interactive Glowing Coin Canvas Background */}
+        <HeroBackgroundVisual />
+
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
         <div style={{ position: 'absolute', top: '10%', left: '20%', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(0,64,233,0.18) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
 
