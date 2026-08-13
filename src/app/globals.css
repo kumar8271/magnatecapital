@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 :root {
@@ -9,17 +9,17 @@
   --accent-gold-hover: #1D58F6;
   --accent-gold-muted: rgba(0, 64, 233, 0.15);
   --accent-blue: #0040E9;
-  --accent-cyan: #00D2FF;
+  --accent-cyan: #38BDF8;
   --text-primary: #FFFFFF;
   --text-secondary: #E2E8F0;
   --text-muted: #8896AB;
   --border-light: rgba(255, 255, 255, 0.08);
   --border-gold: rgba(0, 64, 233, 0.35);
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --shadow-gold: 0 8px 32px 0 rgba(0, 64, 233, 0.15);
-  --shadow-glow: 0 0 20px rgba(0, 64, 233, 0.5);
+  --shadow-glow: 0 0 25px rgba(0, 64, 233, 0.45);
 }
 
 * {

@@ -941,6 +941,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3.5 TRADING PLATFORMS (Elefin: "Find your perfect trading platform") */}
+      <section className="trading-platforms-section" style={{ padding: '100px 0', background: 'linear-gradient(180deg, #0b40e6 0%, #0a2db0 38%, #061131 100%)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '64px 64px', pointerEvents: 'none' }}></div>
+        
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-title text-center" style={{ marginBottom: '50px' }}>
+            <h2 style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em', lineHeight: '1.15' }}>
+              Find your perfect<br />trading <span style={{ fontStyle: 'italic', opacity: 0.9 }}>platform</span>
+            </h2>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '16px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#38BDF8' }}></span>
+              <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Driven by technology.</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', maxWidth: '1000px', margin: '0 auto 50px auto' }}>
+            
+            {/* Platform 1: Magnate Trading Platform */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', gap: '16px', transition: 'all 0.3s' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', color: '#38BDF8', flexShrink: 0 }}>
+                <i className="fa-solid fa-chart-pie"></i>
+              </div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>Magnate Platform</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)' }}>World’s Leading #1 friction-free</div>
+              </div>
+            </div>
+
+            {/* Platform 2: TradingView */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', gap: '16px', transition: 'all 0.3s' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', color: '#38BDF8', flexShrink: 0 }}>
+                <i className="fa-solid fa-chart-line"></i>
+              </div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>TradingView Sync</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)' }}>Industry’s most popular charts</div>
+              </div>
+            </div>
+
+            {/* Platform 3: MetaTrader 5 */}
+            <div className="glass-card" style={{ padding: '24px', borderRadius: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', gap: '16px', transition: 'all 0.3s' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', color: '#38BDF8', flexShrink: 0 }}>
+                <i className="fa-solid fa-desktop"></i>
+              </div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>Magnate MetaTrader 5</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)' }}>A step-up in trading execution</div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Platform Action Button */}
+          <div style={{ textAlign: 'center' }}>
+            <a 
+              href="https://trade.magnatefx.com/register/" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn" 
+              style={{ background: '#fff', color: '#0040E9', padding: '14px 38px', borderRadius: '10px', fontWeight: 800, fontSize: '1rem', display: 'inline-flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}
+            >
+              Start Trading Now <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* 4. INNOVATION BLUE BANNER (Elefin Cobalt Blue #0040E9) */}
       <section className="innovation-banner-section" style={{ padding: '80px 0', background: '#0040E9', color: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', right: '-10%', top: '-40%', width: '600px', height: '600px', borderRadius: '50%', background: '#38BDF8', opacity: 0.25, filter: 'blur(120px)', pointerEvents: 'none' }}></div>
