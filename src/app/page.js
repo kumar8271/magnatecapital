@@ -552,134 +552,127 @@ export default function Home() {
       <div className="glow-orb orb-2"></div>
       <div className="glow-orb orb-3"></div>
 
-      {/* 1. HERO SECTION (Elefin Structure & Copy) */}
-      <section className="hero" style={{ padding: '90px 0 100px 0', background: 'linear-gradient(180deg, #010108 0%, #0A0D1D 100%)', position: 'relative', overflow: 'hidden' }}>
+      {/* 1. HERO SECTION (Elefin Full-Viewport & 3D Interactive Coin Stage) */}
+      <section className="hero" style={{ 
+        minHeight: 'calc(100vh - 80px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: '60px 0 40px 0', 
+        background: '#010108', 
+        position: 'relative', 
+        overflow: 'hidden' 
+      }}>
         
         {/* 3D Bitcoin & Indian Rupee Interactive Glowing Coin Canvas Background */}
         <HeroBackgroundVisual />
 
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
-        <div style={{ position: 'absolute', top: '10%', left: '20%', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(0,64,233,0.18) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.12) 1px, transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '180px', background: 'linear-gradient(to top, #010108, transparent)', pointerEvents: 'none', zIndex: 2 }}></div>
 
-        <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="hero-content">
+        <div className="container" style={{ position: 'relative', zIndex: 10, width: '100%', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          
+          {/* Top Eyebrow / Sub-headline */}
+          <div style={{ paddingTop: '20px' }}>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', fontWeight: 600, color: '#fff', lineHeight: 1.3, letterSpacing: '-0.015em', margin: 0 }}>
+              The leading <span style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.85)' }}>friction-free<br />forex broker.</span>
+            </h2>
+          </div>
+
+          {/* Bottom Area: Massive CTA Button & Hero Title */}
+          <div style={{ paddingBottom: '30px', maxWidth: '780px' }}>
             
-            <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              <span className="live-badge-dot"></span> The leading friction-free broker.
+            {/* Primary Action Button */}
+            <div style={{ marginBottom: '28px' }}>
+              <a 
+                href="https://trade.magnatefx.com/register/" 
+                target="_blank" 
+                rel="noreferrer" 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#0040E9',
+                  color: '#FFFFFF',
+                  padding: '16px 44px',
+                  borderRadius: '10px',
+                  fontSize: '1.2rem',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 24px rgba(0, 64, 233, 0.5)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#1D58F6'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 64, 233, 0.75)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#0040E9'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 64, 233, 0.5)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                Open an Account
+              </a>
             </div>
 
-            <h1 style={{ fontSize: '3.6rem', lineHeight: '1.08', fontWeight: 800, color: '#fff', marginBottom: '20px', letterSpacing: '-0.02em' }}>
+            {/* Main Headline */}
+            <h1 style={{ 
+              fontSize: 'clamp(3rem, 6vw, 4.8rem)', 
+              fontWeight: 700, 
+              lineHeight: 1.04, 
+              letterSpacing: '-0.025em', 
+              color: '#FFFFFF', 
+              margin: '0 0 16px 0' 
+            }}>
               Built Heavy.<br />
-              <span style={{ color: '#38BDF8' }}>Executes Light-Speed.</span>
+              Executes Light-Speed.
             </h1>
 
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '540px', lineHeight: '1.7', marginBottom: '28px' }}>
-              Trade Forex, Gold, Crypto &amp; more with Magnate Capital — tight spreads from 0.0 pips, sub-15ms execution, up to 1:2000 leverage. Open an account from $50.
+            <p style={{ 
+              fontSize: '1.1rem', 
+              color: 'rgba(255, 255, 255, 0.75)', 
+              maxWidth: '560px', 
+              lineHeight: 1.6,
+              margin: 0
+            }}>
+              Trade Forex, Gold, Crypto &amp; more with tight spreads from 0.0 pips, sub-15ms execution, up to 1:2000 leverage. Open an account from $50.
             </p>
 
-            {/* 3 Step Highlights */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
-              <div className="hero-step-item">
-                <div className="hero-step-badge">1</div>
-                <span>Fund your account easily with zero deposit fees</span>
-              </div>
-              <div className="hero-step-item">
-                <div className="hero-step-badge">2</div>
-                <span>Withdraw fast, without friction (90% automated)</span>
-              </div>
-              <div className="hero-step-item">
-                <div className="hero-step-badge">3</div>
-                <span>One account. Full access to 300+ global markets</span>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '32px' }}>
-              <a 
-                href="https://trade.magnatefx.com/register/" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="btn btn-primary"
-                style={{ padding: '14px 34px', borderRadius: '10px', fontSize: '0.95rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-              >
-                Open an Account <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
-              </a>
-              <a 
-                href="https://trade.magnatefx.com/register/" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="btn"
-                style={{ border: '1.5px solid #0040E9', color: '#38BDF8', padding: '14px 28px', borderRadius: '10px', fontSize: '0.95rem', fontWeight: 700, background: 'rgba(0,64,233,0.1)' }}
-              >
-                Free Demo Account
-              </a>
-            </div>
-
-            {/* Regulatory Trust Indicators */}
-            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', color: 'rgba(255,255,255,0.65)', fontSize: '0.8rem', fontWeight: 600, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px' }}>
-              <span><i className="fa-solid fa-shield-halved" style={{ color: '#0040E9', marginRight: '6px' }}></i> Licensed &amp; Regulated</span>
-              <span><i className="fa-solid fa-building-columns" style={{ color: '#0040E9', marginRight: '6px' }}></i> Reg: 2025-00329</span>
-              <span><i className="fa-solid fa-bolt" style={{ color: '#38BDF8', marginRight: '6px' }}></i> &lt;15ms Execution</span>
-            </div>
-
           </div>
 
-          {/* Right Column: Live MT5 Market Watch Preview */}
-          <div className="hero-visual">
-            <div className="glass-card trading-preview" style={{ borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(0,64,233,0.35)', background: 'rgba(8, 11, 24, 0.95)', boxShadow: '0 25px 60px rgba(0,0,0,0.8), 0 0 30px rgba(0,64,233,0.25)' }}>
-              <div className="card-header" style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', letterSpacing: '0.05em' }}>MT5 Market Dashboard</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span className="live-badge-dot"></span>
-                  <span style={{ fontSize: '0.7rem', color: '#38BDF8', fontWeight: 800 }}>LIVE</span>
-                </div>
-              </div>
-
-              {/* Live Pairs Feed */}
-              <div style={{ padding: '14px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', padding: '8px 12px', fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  <span>Symbol</span>
-                  <span>Bid</span>
-                  <span>Ask</span>
-                  <span style={{ textAlign: 'right' }}>Change</span>
-                </div>
-
-                {[
-                  { sym: 'EURUSD', name: 'Euro / USD', bid: (tickerItems.eurusd?.price || 1.0949).toFixed(4), ask: ((tickerItems.eurusd?.price || 1.0949) + 0.0001).toFixed(4), chg: '+0.18%', up: true },
-                  { sym: 'GBPUSD', name: 'Pound / USD', bid: (tickerItems.gbpusd?.price || 1.2721).toFixed(4), ask: ((tickerItems.gbpusd?.price || 1.2721) + 0.0001).toFixed(4), chg: '+0.25%', up: true },
-                  { sym: 'XAUUSD', name: 'Gold Spot', bid: liveGoldPrice.toFixed(2), ask: (liveGoldPrice + 0.20).toFixed(2), chg: '+0.42%', up: true },
-                  { sym: 'BTCUSD', name: 'Bitcoin', bid: (tickerItems.btcusd?.price || 65038).toFixed(2), ask: ((tickerItems.btcusd?.price || 65038) + 5).toFixed(2), chg: '+1.12%', up: true },
-                  { sym: 'USDJPY', name: 'USD / Yen', bid: (tickerItems.usdjpy?.price || 157.86).toFixed(2), ask: ((tickerItems.usdjpy?.price || 157.86) + 0.02).toFixed(2), chg: '-0.31%', up: false },
-                  { sym: 'USOIL', name: 'Crude Oil', bid: (tickerItems.usoil?.price || 74.17).toFixed(2), ask: ((tickerItems.usoil?.price || 74.17) + 0.03).toFixed(2), chg: '+0.64%', up: true },
-                ].map((row) => (
-                  <div key={row.sym} style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', padding: '12px', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.04)', fontSize: '0.85rem' }}>
-                    <div>
-                      <div style={{ fontWeight: 800, color: '#fff' }}>{row.sym}</div>
-                      <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{row.name}</div>
-                    </div>
-                    <div style={{ fontFamily: 'JetBrains Mono, monospace', color: '#fff' }}>{row.bid}</div>
-                    <div style={{ fontFamily: 'JetBrains Mono, monospace', color: '#fff' }}>{row.ask}</div>
-                    <div style={{ textAlign: 'right', fontFamily: 'JetBrains Mono, monospace', color: row.up ? '#2ecc71' : '#ef5350', fontWeight: 700 }}>
-                      {row.chg}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Terminal Footer Strip */}
-              <div style={{ padding: '14px 20px', background: 'rgba(0,0,0,0.4)', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Server: Equinix LD4 (London)</span>
-                <span style={{ fontSize: '0.75rem', color: '#2ecc71', fontWeight: 700 }}>● Ping: 8ms</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* Seamless Live Market Ticker */}
+      <div className="ticker-wrap" style={{ background: '#05060D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '12px 0' }}>
+        {[1, 2].map((trackNum) => (
+          <div className="ticker-track" key={trackNum}>
+            {Object.values(tickerItems).map((item) => {
+              const displayPrice = item.price.toFixed(item.digits);
+              const displayChange = `${item.change >= 0 ? '+' : ''}${item.change.toFixed(2)}%`;
+              return (
+                <div className="ticker-item" key={item.symbol}>
+                  <div className={`symbol-icon-mini ${item.type !== 'forex' ? `${item.type}-icon` : ''}`}>
+                    {item.type === 'forex' ? (
+                      <>
+                        <span className="mini-flag">{item.flag1}</span>
+                        <span className="mini-flag" style={{ marginLeft: '-5px' }}>{item.flag2}</span>
+                      </>
+                    ) : item.type === 'gold' ? (
+                      <i className="fa-solid fa-coins" style={{ fontSize: '0.65rem' }}></i>
+                    ) : item.type === 'oil' ? (
+                      <i className="fa-solid fa-droplet" style={{ fontSize: '0.65rem' }}></i>
+                    ) : item.type === 'indices' ? (
+                      <span>{item.labelTag}</span>
+                    ) : item.type === 'crypto' ? (
+                      <span>{item.cryptoChar}</span>
+                    ) : item.type === 'eth' ? (
+                      <i className="fa-brands fa-ethereum" style={{ fontSize: '0.65rem' }}></i>
+                    ) : null}
+                  </div>
+                  <span className="ticker-label">{item.label}</span>
+                  <span className="ticker-val">{displayPrice}</span>
+                  <span className={`ticker-change ${item.change >= 0 ? 'up' : 'down'}`}>{displayChange}</span>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
 
       {/* 2. CORE ADVANTAGE (Elefin: "What Makes Us the Best in the Industry?") */}
       <section className="core-advantage-section" style={{ padding: '100px 0', background: '#010108', position: 'relative' }}>

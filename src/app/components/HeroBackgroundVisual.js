@@ -10,15 +10,21 @@ export default function HeroBackgroundVisual() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    
+    let width = 0;
+    let height = 0;
+    const dpr = typeof window !== 'undefined' ? (window.devicePixelRatio || 1) : 1;
 
     const handleResize = () => {
       if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      width = canvas.parentElement ? canvas.parentElement.offsetWidth : window.innerWidth;
+      height = canvas.parentElement ? canvas.parentElement.offsetHeight : window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     // Mouse parallax tracking
