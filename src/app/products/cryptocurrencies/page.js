@@ -11,21 +11,22 @@ export default function CryptocurrenciesPage() {
     <>
       <Header />
 
-      <section style={{ padding: '90px 0 60px 0', background: 'linear-gradient(180deg, #120922 0%, #1A0F2E 100%)' }}>
-        <div className="container">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', marginBottom: '16px' }}>
-            <i className="fa-brands fa-bitcoin" style={{ color: 'var(--accent-gold)' }}></i>
-            <span style={{ color: 'var(--accent-gold)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Asset Class Specifications</span>
+      <section style={{ padding: '90px 0 70px 0', background: 'linear-gradient(180deg, #010108 0%, #0A0D1D 100%)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', marginBottom: '16px' }}>
+            <i className="fa-brands fa-bitcoin" style={{ color: '#38BDF8' }}></i>
+            <span style={{ color: '#38BDF8', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Asset Class Specifications</span>
           </div>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
-            Cryptocurrency CFD Trading
+          <h1 style={{ fontSize: '3.4rem', fontWeight: 800, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+            Cryptocurrency CFD <span style={{ color: '#38BDF8' }}>Trading</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: '1.7', marginBottom: '30px' }}>
-            Trade Bitcoin, Ethereum, and other digital assets 24/7 without wallet. Take long or short market positions without managing private keys or crypto exchange custody risk.
+          <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: '1.7', marginBottom: '30px' }}>
+            Trade Bitcoin, Ethereum, and 40+ digital assets 24/7 with zero wallet requirement. Take long or short market positions without managing private keys or crypto exchange custody risk.
           </p>
 
           <div style={{ display: 'flex', gap: '15px' }}>
-            <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1rem' }}>
+            <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1rem', borderRadius: '8px' }}>
               Start Trading Crypto →
             </a>
           </div>
@@ -33,17 +34,17 @@ export default function CryptocurrenciesPage() {
       </section>
 
       {/* Point-by-Point Detailed Breakdown */}
-      <section style={{ padding: '60px 0 100px 0', background: '#160B28' }}>
+      <section style={{ padding: '80px 0 100px 0', background: '#010108' }}>
         <div className="container">
           <div className="section-title" style={{ marginBottom: '40px' }}>
-            <span className="section-label">Detailed Breakdown</span>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--accent-gold)' }}>Cryptocurrency CFD Highlights</h2>
+            <span className="section-label" style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.2em' }}>Detailed Breakdown</span>
+            <h2 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>Cryptocurrency CFD Highlights</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '50px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '50px' }}>
             
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 1
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>No Crypto Wallet Needed</h3>
@@ -52,41 +53,41 @@ export default function CryptocurrenciesPage() {
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 2
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>24/7 Market Access</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Trade round-the-clock 365 days a year including weekends, taking advantage of crypto market momentum.
+                Trade digital assets around the clock, 7 days a week, 365 days a year without traditional market close constraints.
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 3
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Bi-directional Trading (BUY & SELL)</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Two-Way Profit Potential</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Profit from both bull rallies and bear market corrections by entering instant short or long CFD orders.
+                Take long positions in bull markets or short sell instantly in bear cycles with equal ease and execution speed.
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 4
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Leveraged Exposure</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Regulated Fiat Funding</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Utilize flexible leverage up to 1:20 to amplify trading power with institutional order execution under 15ms.
+                Deposit and withdraw using standard banking rails, cards, and stablecoins with zero hidden conversion penalties.
               </p>
             </div>
 
           </div>
 
-          {/* Detailed Contract Specifications Table */}
-          <div className="glass-card" style={{ padding: '35px', borderRadius: '20px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid var(--accent-gold)' }}>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '20px' }}>Cryptocurrency Contract Specifications</h3>
+          {/* Crypto Contract Specs */}
+          <div className="glass-card" style={{ padding: '35px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+            <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#38BDF8', marginBottom: '20px' }}>Crypto CFD Contract Specifications</h3>
             
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', color: '#fff', fontSize: '0.9rem', textAlign: 'left' }}>
@@ -96,23 +97,22 @@ export default function CryptocurrenciesPage() {
                     <th style={{ padding: '14px' }}>Asset Name</th>
                     <th style={{ padding: '14px' }}>Contract Size</th>
                     <th style={{ padding: '14px' }}>Max Leverage</th>
-                    <th style={{ padding: '14px' }}>Min Spread</th>
                     <th style={{ padding: '14px' }}>Trading Hours</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { symbol: 'BTCUSD', name: 'Bitcoin vs US Dollar', size: '1 BTC', lev: '1:20', spread: '$5.00', hours: '24/7 (365 Days)' },
-                    { symbol: 'ETHUSD', name: 'Ethereum vs US Dollar', size: '1 ETH', lev: '1:20', spread: '$0.40', hours: '24/7 (365 Days)' },
-                    { symbol: 'SOLUSD', name: 'Solana vs US Dollar', size: '1 SOL', lev: '1:10', spread: '$0.05', hours: '24/7 (365 Days)' },
-                    { symbol: 'XRPUSD', name: 'Ripple vs US Dollar', size: '100 XRP', lev: '1:10', spread: '$0.002', hours: '24/7 (365 Days)' },
+                    { symbol: 'BTCUSD', name: 'Bitcoin / US Dollar', size: '1 BTC', lev: '1:50', hours: '24/7 (Non-stop)' },
+                    { symbol: 'ETHUSD', name: 'Ethereum / US Dollar', size: '1 ETH', lev: '1:50', hours: '24/7 (Non-stop)' },
+                    { symbol: 'SOLUSD', name: 'Solana / US Dollar', size: '1 SOL', lev: '1:20', hours: '24/7 (Non-stop)' },
+                    { symbol: 'XRPUSD', name: 'Ripple / US Dollar', size: '100 XRP', lev: '1:20', hours: '24/7 (Non-stop)' },
+                    { symbol: 'BNBUSD', name: 'BNB / US Dollar', size: '1 BNB', lev: '1:20', hours: '24/7 (Non-stop)' },
                   ].map((row) => (
                     <tr key={row.symbol} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '14px', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>{row.symbol}</td>
+                      <td style={{ padding: '14px', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace' }}>{row.symbol}</td>
                       <td style={{ padding: '14px' }}>{row.name}</td>
                       <td style={{ padding: '14px' }}>{row.size}</td>
                       <td style={{ padding: '14px' }}>{row.lev}</td>
-                      <td style={{ padding: '14px', color: '#2ecc71', fontWeight: 700 }}>{row.spread}</td>
                       <td style={{ padding: '14px', color: 'var(--text-secondary)' }}>{row.hours}</td>
                     </tr>
                   ))}

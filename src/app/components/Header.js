@@ -55,7 +55,7 @@ export default function Header() {
   return (
     <>
       {/* Top Bar Announcement */}
-      <div className="top-bar" style={{ background: '#120922', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '6px 0', fontSize: '0.78rem' }}>
+      <div className="top-bar" style={{ background: '#010108', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '6px 0', fontSize: '0.78rem' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="top-bar-contact" style={{ display: 'flex', gap: '20px', color: 'var(--text-secondary)' }}>
             <span><i className="fa-solid fa-envelope" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i> support@magnatefx.com</span>

@@ -11,21 +11,22 @@ export default function IndicesPage() {
     <>
       <Header />
 
-      <section style={{ padding: '90px 0 60px 0', background: 'linear-gradient(180deg, #120922 0%, #1A0F2E 100%)' }}>
-        <div className="container">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', marginBottom: '16px' }}>
-            <i className="fa-solid fa-chart-line" style={{ color: 'var(--accent-gold)' }}></i>
-            <span style={{ color: 'var(--accent-gold)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Asset Class Specifications</span>
+      <section style={{ padding: '90px 0 70px 0', background: 'linear-gradient(180deg, #010108 0%, #0A0D1D 100%)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(0,64,233,0.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', marginBottom: '16px' }}>
+            <i className="fa-solid fa-chart-line" style={{ color: '#38BDF8' }}></i>
+            <span style={{ color: '#38BDF8', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Asset Class Specifications</span>
           </div>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
-            Stock Indices Trading
+          <h1 style={{ fontSize: '3.4rem', fontWeight: 800, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+            Stock Indices <span style={{ color: '#38BDF8' }}>Trading</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: '1.7', marginBottom: '30px' }}>
+          <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: '1.7', marginBottom: '30px' }}>
             Trade top global indices including S&P 500, Nasdaq, and FTSE 100. Gain broad equity market exposure without buying individual stocks.
           </p>
 
           <div style={{ display: 'flex', gap: '15px' }}>
-            <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1rem' }}>
+            <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1rem', borderRadius: '8px' }}>
               Start Trading Indices →
             </a>
           </div>
@@ -33,17 +34,17 @@ export default function IndicesPage() {
       </section>
 
       {/* Point-by-Point Detailed Breakdown */}
-      <section style={{ padding: '60px 0 100px 0', background: '#160B28' }}>
+      <section style={{ padding: '80px 0 100px 0', background: '#010108' }}>
         <div className="container">
           <div className="section-title" style={{ marginBottom: '40px' }}>
-            <span className="section-label">Detailed Breakdown</span>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--accent-gold)' }}>Major Global Benchmark Indices</h2>
+            <span className="section-label" style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.2em' }}>Detailed Breakdown</span>
+            <h2 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>Major Global Benchmark Indices</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '50px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '50px' }}>
             
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 1
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>S&P 500 Index (SPX500)</h3>
@@ -52,41 +53,41 @@ export default function IndicesPage() {
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 2
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Nasdaq 100 Index (NAS100)</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Access top tech titans including Apple, Microsoft, NVIDIA, Amazon, and Google with sub-15ms execution.
+                Access the world’s leading technology innovators including Apple, Microsoft, Nvidia, Amazon, and Alphabet.
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 3
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>FTSE 100 Index (UK100) & DAX 40 (GER40)</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Dow Jones 30 (US30)</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Trade leading European market benchmarks reflecting British and German industrial performance.
+                Trade Wall Street’s oldest and most prestigious industrial barometer with direct market pricing.
               </p>
             </div>
 
-            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(35, 21, 60, 0.85)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(212, 168, 75, 0.15)', border: '1px solid var(--accent-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', fontSize: '1.2rem', marginBottom: '16px' }}>
+            <div className="glass-card tech-card-pulse" style={{ padding: '30px', borderRadius: '18px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+              <div style={{ width: '45px', height: '45px', borderRadius: '10px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.2rem', marginBottom: '16px', fontWeight: 800 }}>
                 4
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>Dividend & Cash Adjustments</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>European Indices (DAX40, FTSE100)</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Receive dividend adjustments credited directly to your trading account on index constituent dividend ex-dates.
+                Gain exposure to Germany’s DAX 40 and London’s FTSE 100 during active European cash market sessions.
               </p>
             </div>
 
           </div>
 
-          {/* Detailed Contract Specifications Table */}
-          <div className="glass-card" style={{ padding: '35px', borderRadius: '20px', background: 'rgba(26, 15, 46, 0.9)', border: '1px solid var(--accent-gold)' }}>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: '20px' }}>Stock Indices Contract Specifications</h3>
+          {/* Indices Contract Specs */}
+          <div className="glass-card" style={{ padding: '35px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
+            <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#38BDF8', marginBottom: '20px' }}>Indices Contract Specifications</h3>
             
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', color: '#fff', fontSize: '0.9rem', textAlign: 'left' }}>
@@ -96,24 +97,22 @@ export default function IndicesPage() {
                     <th style={{ padding: '14px' }}>Index Name</th>
                     <th style={{ padding: '14px' }}>Contract Size</th>
                     <th style={{ padding: '14px' }}>Max Leverage</th>
-                    <th style={{ padding: '14px' }}>Commission</th>
                     <th style={{ padding: '14px' }}>Trading Hours</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { symbol: 'SPX500', name: 'US SP 500 Index', size: '1 Index Point ($1/pt)', lev: '1:200', comm: '$0 (Zero)', hours: 'Sun 23:00 - Fri 21:15 GMT' },
-                    { symbol: 'NAS100', name: 'US TECH 100 Index', size: '1 Index Point ($1/pt)', lev: '1:200', comm: '$0 (Zero)', hours: 'Sun 23:00 - Fri 21:15 GMT' },
-                    { symbol: 'US30', name: 'US Wall Street 30 Index', size: '1 Index Point ($1/pt)', lev: '1:200', comm: '$0 (Zero)', hours: 'Sun 23:00 - Fri 21:15 GMT' },
-                    { symbol: 'UK100', name: 'UK FTSE 100 Index', size: '1 Index Point (£1/pt)', lev: '1:100', comm: '$0 (Zero)', hours: 'Mon 01:00 - Fri 21:00 GMT' },
-                    { symbol: 'GER40', name: 'Germany DAX 40 Index', size: '1 Index Point (€1/pt)', lev: '1:100', comm: '$0 (Zero)', hours: 'Mon 01:00 - Fri 21:00 GMT' },
+                    { symbol: 'SPX500', name: 'US S&P 500 Index', size: '1 Index Point', lev: '1:500', hours: '23/5 Global Market Hours' },
+                    { symbol: 'NAS100', name: 'US Tech 100 (Nasdaq)', size: '1 Index Point', lev: '1:500', hours: '23/5 Global Market Hours' },
+                    { symbol: 'US30', name: 'US Wall Street 30 (Dow)', size: '1 Index Point', lev: '1:500', hours: '23/5 Global Market Hours' },
+                    { symbol: 'GER40', name: 'German DAX 40', size: '1 Index Point', lev: '1:200', hours: 'Mon - Fri (07:00 - 21:00 GMT)' },
+                    { symbol: 'UK100', name: 'UK FTSE 100', size: '1 Index Point', lev: '1:200', hours: 'Mon - Fri (07:00 - 21:00 GMT)' },
                   ].map((row) => (
                     <tr key={row.symbol} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '14px', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'JetBrains Mono, monospace' }}>{row.symbol}</td>
+                      <td style={{ padding: '14px', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace' }}>{row.symbol}</td>
                       <td style={{ padding: '14px' }}>{row.name}</td>
                       <td style={{ padding: '14px' }}>{row.size}</td>
                       <td style={{ padding: '14px' }}>{row.lev}</td>
-                      <td style={{ padding: '14px', color: '#2ecc71', fontWeight: 700 }}>{row.comm}</td>
                       <td style={{ padding: '14px', color: 'var(--text-secondary)' }}>{row.hours}</td>
                     </tr>
                   ))}
