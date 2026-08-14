@@ -18,9 +18,9 @@ export default function PrimeCrownPage() {
             <i className="fa-solid fa-crown" style={{ color: '#fff' }}></i>
             <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Most Popular Trader Choice</span>
           </div>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>PRO Account</h1>
+          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>Prime Crown Account</h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '750px', lineHeight: '1.7', marginBottom: '30px' }}>
-            The PRO account is tailored for active traders requiring institutional spread markups (from 0.3 pips) while enjoying zero commission on all trades.
+            The Prime Crown account is tailored for active traders requiring institutional spread markups (from 0.3 pips) while enjoying zero commission on all trades.
           </p>
 
           <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.95)', border: '2px solid #0040E9', boxShadow: '0 0 30px rgba(0,64,233,0.35)', marginBottom: '50px' }}>
@@ -47,7 +47,7 @@ export default function PrimeCrownPage() {
 
             <div style={{ marginTop: '35px' }}>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 40px', fontSize: '1rem', borderRadius: '8px' }}>
-                Open PRO Account →
+                Open Prime Crown Account →
               </a>
             </div>
           </div>

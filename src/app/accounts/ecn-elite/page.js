@@ -18,9 +18,9 @@ export default function EcnElitePage() {
             <i className="fa-solid fa-gem" style={{ color: '#38BDF8' }}></i>
             <span style={{ color: '#38BDF8', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Institutional ECN Tier</span>
           </div>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>ECN Raw Account</h1>
+          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>ECN Elite Account</h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '750px', lineHeight: '1.7', marginBottom: '30px' }}>
-            The ECN Raw account delivers direct interbank liquidity access with raw spreads from 0.0 pips and competitive $3.50 commission.
+            The ECN Elite account delivers direct interbank liquidity access with raw spreads from 0.0 pips and competitive $3.50 commission.
           </p>
 
           <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)', marginBottom: '50px' }}>
@@ -47,7 +47,7 @@ export default function EcnElitePage() {
 
             <div style={{ marginTop: '35px' }}>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 40px', fontSize: '1rem', borderRadius: '8px' }}>
-                Open ECN Raw Account →
+                Open ECN Elite Account →
               </a>
             </div>
           </div>

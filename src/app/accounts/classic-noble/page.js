@@ -18,9 +18,9 @@ export default function ClassicNoblePage() {
             <i className="fa-solid fa-shield" style={{ color: '#38BDF8' }}></i>
             <span style={{ color: '#38BDF8', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>Standard Account Tier</span>
           </div>
-          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>Standard Account</h1>
+          <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>Classic Noble Account</h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '750px', lineHeight: '1.7', marginBottom: '30px' }}>
-            The Standard account is designed for traders looking for zero-commission trading with an accessible $50 minimum deposit threshold.
+            The Classic Noble account is designed for traders looking for zero-commission trading with an accessible $50 minimum deposit threshold.
           </p>
 
           <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)', marginBottom: '50px' }}>
@@ -47,7 +47,7 @@ export default function ClassicNoblePage() {
 
             <div style={{ marginTop: '35px' }}>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '14px 40px', fontSize: '1rem', borderRadius: '8px' }}>
-                Open Standard Account →
+                Open Classic Noble Account →
               </a>
             </div>
           </div>

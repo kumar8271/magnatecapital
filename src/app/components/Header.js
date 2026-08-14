@@ -102,13 +102,13 @@ export default function Header() {
                 </Link>
                 <div className={`nav-dropdown-menu ${activeDropdown === 'accounts' ? 'open' : ''}`}>
                   <Link href="/accounts/classic-noble" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-solid fa-shield" style={{ color: '#0040E9' }}></i> Standard ($50)
+                    <i className="fa-solid fa-shield" style={{ color: '#0040E9' }}></i> Classic Noble ($50 Min)
                   </Link>
                   <Link href="/accounts/prime-crown" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-solid fa-crown" style={{ color: '#0040E9' }}></i> PRO ($500)
+                    <i className="fa-solid fa-crown" style={{ color: '#0040E9' }}></i> Prime Crown ($500 Min)
                   </Link>
                   <Link href="/accounts/ecn-elite" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
-                    <i className="fa-solid fa-gem" style={{ color: '#0040E9' }}></i> ECN Raw ($5,000)
+                    <i className="fa-solid fa-gem" style={{ color: '#0040E9' }}></i> ECN Elite ($5,000 Min)
                   </Link>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '4px 0' }}></div>
                   <Link href="/accounts" className="dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>

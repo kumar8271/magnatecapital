@@ -36,7 +36,7 @@ export default function AccountsPage() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', margin: '0 auto 16px auto' }}>
                 <i className="fa-solid fa-shield"></i>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Standard</h3>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Classic Noble</h3>
               <div style={{ fontSize: '2.8rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$50</div>
               
               <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
@@ -50,7 +50,7 @@ export default function AccountsPage() {
               </ul>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open Standard Account</a>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open Classic Noble Account</a>
                 <Link href="/accounts/classic-noble" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8', width: '100%', padding: '10px', fontSize: '0.85rem' }}>View Full Specs →</Link>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function AccountsPage() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.25)', border: '1px solid #0040E9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', margin: '0 auto 16px auto' }}>
                 <i className="fa-solid fa-crown"></i>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>PRO Account</h3>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Prime Crown</h3>
               <div style={{ fontSize: '2.8rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$500</div>
               
               <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
@@ -75,7 +75,7 @@ export default function AccountsPage() {
               </ul>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open PRO Account</a>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open Prime Crown Account</a>
                 <Link href="/accounts/prime-crown" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8', width: '100%', padding: '10px', fontSize: '0.85rem' }}>View Full Specs →</Link>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function AccountsPage() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38BDF8', fontSize: '1.4rem', margin: '0 auto 16px auto' }}>
                 <i className="fa-solid fa-gem"></i>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>ECN Raw</h3>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>ECN Elite</h3>
               <div style={{ fontSize: '2.8rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace', margin: '15px 0' }}>$5,000</div>
               
               <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
@@ -98,7 +98,7 @@ export default function AccountsPage() {
               </ul>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open ECN Account</a>
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '12px' }}>Open ECN Elite Account</a>
                 <Link href="/accounts/ecn-elite" className="btn" style={{ border: '1px solid #0040E9', color: '#38BDF8', width: '100%', padding: '10px', fontSize: '0.85rem' }}>View Full Specs →</Link>
               </div>
             </div>

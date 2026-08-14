@@ -729,11 +729,11 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
             
-            {/* Standard Account */}
+            {/* Classic Noble Account */}
             <div className="glass-card tech-card-pulse" style={{ padding: '36px 30px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>Standard.</h3>
+                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>Classic Noble.</h3>
                   <span style={{ fontSize: '0.8rem', color: '#38BDF8', fontWeight: 700, padding: '4px 10px', borderRadius: '6px', background: 'rgba(0,64,233,0.15)' }}>Beginner Friendly</span>
                 </div>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px' }}>A versatile account built for every type of trader.</p>
@@ -772,11 +772,11 @@ export default function Home() {
               </a>
             </div>
 
-            {/* PRO Account */}
+            {/* Prime Crown Account */}
             <div className="glass-card tech-card-pulse" style={{ padding: '36px 30px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.95)', border: '2px solid #0040E9', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 0 35px rgba(0, 64, 233, 0.4)', transform: 'translateY(-6px)' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>PRO.</h3>
+                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>Prime Crown.</h3>
                   <span style={{ fontSize: '0.8rem', color: '#fff', fontWeight: 800, padding: '4px 10px', borderRadius: '6px', background: '#0040E9' }}>Most Popular</span>
                 </div>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px' }}>Institutional-grade spreads from 0.3 pips.</p>
@@ -815,11 +815,11 @@ export default function Home() {
               </a>
             </div>
 
-            {/* ECN Raw Account */}
+            {/* ECN Elite Account */}
             <div className="glass-card tech-card-pulse" style={{ padding: '36px 30px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.9)', border: '1px solid rgba(0, 64, 233, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>ECN Raw.</h3>
+                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff' }}>ECN Elite.</h3>
                   <span style={{ fontSize: '0.8rem', color: '#38BDF8', fontWeight: 700, padding: '4px 10px', borderRadius: '6px', background: 'rgba(0,64,233,0.15)' }}>Institutional</span>
                 </div>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px' }}>Direct interbank depth of market with 0.0 pips.</p>
