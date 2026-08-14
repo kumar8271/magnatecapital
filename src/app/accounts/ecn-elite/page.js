@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "ECN Elite Account ($5,000 Deposit) | Magnate Capital",
-  description: "ECN Elite Account details: $5,000 minimum deposit, Raw Spreads from 0.0 pips, Up to $12 commission per lot, cTrader & MT5 direct liquidity bridge, leverage 1:200. Designed for professional traders.",
+  description: "ECN Elite Account details: $5,000 minimum deposit, Raw Spreads from 0.0 pips, $3.50 commission per lot, cTrader & MT5 direct liquidity bridge, leverage 1:100. Designed for professional traders.",
 };
 
 export default function EcnElitePage() {
@@ -20,7 +20,7 @@ export default function EcnElitePage() {
           </div>
           <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>ECN Raw Account</h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '750px', lineHeight: '1.7', marginBottom: '30px' }}>
-            The ECN Raw account delivers direct interbank liquidity access with raw spreads from 0.0 pips, ultra-fast sub-8ms execution, and competitive $3.50 commission.
+            The ECN Raw account delivers direct interbank liquidity access with raw spreads from 0.0 pips and competitive $3.50 commission.
           </p>
 
           <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)', marginBottom: '50px' }}>
@@ -40,8 +40,8 @@ export default function EcnElitePage() {
                 <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace', marginTop: '4px' }}>$3.50 / lot</div>
               </div>
               <div style={{ background: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)' }}>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Execution</div>
-                <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#2ecc71', fontFamily: 'JetBrains Mono, monospace', marginTop: '4px' }}>Equinix LD4 &lt;8ms</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Leverage</div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', fontFamily: 'JetBrains Mono, monospace', marginTop: '4px' }}>1:100</div>
               </div>
             </div>
 

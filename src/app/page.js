@@ -826,7 +826,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Max Leverage</span>
-                    <strong style={{ color: '#fff' }}>1:2000</strong>
+                    <strong style={{ color: '#fff' }}>1:500</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Trade Size</span>
@@ -869,7 +869,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Max Leverage</span>
-                    <strong style={{ color: '#fff' }}>1:2000</strong>
+                    <strong style={{ color: '#fff' }}>1:500</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Trade Size</span>
@@ -912,11 +912,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Max Leverage</span>
-                    <strong style={{ color: '#fff' }}>1:500</strong>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span>Execution</span>
-                    <strong style={{ color: '#2ecc71' }}>Equinix LD4 &lt;8ms</strong>
+                    <strong style={{ color: '#fff' }}>1:100</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Platforms</span>

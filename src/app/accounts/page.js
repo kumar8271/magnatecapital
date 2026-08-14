@@ -44,7 +44,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$50</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#2ecc71', marginRight: '8px' }}></i> Commission: <strong>ZERO</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MetaTrader 5 / Web</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:2000</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trade Size: <strong>0.01 micro lots</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>All Traders</strong></li>
               </ul>
@@ -69,7 +69,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#2ecc71', marginRight: '8px' }}></i> Commission: <strong>ZERO</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MetaTrader 5 / Web</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:2000</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trade Size: <strong>0.01 micro lots</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>Active Traders</strong></li>
               </ul>
@@ -93,8 +93,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$5,000</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Commission: <strong>$3.50 per lot</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MT5 / FIX API</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Execution: <strong>Equinix LD4 &lt;8ms</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Leverage: <strong>1:500</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Leverage: <strong>1:100</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>Institutions &amp; Scalpers</strong></li>
               </ul>
 
