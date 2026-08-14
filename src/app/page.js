@@ -629,7 +629,7 @@ export default function Home() {
               lineHeight: 1.6,
               margin: 0
             }}>
-              Trade Forex, Gold, Crypto &amp; more with tight spreads from 0.0 pips, sub-15ms execution, up to 1:2000 leverage. Open an account from $50.
+              Trade Forex, Gold, Crypto &amp; more with tight spreads from 0.0 pips, sub-15ms execution, up to 1:500 leverage. Open an account from $50.
             </p>
 
           </div>
@@ -731,11 +731,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 4: 1:2000 Leverage */}
+            {/* Card 4: 1:500 Leverage */}
             <div className="glass-card tech-card-pulse" style={{ padding: '36px 30px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
               <div>
                 <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', marginBottom: '10px', lineHeight: 1.15 }}>
-                  1:2000<br />Leverage
+                  1:500<br />Leverage
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
                   Low risk. High conviction trading.
@@ -1341,10 +1341,10 @@ export default function Home() {
                 <div className="form-group">
                   <label htmlFor="calc-leverage">Account Leverage</label>
                   <select id="calc-leverage" value={calcLeverage} onChange={(e) => setCalcLeverage(parseInt(e.target.value) || 1)}>
-                    <option value="2000">1:2000 (Max Leverage)</option>
-                    <option value="500">1:500</option>
+                    <option value="500">1:500 (Max Leverage)</option>
                     <option value="200">1:200</option>
                     <option value="100">1:100</option>
+                    <option value="50">1:50</option>
                     <option value="1">1:1 (No Leverage)</option>
                   </select>
                 </div>

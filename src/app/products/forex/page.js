@@ -79,7 +79,7 @@ export default function ForexDetailsPage() {
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>High Flexible Leverage</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Maximize your market exposure with flexible leverage up to 1:2000, tailored risk parameters, and negative balance protection.
+                Maximize your market exposure with flexible leverage up to 1:500, tailored risk parameters, and negative balance protection.
               </p>
             </div>
 
@@ -103,10 +103,10 @@ export default function ForexDetailsPage() {
                 </thead>
                 <tbody>
                   {[
-                    { symbol: 'EURUSD', name: 'Euro / US Dollar', size: '100,000 EUR', lev: '1:2000', spread: '0.0 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
-                    { symbol: 'GBPUSD', name: 'Great Britain Pound / US Dollar', size: '100,000 GBP', lev: '1:2000', spread: '0.2 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
-                    { symbol: 'USDJPY', name: 'US Dollar / Japanese Yen', size: '100,000 USD', lev: '1:2000', spread: '0.1 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
-                    { symbol: 'AUDUSD', name: 'Australian Dollar / US Dollar', size: '100,000 AUD', lev: '1:2000', spread: '0.3 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
+                    { symbol: 'EURUSD', name: 'Euro / US Dollar', size: '100,000 EUR', lev: '1:500', spread: '0.0 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
+                    { symbol: 'GBPUSD', name: 'Great Britain Pound / US Dollar', size: '100,000 GBP', lev: '1:500', spread: '0.2 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
+                    { symbol: 'USDJPY', name: 'US Dollar / Japanese Yen', size: '100,000 USD', lev: '1:500', spread: '0.1 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
+                    { symbol: 'AUDUSD', name: 'Australian Dollar / US Dollar', size: '100,000 AUD', lev: '1:500', spread: '0.3 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
                     { symbol: 'USDINR', name: 'US Dollar / Indian Rupee', size: '100,000 USD', lev: '1:500', spread: '1.2 Pips', hours: '24/5 (Sun 22:00 - Fri 22:00 GMT)' },
                   ].map((row) => (
                     <tr key={row.symbol} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>

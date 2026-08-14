@@ -78,10 +78,10 @@ export default function CalculatorPage() {
                   <div>
                     <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Account Leverage</label>
                     <select value={calcLeverage} onChange={(e) => setCalcLeverage(parseInt(e.target.value))} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }}>
+                      <option value={50}>1:50</option>
                       <option value={100}>1:100</option>
                       <option value={200}>1:200</option>
-                      <option value={500}>1:500</option>
-                      <option value={2000}>1:2000</option>
+                      <option value={500}>1:500 (Max Leverage)</option>
                     </select>
                   </div>
                 </div>
