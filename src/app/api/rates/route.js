@@ -39,7 +39,7 @@ export async function GET() {
     const audRate = forexRates.AUD || 1.539;
     const cadRate = forexRates.CAD || 1.360;
     const chfRate = forexRates.CHF || 0.811;
-    const inrRate = forexRates.INR || 86.06;
+    const inrRate = forexRates.INR || 95.3864;
 
     // Parse Binance Items
     const btcItem = cryptoData.find((i) => i.symbol === 'BTCUSDT');

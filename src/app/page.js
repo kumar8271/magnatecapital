@@ -117,7 +117,7 @@ export default function Home() {
   const [selectedMatrixCell, setSelectedMatrixCell] = useState({ row: 'GBP', col: 'JPY' });
   const [forexMatrixRates, setForexMatrixRates] = useState({
     USD: 1.0,
-    INR: 86.06,
+    INR: 95.3864,
     EUR: 0.915,
     GBP: 0.785,
     JPY: 155.40,
