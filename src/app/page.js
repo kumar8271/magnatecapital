@@ -1131,11 +1131,11 @@ export default function Home() {
             Featured by Industry Leaders &amp; Global Liquidity Providers
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '48px', flexWrap: 'wrap', opacity: 0.75 }}>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>EQUINIX LD4</span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>METATRADER 5</span>
             <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>ONEZERO BRIDGE</span>
             <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>BLOOMBERG LP</span>
             <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>REFINITIV</span>
+            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>FIX PROTOCOL</span>
+            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>CURRENEX</span>
           </div>
         </div>
       </section>
@@ -1153,8 +1153,8 @@ export default function Home() {
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <div style={{ color: '#38BDF8', fontSize: '1.2rem', marginTop: '2px' }}><i className="fa-solid fa-circle-check"></i></div>
                 <div>
-                  <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: '4px' }}>Direct Equinix LD4 Server Bridge</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Servers co-located in London for ultra low-latency sub-15ms execution pipelines.</p>
+                  <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: '4px' }}>Ultra-Low Latency Execution Bridge</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Tier-1 institutional routing and dedicated fiber pipelines for sub-15ms lightning execution.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
