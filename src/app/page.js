@@ -62,10 +62,10 @@ export default function Home() {
 
   // 3. Instagram Feed Custom Cards State (Live feed from connected @magnatecapital)
   const [instaPosts, setInstaPosts] = useState([
-    { id: 1, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODEwMjA3NjYxNjA5MDY5NyIsImgiOiIxbGM2ZWxtIn0.jpg?class=squareLarge', likes: 254, commentsCount: 14, link: 'https://www.instagram.com/reel/DZsCsz3zFuw/', caption: 'XAUUSD (GOLD) market analysis is live. Plan your entry targets with our raw spreads. 📈', comments: [{ user: 'trader_dubai', text: 'Clean charting! Spreads are very tight.' }, { user: 'capital_forex', text: 'Caught the gold breakout today. MT5 is flawless.' }] },
+    { id: 1, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODEwMjA3NjYxNjA5MDY5NyIsImgiOiIxbGM2ZWxtIn0.jpg?class=squareLarge', likes: 254, commentsCount: 14, link: 'https://www.instagram.com/reel/DZsCsz3zFuw/', caption: 'XAUUSD (GOLD) market analysis is live. Plan your entry targets with our raw spreads. 📈', comments: [{ user: 'trader_dubai', text: 'Clean charting! Spreads are very tight.' }, { user: 'capital_forex', text: 'Caught the gold breakout today. Execution is flawless.' }] },
     { id: 2, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODEwMTc2NjQyNzgyMTQ2NyIsImgiOiJ6ZTlhbXIifQ.jpg?class=squareLarge', likes: 198, commentsCount: 9, link: 'https://www.instagram.com/p/DWjMCE4kXYt/', caption: 'Calm minds build strong portfolios. Noise fades. Structure stays. Trade with Magnate Capital. 🛡️', comments: [{ user: 'safetrade_inc', text: 'Segregated accounts are a must. Respect.' }, { user: 'vip_trader_ae', text: 'Smooth deposit and fast withdrawal processing.' }] },
     { id: 3, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxNzkxMjQyMDQzNjM1MjQ4OSIsImgiOiIxMTdsdThwIn0.jpg?class=squareLarge', likes: 312, commentsCount: 19, link: 'https://www.instagram.com/p/DWguJd0E-nK/', caption: 'No shortcuts. No guesses. Only structure. That\'s how real traders survive the market. ⚡', comments: [{ user: 'scalper_pro', text: 'Zero markup is real on the ECN account.' }, { user: 'market_maker', text: 'Less than 15ms latency. Insane!' }] },
-    { id: 4, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODEwOTE5ODE5ODY5NTMwMiIsImgiOiIxOHRjN2QwIn0.jpg?class=squareLarge', likes: 167, commentsCount: 11, link: 'https://www.instagram.com/p/DWY38TfE0im/', caption: 'In the market, discipline speaks louder than emotion. Stay in the game and protect your capital. 📱', comments: [{ user: 'nomad_trader', text: 'The mobile app interface is super clean.' }, { user: 'mt5_fan', text: 'Execution speed on mobile is very fast.' }] },
+    { id: 4, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODEwOTE5ODE5ODY5NTMwMiIsImgiOiIxOHRjN2QwIn0.jpg?class=squareLarge', likes: 167, commentsCount: 11, link: 'https://www.instagram.com/p/DWY38TfE0im/', caption: 'In the market, discipline speaks louder than emotion. Stay in the game and protect your capital. 📱', comments: [{ user: 'nomad_trader', text: 'The mobile app interface is super clean.' }, { user: 'capital_pro', text: 'Execution speed on mobile is very fast.' }] },
     { id: 5, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODMwNjU3MTA1NzI2MzUwNiIsImgiOiI5eG1yanIifQ.jpg?class=squareLarge', likes: 210, commentsCount: 8, link: 'https://www.instagram.com/p/DWWeWySk5v1/', caption: 'Anyone can enter the market. Few can stay consistent. Magnate Capital focuses on sustainable mindset. 📊', comments: [{ user: 'growth_mindset', text: 'Patience win the race. Solid quote!' }, { user: 'risk_mgmt', text: 'Patience is everything in forex.' }] },
     { id: 6, image: 'https://behold.pictures/eyJ1IjoiM2lKV3hXOXFDTFBvZGMxR1BCckJPd2FzWDN0MSIsImYiOiJFMnhqdnI3MDMzV3JHSlBtdUs0YSIsInAiOiIxODA3ODEzMTk0NTYyMTI5NCIsImgiOiIxNXJhMGs0In0.jpg?class=squareLarge', likes: 182, commentsCount: 12, link: 'https://www.instagram.com/p/DWTt9cmEzro/', caption: 'Don\'t wait for the right time... create it. Trade on your terms and chase your profit goals. 📈', comments: [{ user: 'technical_fx', text: 'Daily market outlook has been very helpful.' }, { user: 'pips_hunter', text: 'AUDUSD is looking hot this week.' }] }
   ]);
@@ -762,7 +762,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Platforms</span>
-                    <strong style={{ color: '#fff' }}>MT5 / WebTrader</strong>
+                    <strong style={{ color: '#fff' }}>WebTrader / Mobile</strong>
                   </div>
                 </div>
               </div>
@@ -805,7 +805,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Platforms</span>
-                    <strong style={{ color: '#fff' }}>MT5 / WebTrader</strong>
+                    <strong style={{ color: '#fff' }}>WebTrader / Mobile</strong>
                   </div>
                 </div>
               </div>
@@ -844,7 +844,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Platforms</span>
-                    <strong style={{ color: '#fff' }}>MT5 / FIX API</strong>
+                    <strong style={{ color: '#fff' }}>WebTrader / FIX API</strong>
                   </div>
                 </div>
               </div>
@@ -897,13 +897,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Platform 3: MetaTrader 5 */}
+            {/* Platform 3: Magnate WebTrader */}
             <div className="glass-card" style={{ padding: '24px', borderRadius: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', gap: '16px', transition: 'all 0.3s' }}>
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', color: '#38BDF8', flexShrink: 0 }}>
                 <i className="fa-solid fa-desktop"></i>
               </div>
               <div>
-                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>Magnate MetaTrader 5</div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>Magnate WebTrader</div>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)' }}>A step-up in trading execution</div>
               </div>
             </div>
@@ -1075,7 +1075,7 @@ export default function Home() {
             <span className="section-label">Trading Infrastructure</span>
             <h2 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#fff', marginBottom: '20px', lineHeight: '1.2' }}>Trade with ECN Institutional Velocity</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '24px' }}>
-              Connect directly to our deep liquidity pool via the MetaTrader 5 server bridge. Experience pricing built for professional scalpers, algorithmic traders, and high-frequency accounts.
+              Connect directly to our deep liquidity pool via high-speed institutional execution bridges. Experience pricing built for professional scalpers, algorithmic traders, and high-frequency accounts.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -1095,7 +1095,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* MT5 Terminal Chart Mock */}
+          {/* Terminal Execution Chart Mock */}
           <div className="glass-card" style={{ background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.3)', borderRadius: '16px', padding: '26px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 25px rgba(0,64,233,0.15)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '12px', marginBottom: '20px' }}>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -1268,7 +1268,7 @@ export default function Home() {
                 </span>
               </div>
               <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem', borderRadius: '8px' }}>
-                Trade {selectedMatrixCell.row}/{selectedMatrixCell.col} Live on MT5 →
+                Trade {selectedMatrixCell.row}/{selectedMatrixCell.col} Live →
               </a>
             </div>
           </div>
@@ -1594,7 +1594,7 @@ export default function Home() {
                 </div>
 
                 <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px', borderRadius: '8px' }}>
-                  Trade Live on MT5 →
+                  Trade Live Now →
                 </a>
               </div>
             </div>

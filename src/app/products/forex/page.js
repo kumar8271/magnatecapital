@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "Forex Trading Details & Contract Specs | Magnate Capital",
-  description: "Trade majors, minors, and exotic currency pairs with low spreads from 0.0 pips and high leverage up to 1:500. Institutional execution on cTrader and MT5.",
+  description: "Trade majors, minors, and exotic currency pairs with low spreads from 0.0 pips and high leverage up to 1:500. Institutional execution on WebTrader.",
 };
 
 export default function ForexDetailsPage() {

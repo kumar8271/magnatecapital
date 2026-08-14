@@ -22,7 +22,7 @@ export default function Footer() {
                 <img src="/logo.png" alt="Magnate Capital Logo" width="250" height="73" style={{ height: '73px', width: 'auto', display: 'block' }} />
               </Link>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7', marginBottom: '20px' }}>
-                Global Magnate Capital Ltd. is a tier-1 multi-asset broker delivering raw ECN liquidity, co-located MT5 execution, and tailored institutional solutions worldwide.
+                Global Magnate Capital Ltd. is a tier-1 multi-asset broker delivering raw ECN liquidity, ultra-low latency execution, and tailored institutional solutions worldwide.
               </p>
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 {[

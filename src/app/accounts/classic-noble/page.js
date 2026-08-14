@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "Classic Noble Account ($50 Deposit) | Magnate Capital",
-  description: "Classic Noble Account details: $50 minimum deposit, spreads from 1.5 pips, No Commission, cTrader & MT5 platform, leverage 1:500. Perfect for beginner traders.",
+  description: "Classic Noble Account details: $50 minimum deposit, spreads from 1.0 pips, No Commission, WebTrader & Mobile platform, leverage 1:500. Perfect for beginner traders.",
 };
 
 export default function ClassicNoblePage() {

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Trading Account Types | Classic Noble, Prime Crown & ECN Elite | Magnate Capital",
-  description: "Compare Magnate Capital account types: Classic Noble ($50 deposit, 1.5 pips), Prime Crown ($500 deposit, 0.8 pips), and ECN Elite ($5,000 deposit, Raw Spreads, $12 commission). cTrader and MT5 execution.",
+  description: "Compare Magnate Capital account types: Classic Noble ($50 deposit, 1.5 pips), Prime Crown ($500 deposit, 0.8 pips), and ECN Elite ($5,000 deposit, Raw Spreads, $3.50 commission). Advanced WebTrader execution.",
 };
 
 export default function AccountsPage() {
@@ -21,7 +21,7 @@ export default function AccountsPage() {
             Choose Your <span style={{ color: '#38BDF8' }}>Trading Account</span>
           </h1>
           <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7' }}>
-            Experience friction-free execution with razor-thin spreads, zero hidden charges, and direct market access on MetaTrader 5.
+            Experience friction-free execution with razor-thin spreads, zero hidden charges, and direct market access on WebTrader.
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Spreads: <strong>Starting From 1.0 pips</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$50</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#2ecc71', marginRight: '8px' }}></i> Commission: <strong>ZERO</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MetaTrader 5 / Web</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>WebTrader / Mobile</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trade Size: <strong>0.01 micro lots</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>All Traders</strong></li>
@@ -68,7 +68,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Spreads: <strong>Starting From 0.3 pips</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#2ecc71', marginRight: '8px' }}></i> Commission: <strong>ZERO</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MetaTrader 5 / Web</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>WebTrader / Mobile</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Maximum Leverage: <strong>1:500</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trade Size: <strong>0.01 micro lots</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>Active Traders</strong></li>
@@ -92,7 +92,7 @@ export default function AccountsPage() {
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Spreads: <strong>Raw Spreads from 0.0 pips</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$5,000</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Commission: <strong>$3.50 per lot</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>MT5 / FIX API</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>WebTrader / FIX API</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Leverage: <strong>1:100</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>Institutions &amp; Scalpers</strong></li>
               </ul>

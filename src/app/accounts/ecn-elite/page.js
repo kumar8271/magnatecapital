@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "ECN Elite Account ($5,000 Deposit) | Magnate Capital",
-  description: "ECN Elite Account details: $5,000 minimum deposit, Raw Spreads from 0.0 pips, $3.50 commission per lot, cTrader & MT5 direct liquidity bridge, leverage 1:100. Designed for professional traders.",
+  description: "ECN Elite Account details: $5,000 minimum deposit, Raw Spreads from 0.0 pips, $3.50 commission per lot, direct institutional liquidity bridge, leverage 1:100. Designed for professional traders.",
 };
 
 export default function EcnElitePage() {

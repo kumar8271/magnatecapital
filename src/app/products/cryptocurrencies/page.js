@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "Cryptocurrency CFD Trading Details (Bitcoin, Ethereum) | Magnate Capital",
-  description: "Trade Bitcoin, Ethereum, and digital assets 24/7 without wallet. Institutional liquidity, leverage up to 1:20, and instant execution on MT5.",
+  description: "Trade Bitcoin, Ethereum, and digital assets 24/7 without wallet. Institutional liquidity, leverage up to 1:20, and instant execution on WebTrader.",
 };
 
 export default function CryptocurrenciesPage() {

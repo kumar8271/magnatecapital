@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "Prime Crown Account ($500 Deposit) | Magnate Capital",
-  description: "Prime Crown Account details: $500 minimum deposit, tight spreads from 0.8 pips, No Commission, cTrader & MT5 platform, leverage 1:500. Ideal for experienced traders.",
+  description: "Prime Crown Account details: $500 minimum deposit, tight spreads from 0.3 pips, No Commission, WebTrader & Mobile platform, leverage 1:500. Ideal for experienced traders.",
 };
 
 export default function PrimeCrownPage() {

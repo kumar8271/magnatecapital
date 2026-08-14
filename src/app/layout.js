@@ -2,15 +2,15 @@ import "./globals.css";
 
 export const metadata = {
   title: "Magnate Capital | Premium Forex & CFD Trading Broker in Dubai",
-  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, co-located MT5 servers, leverage up to 1:500, and institutional speed under 15ms. Regulated premium brokerage headquarters in Currency House, DIFC, Dubai.",
+  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, ultra-low latency execution, leverage up to 1:500, and institutional speed under 15ms. Regulated premium brokerage headquarters in Currency House, DIFC, Dubai.",
   keywords: [
     "Forex trading", "Online Forex broker", "Trade Gold CFD", "ECN broker Dubai", 
-    "MT5 Trading Platform", "CFD trading indices", "Raw Spreads Broker", 
-    "Kama Capital competitor", "Dubai Currency House broker", "Commodities trading desk"
+    "WebTrader Trading Platform", "CFD trading indices", "Raw Spreads Broker", 
+    "Dubai Currency House broker", "Commodities trading desk"
   ],
   openGraph: {
     title: "Magnate Capital | Premium Forex & CFD Trading Broker",
-    description: "Trade Forex, Gold, and Crypto with raw ECN spreads from 0.0 pips on the MT5 terminal. Institutional execution under 15ms.",
+    description: "Trade Forex, Gold, and Crypto with raw ECN spreads from 0.0 pips on advanced WebTrader. Institutional execution under 15ms.",
     url: "https://magnatecapital.com",
     siteName: "Magnate Capital",
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Magnate Capital | Premium Forex & CFD Broker",
-    description: "Trade Forex, Gold, and Crypto with spreads from 0.0 pips. Direct co-located MT5 server bridge.",
+    description: "Trade Forex, Gold, and Crypto with spreads from 0.0 pips. Direct low-latency execution bridge.",
     images: ["https://magnatecapital.com/logo.jpg"],
   },
   icons: {

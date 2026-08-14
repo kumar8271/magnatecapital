@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 export const metadata = {
   title: "Precious Metals Trading Details (Gold, Silver, Platinum) | Magnate Capital",
-  description: "Gold, Silver, Platinum and Palladium trading specifications. Perfect for hedging risk with tight spreads and institutional execution on MT5 & cTrader.",
+  description: "Gold, Silver, Platinum and Palladium trading specifications. Perfect for hedging risk with tight spreads and institutional execution on WebTrader.",
 };
 
 export default function PreciousMetalsPage() {

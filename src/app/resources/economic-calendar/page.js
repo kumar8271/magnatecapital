@@ -289,7 +289,7 @@ export default function EconomicCalendarPage() {
                 </div>
 
                 <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '14px', borderRadius: '8px' }}>
-                  Trade This Release Live on MT5 →
+                  Trade This Release Live →
                 </a>
               </div>
             </div>
