@@ -145,7 +145,7 @@ export default function HeroBackgroundVisual() {
         ctx.stroke();
       }
 
-      // Embossed Coin Symbol (₿ or ₹)
+      // Embossed Coin Symbol (₿ or $)
       if (Math.abs(scaleX) > 0.2) {
         ctx.fillStyle = '#FFFFFF';
         ctx.shadowColor = '#38BDF8';
@@ -249,11 +249,11 @@ export default function HeroBackgroundVisual() {
       const btcRadius = width > 768 ? 95 : 70;
       drawCoin(btcX, btcY, btcRadius, '₿', time, -0.15, 'rgba(0, 64, 233, ', 'rgba(56, 189, 248, ');
 
-      // Draw Supporting 3D Floating Indian Rupee Coin (₹)
+      // Draw Supporting 3D Floating Dollar Coin ($)
       const inrX = width > 900 ? width * 0.84 + mouseX * 1.2 : width * 0.74 + mouseX * 1.2;
       const inrY = height * 0.60 + Math.cos(time * 1.3) * 14 + mouseY * 1.2;
       const inrRadius = width > 768 ? 72 : 55;
-      drawCoin(inrX, inrY, inrRadius, '₹', -time * 0.9 + 1.2, 0.22, 'rgba(56, 189, 248, ', 'rgba(0, 64, 233, ');
+      drawCoin(inrX, inrY, inrRadius, '$', -time * 0.9 + 1.2, 0.22, 'rgba(56, 189, 248, ', 'rgba(0, 64, 233, ');
 
       // Soft vignette bottom & edge gradient overlay
       const vignette = ctx.createLinearGradient(0, height * 0.7, 0, height);
