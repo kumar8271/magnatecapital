@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
+import { sendSmtpEmail } from '@/lib/sendEmail';
 
-const TARGET_EMAIL = 'kumar8271@gmail.com';
+const TARGET_EMAIL = process.env.TARGET_NOTIFICATION_EMAIL || 'kumar8271@gmail.com';
 
 export async function POST(request) {
   try {
@@ -20,13 +21,13 @@ export async function POST(request) {
       timeStyle: 'long'
     });
 
-    console.log(`[Contact Submission] Name: ${name}, Email: ${email}, Phone: ${phone || 'N/A'}, Message: ${message || 'N/A'}, Target: ${TARGET_EMAIL}`);
+    console.log(`[Contact Submission] Name: ${name}, Email: ${email}, Phone: ${phone || 'N/A'}, Target: ${TARGET_EMAIL}`);
 
     const htmlContent = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0A0D1D; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #0040E9;">
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0A0D1D; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #0040E9;">
         <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px;">
           <h2 style="color: #38BDF8; margin: 0; font-size: 22px;">Magnate Capital</h2>
-          <p style="color: #94A3B8; font-size: 14px; margin: 5px 0 0 0;">New Account Callback Request</p>
+          <p style="color: #94A3B8; font-size: 14px; margin: 5px 0 0 0;">New Account Callback Request Notification</p>
         </div>
         
         <div style="background: rgba(255,255,255,0.04); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -45,7 +46,7 @@ export async function POST(request) {
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #94A3B8;"><strong>Submitted At:</strong></td>
-              <td style="padding: 8px 0; color: #ffffff;">${timestampIST}</td>
+              <td style="padding: 8px 0; color: #ffffff;">${timestampIST} (IST)</td>
             </tr>
           </table>
         </div>
@@ -56,7 +57,7 @@ export async function POST(request) {
         </div>
         
         <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #64748B; text-align: center;">
-          This lead was received from the Account Callback form on <a href="https://magnatecapital.com" style="color: #38BDF8; text-decoration: none;">magnatecapital.com</a>
+          This email was sent automatically from your website at <a href="https://magnatecapital.com" style="color: #38BDF8; text-decoration: none;">magnatecapital.com</a>
         </div>
       </div>
     `;
@@ -65,8 +66,30 @@ export async function POST(request) {
 
     let emailSent = false;
 
-    // 1. Resend API (if RESEND_API_KEY is configured in Vercel/environment)
-    if (process.env.RESEND_API_KEY) {
+    // 1. Hostinger / Custom SMTP (Hostinger Email: smtp.hostinger.com:465)
+    if (process.env.HOSTINGER_SMTP_USER || process.env.SMTP_USER) {
+      try {
+        await sendSmtpEmail({
+          host: process.env.HOSTINGER_SMTP_HOST || process.env.SMTP_HOST || 'smtp.hostinger.com',
+          port: parseInt(process.env.HOSTINGER_SMTP_PORT || process.env.SMTP_PORT || '465', 10),
+          user: process.env.HOSTINGER_SMTP_USER || process.env.SMTP_USER,
+          pass: process.env.HOSTINGER_SMTP_PASS || process.env.SMTP_PASS,
+          from: process.env.HOSTINGER_EMAIL_FROM || process.env.EMAIL_FROM || `Magnate Capital <${process.env.HOSTINGER_SMTP_USER || process.env.SMTP_USER}>`,
+          to: TARGET_EMAIL,
+          replyTo: email,
+          subject: `🔔 New Account Callback: ${name} (${phone || email})`,
+          html: htmlContent,
+          text: textContent
+        });
+        emailSent = true;
+        console.log('[Hostinger SMTP] Email dispatched to', TARGET_EMAIL);
+      } catch (smtpErr) {
+        console.warn('[Hostinger SMTP Failed, attempting fallbacks]', smtpErr.message);
+      }
+    }
+
+    // 2. Resend API Fallback
+    if (!emailSent && process.env.RESEND_API_KEY) {
       try {
         const resendRes = await fetch('https://api.resend.com/emails', {
           method: 'POST',
@@ -78,25 +101,18 @@ export async function POST(request) {
             from: process.env.EMAIL_FROM || 'Magnate Capital <leads@magnatecapital.com>',
             to: [TARGET_EMAIL],
             reply_to: email,
-            subject: `🔔 New Account Callback: ${name} (${phone || email})`,
+            subject: `🔔 New Account Callback: ${name}`,
             html: htmlContent,
             text: textContent
           })
         });
-
-        if (resendRes.ok) {
-          emailSent = true;
-          console.log('[Resend] Email delivered successfully to', TARGET_EMAIL);
-        } else {
-          const errData = await resendRes.json();
-          console.warn('[Resend Error]', errData);
-        }
+        if (resendRes.ok) emailSent = true;
       } catch (err) {
-        console.warn('[Resend Exception]', err);
+        console.warn('[Resend API Exception]', err.message);
       }
     }
 
-    // 2. Brevo API (if BREVO_API_KEY is configured)
+    // 3. Brevo API Fallback
     if (!emailSent && process.env.BREVO_API_KEY) {
       try {
         const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -107,59 +123,15 @@ export async function POST(request) {
           },
           body: JSON.stringify({
             sender: { name: 'Magnate Capital', email: process.env.EMAIL_FROM || 'leads@magnatecapital.com' },
-            to: [{ email: TARGET_EMAIL, name: 'Lead Manager' }],
-            replyTo: { email: email, name: name },
+            to: [{ email: TARGET_EMAIL }],
+            replyTo: { email, name },
             subject: `🔔 New Account Callback: ${name}`,
             htmlContent: htmlContent
           })
         });
-
-        if (brevoRes.ok) {
-          emailSent = true;
-          console.log('[Brevo] Email delivered successfully to', TARGET_EMAIL);
-        }
+        if (brevoRes.ok) emailSent = true;
       } catch (err) {
-        console.warn('[Brevo Exception]', err);
-      }
-    }
-
-    // 3. SendGrid API (if SENDGRID_API_KEY is configured)
-    if (!emailSent && process.env.SENDGRID_API_KEY) {
-      try {
-        const sgRes = await fetch('https://api.sendgrid.com/v3/mail/send', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`
-          },
-          body: JSON.stringify({
-            personalizations: [{ to: [{ email: TARGET_EMAIL }] }],
-            from: { email: process.env.EMAIL_FROM || 'leads@magnatecapital.com', name: 'Magnate Capital' },
-            reply_to: { email: email, name: name },
-            subject: `🔔 New Account Callback: ${name}`,
-            content: [{ type: 'text/html', value: htmlContent }]
-          })
-        });
-
-        if (sgRes.ok) {
-          emailSent = true;
-          console.log('[SendGrid] Email delivered successfully to', TARGET_EMAIL);
-        }
-      } catch (err) {
-        console.warn('[SendGrid Exception]', err);
-      }
-    }
-
-    // 4. Webhook fallback (if WEBHOOK_URL or FORMSPREE is configured)
-    if (!emailSent && process.env.CONTACT_WEBHOOK_URL) {
-      try {
-        await fetch(process.env.CONTACT_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone, message, target: TARGET_EMAIL, timestamp: timestampIST })
-        });
-      } catch (err) {
-        console.warn('[Webhook Exception]', err);
+        console.warn('[Brevo API Exception]', err.message);
       }
     }
 
