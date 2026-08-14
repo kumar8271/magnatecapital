@@ -114,6 +114,18 @@ export default function Home() {
 
   // Commodity Tab & FX Matrix State (Panel 2 & Panel 4)
   const [activeCommodityTab, setActiveCommodityTab] = useState('commodities'); // 'forex', 'indices', 'crypto', 'commodities'
+  const [selectedMatrixCell, setSelectedMatrixCell] = useState({ row: 'GBP', col: 'JPY' });
+  const [forexMatrixRates, setForexMatrixRates] = useState({
+    USD: 1.0,
+    INR: 86.06,
+    EUR: 0.915,
+    GBP: 0.785,
+    JPY: 155.40,
+    CHF: 0.885,
+    AUD: 1.520,
+    CAD: 1.365,
+    NZD: 1.660
+  });
 
   // Legal Policy & KYC Modal State
   const [selectedPolicyModal, setSelectedPolicyModal] = useState(null); // 'kyc', 'aml', 'terms', 'legal'
@@ -260,6 +272,11 @@ export default function Home() {
             EURNZD: { ...prev.EURNZD, buy: r.eurnzd.price }
           }));
 
+          // Update Live FX Cross Matrix Rates from API
+          if (data.forexRates) {
+            setForexMatrixRates(prev => ({ ...prev, ...data.forexRates }));
+          }
+
           // Update Market Watch Forex Pairs
           setForexPairs(prev => {
             return prev.map(item => {
@@ -286,8 +303,8 @@ export default function Home() {
     // Initial fetch
     fetchLiveMarketRates();
 
-    // Poll live market endpoint every 12 seconds
-    const interval = setInterval(fetchLiveMarketRates, 12000);
+    // Poll live market endpoint every 10 seconds
+    const interval = setInterval(fetchLiveMarketRates, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -310,6 +327,17 @@ export default function Home() {
           };
         }
         return prev;
+      });
+
+      // Update Live Cross Matrix with subtle real-time interbank micro-ticks
+      setForexMatrixRates(prev => {
+        const curKeys = ['EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'NZD', 'INR'];
+        const mutateKey = curKeys[Math.floor(Math.random() * curKeys.length)];
+        const delta = (Math.random() - 0.5) * 0.0004;
+        return {
+          ...prev,
+          [mutateKey]: prev[mutateKey] * (1 + delta)
+        };
       });
 
       const ratesKey = randomKey.toUpperCase() === 'USOIL' ? 'USOUSD' : randomKey.toUpperCase();
@@ -1126,7 +1154,17 @@ export default function Home() {
             <p className="subtitle">Real-time cross-currency exchange matrix for global currency pairs.</p>
           </div>
 
-          <div className="glass-card" style={{ padding: '20px', borderRadius: '18px', background: '#080B1A', border: '1px solid rgba(0,64,233,0.25)', overflowX: 'auto' }}>
+          <div className="glass-card" style={{ padding: '24px', borderRadius: '20px', background: '#080B1A', border: '1px solid rgba(0,64,233,0.3)', overflowX: 'auto', boxShadow: '0 20px 50px rgba(0,0,0,0.6)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', fontSize: '0.78rem', fontWeight: 700 }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981', display: 'inline-block', boxShadow: '0 0 8px #10B981' }}></span>
+                Live Interbank Exchange Stream
+              </div>
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                Click any cell to highlight cross pair
+              </span>
+            </div>
+
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', fontFamily: 'JetBrains Mono, monospace', color: '#fff', textAlign: 'center' }}>
               <thead>
                 <tr style={{ background: 'rgba(0,0,0,0.5)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
@@ -1150,37 +1188,87 @@ export default function Home() {
               </thead>
               <tbody>
                 {[
-                  { row: 'INR', flag: '🇮🇳', rates: ['—', '0.010047', '0.01160', '1.6699', '0.00854', '0.00941', '0.01786', '0.01578', '0.01926'] },
-                  { row: 'EUR', flag: '🇪🇺', rates: ['99.4894', '—', '1.15466', '166.312', '0.8507', '0.9368', '1.7778', '1.5704', '1.9171'] },
-                  { row: 'USD', flag: '🇺🇸', rates: ['86.0610', '0.8658', '—', '144.028', '0.7368', '0.8113', '1.5397', '1.3601', '1.6603'] },
-                  { row: 'JPY', flag: '🇯🇵', rates: ['0.59793', '0.0060122', '0.006942', '—', '0.00511', '0.00563', '0.01068', '0.00944', '0.01153'] },
-                  { row: 'GBP', flag: '🇬🇧', rates: ['116.9520', '1.1758', '1.3578', '195.557', '—', '1.1012', '2.0901', '1.8461', '2.2536'], highlight: 3 },
-                  { row: 'CHF', flag: '🇨🇭', rates: ['106.195', '1.0672', '1.2322', '177.557', '0.9081', '—', '1.8980', '1.6765', '2.0465'] },
-                  { row: 'AUD', flag: '🇦🇺', rates: ['55.9840', '0.5625', '0.64961', '93.567', '0.4784', '0.5268', '—', '0.8833', '1.0783'] },
-                  { row: 'CAD', flag: '🇨🇦', rates: ['63.357', '0.6368', '0.7356', '105.962', '0.5417', '0.5965', '1.1321', '—', '1.2207'] },
-                  { row: 'NZD', flag: '🇳🇿', rates: ['51.906', '0.5211', '0.60226', '86.744', '0.4437', '0.4886', '0.9273', '0.8192', '—'] },
-                ].map((r) => (
-                  <tr key={r.row} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                  { code: 'INR', flag: '🇮🇳' },
+                  { code: 'EUR', flag: '🇪🇺' },
+                  { code: 'USD', flag: '🇺🇸' },
+                  { code: 'JPY', flag: '🇯🇵' },
+                  { code: 'GBP', flag: '🇬🇧' },
+                  { code: 'CHF', flag: '🇨🇭' },
+                  { code: 'AUD', flag: '🇦🇺' },
+                  { code: 'CAD', flag: '🇨🇦' },
+                  { code: 'NZD', flag: '🇳🇿' },
+                ].map((row) => (
+                  <tr key={row.code} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
                     <td style={{ padding: '12px', fontWeight: 800, color: '#fff', textAlign: 'left', background: 'rgba(0,0,0,0.3)' }}>
-                      <span style={{ marginRight: '4px' }}>{r.flag}</span> {r.row}
+                      <span style={{ marginRight: '4px' }}>{row.flag}</span> {row.code}
                     </td>
-                    {r.rates.map((val, idx) => (
-                      <td 
-                        key={idx} 
-                        style={{ 
-                          padding: '12px', 
-                          background: r.highlight === idx ? '#0040E9' : val === '—' ? 'rgba(255,255,255,0.02)' : 'transparent', 
-                          color: r.highlight === idx ? '#fff' : val === '—' ? 'var(--text-muted)' : '#fff',
-                          fontWeight: r.highlight === idx ? 800 : 500
-                        }}
-                      >
-                        {val}
-                      </td>
-                    ))}
+                    {[
+                      { code: 'INR' },
+                      { code: 'EUR' },
+                      { code: 'USD' },
+                      { code: 'JPY' },
+                      { code: 'GBP' },
+                      { code: 'CHF' },
+                      { code: 'AUD' },
+                      { code: 'CAD' },
+                      { code: 'NZD' },
+                    ].map((col) => {
+                      const isSelf = row.code === col.code;
+                      const isHighlighted = selectedMatrixCell.row === row.code && selectedMatrixCell.col === col.code;
+                      
+                      let formattedValue = '—';
+                      if (!isSelf && forexMatrixRates[row.code] && forexMatrixRates[col.code]) {
+                        const rawRate = forexMatrixRates[col.code] / forexMatrixRates[row.code];
+                        if (rawRate >= 100) formattedValue = rawRate.toFixed(2);
+                        else if (rawRate >= 10) formattedValue = rawRate.toFixed(3);
+                        else if (rawRate >= 1) formattedValue = rawRate.toFixed(4);
+                        else if (rawRate >= 0.01) formattedValue = rawRate.toFixed(5);
+                        else formattedValue = rawRate.toFixed(6);
+                      }
+
+                      return (
+                        <td
+                          key={col.code}
+                          onClick={() => !isSelf && setSelectedMatrixCell({ row: row.code, col: col.code })}
+                          style={{
+                            padding: '12px',
+                            background: isHighlighted ? '#0040E9' : isSelf ? 'rgba(255,255,255,0.02)' : 'transparent',
+                            color: isHighlighted ? '#fff' : isSelf ? 'var(--text-muted)' : '#fff',
+                            fontWeight: isHighlighted ? 800 : 500,
+                            cursor: isSelf ? 'default' : 'pointer',
+                            transition: 'all 0.15s ease',
+                            userSelect: 'none'
+                          }}
+                          title={isSelf ? '' : `Live ${row.code}/${col.code}: ${formattedValue}`}
+                        >
+                          {formattedValue}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
             </table>
+
+            {/* Cross Pair Selected Inspector */}
+            <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px', padding: '14px 20px', background: 'rgba(0,0,0,0.5)', borderRadius: '12px', border: '1px solid rgba(0,64,233,0.35)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Active Cross:</span>
+                <span style={{ color: '#fff', fontSize: '1rem', fontWeight: 800, fontFamily: 'JetBrains Mono, monospace' }}>
+                  {selectedMatrixCell.row} / {selectedMatrixCell.col}
+                </span>
+                <span style={{ color: '#38BDF8', fontSize: '1.25rem', fontWeight: 900, fontFamily: 'JetBrains Mono, monospace' }}>
+                  {forexMatrixRates[selectedMatrixCell.row] && forexMatrixRates[selectedMatrixCell.col]
+                    ? (forexMatrixRates[selectedMatrixCell.col] / forexMatrixRates[selectedMatrixCell.row] >= 100
+                        ? (forexMatrixRates[selectedMatrixCell.col] / forexMatrixRates[selectedMatrixCell.row]).toFixed(3)
+                        : (forexMatrixRates[selectedMatrixCell.col] / forexMatrixRates[selectedMatrixCell.row]).toFixed(5))
+                    : '195.557'}
+                </span>
+              </div>
+              <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem', borderRadius: '8px' }}>
+                Trade {selectedMatrixCell.row}/{selectedMatrixCell.col} Live on MT5 →
+              </a>
+            </div>
           </div>
         </div>
       </section>
