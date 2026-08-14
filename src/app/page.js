@@ -10,17 +10,17 @@ export default function Home() {
   
   // 1. Ticker baseline state
   const [tickerItems, setTickerItems] = useState({
-    eurusd: { symbol: 'EURUSD', label: 'EURUSD', price: 1.0949, change: 0.01, isUp: true, digits: 4, type: 'forex', flag1: '🇪🇺', flag2: '🇺🇸' },
-    gbpusd: { symbol: 'GBPUSD', label: 'GBPUSD', price: 1.2721, change: 0.12, isUp: true, digits: 4, type: 'forex', flag1: '🇬🇧', flag2: '🇺🇸' },
-    xauusd: { symbol: 'XAUUSD', label: 'GOLD', price: 2023.55, change: -0.02, isUp: false, digits: 2, type: 'gold' },
-    btcusd: { symbol: 'BTCUSD', label: 'BTCUSD', price: 65038.73, change: 0.39, isUp: true, digits: 2, type: 'crypto', cryptoChar: '₿' },
-    usoil: { symbol: 'USOIL', label: 'USOIL', price: 74.17, change: -0.04, isUp: false, digits: 2, type: 'oil' },
-    spx500: { symbol: 'SPX500', label: 'SPX500', price: 4848.53, change: -0.03, isUp: false, digits: 2, type: 'indices', labelTag: '500' },
-    eurjpy: { symbol: 'EURJPY', label: 'EURJPY', price: 182.249, change: -0.18, isUp: false, digits: 2, type: 'forex', flag1: '🇪🇺', flag2: '🇯🇵' },
-    usdjpy: { symbol: 'USDJPY', label: 'USDJPY', price: 157.86, change: -0.42, isUp: false, digits: 2, type: 'forex', flag1: '🇺🇸', flag2: '🇯🇵' },
-    ethusd: { symbol: 'ETHUSD', label: 'ETHUSD', price: 1921.03, change: 0.73, isUp: true, digits: 2, type: 'eth' },
-    eurnzd: { symbol: 'EURNZD', label: 'EURNZD', price: 1.961, change: -0.10, isUp: false, digits: 3, type: 'forex', flag1: '🇪🇺', flag2: '🇳🇿' },
-    xagusd: { symbol: 'XAGUSD', label: 'SILVER', price: 63.53, change: 3.18, isUp: true, digits: 2, type: 'silver' }
+    eurusd: { symbol: 'EURUSD', label: 'EURUSD', price: 1.1532, change: 0.12, isUp: true, digits: 4, type: 'forex', flag1: '🇪🇺', flag2: '🇺🇸' },
+    gbpusd: { symbol: 'GBPUSD', label: 'GBPUSD', price: 1.3491, change: 0.22, isUp: true, digits: 4, type: 'forex', flag1: '🇬🇧', flag2: '🇺🇸' },
+    xauusd: { symbol: 'XAUUSD', label: 'GOLD', price: 4323.35, change: -1.62, isUp: false, digits: 2, type: 'gold' },
+    btcusd: { symbol: 'BTCUSD', label: 'BTCUSD', price: 63345.99, change: -0.90, isUp: false, digits: 2, type: 'crypto', cryptoChar: '₿' },
+    usoil: { symbol: 'USOIL', label: 'USOIL', price: 78.45, change: -0.35, isUp: false, digits: 2, type: 'oil' },
+    spx500: { symbol: 'SPX500', label: 'SPX500', price: 5840.50, change: 0.45, isUp: true, digits: 2, type: 'indices', labelTag: '500' },
+    eurjpy: { symbol: 'EURJPY', label: 'EURJPY', price: 183.81, change: 0.18, isUp: true, digits: 2, type: 'forex', flag1: '🇪🇺', flag2: '🇯🇵' },
+    usdjpy: { symbol: 'USDJPY', label: 'USDJPY', price: 159.39, change: -0.47, isUp: false, digits: 2, type: 'forex', flag1: '🇺🇸', flag2: '🇯🇵' },
+    ethusd: { symbol: 'ETHUSD', label: 'ETHUSD', price: 1882.79, change: -0.75, isUp: false, digits: 2, type: 'eth' },
+    eurnzd: { symbol: 'EURNZD', label: 'EURNZD', price: 1.971, change: 0.04, isUp: true, digits: 3, type: 'forex', flag1: '🇪🇺', flag2: '🇳🇿' },
+    xagusd: { symbol: 'XAGUSD', label: 'SILVER', price: 38.42, change: 0.85, isUp: true, digits: 2, type: 'silver' }
   });
 
   // Rates Table Tab Data
@@ -32,16 +32,16 @@ export default function Home() {
 
   // Full item dictionary for the rates table
   const [ratesItems, setRatesItems] = useState({
-    XAUUSD: { symbol: 'XAUUSD', name: 'Gold', buy: 4343.80, spread: 24, change: 2.42, type: 'gold', spark: [50, 48, 45, 40, 38, 30, 28, 25, 20] },
-    EURJPY: { symbol: 'EURJPY', name: 'Euro / Yen', buy: 182.249, spread: 65, change: -0.18, type: 'forex', flag1: '🇪🇺', flag2: '🇯🇵', spark: [30, 35, 32, 40, 42, 45, 44, 48, 50] },
-    BTCUSD: { symbol: 'BTCUSD', name: 'Bitcoin', buy: 65047.98, spread: 19, change: 0.57, type: 'crypto', cryptoChar: '₿', spark: [40, 38, 39, 37, 36, 35, 36, 34, 33] },
-    USOUSD: { symbol: 'USOUSD', name: 'Crude Oil', buy: 77.23, spread: 26, change: -1.60, type: 'oil', spark: [20, 22, 25, 30, 28, 35, 38, 40, 42] },
-    NASUSD: { symbol: 'NASUSD', name: 'Nasdaq 100', buy: 29726.88, spread: 22, change: 1.09, type: 'indices', label: '100', spark: [60, 58, 55, 52, 50, 48, 45, 42, 40] },
-    USDJPY: { symbol: 'USDJPY', name: 'US Dollar / Yen', buy: 157.86, spread: 50, change: -0.42, type: 'forex', flag1: '🇺🇸', flag2: '🇯🇵', spark: [35, 38, 40, 42, 43, 44, 45, 46, 48] },
-    XAGUSD: { symbol: 'XAGUSD', name: 'Silver', buy: 63.53, spread: 53, change: 3.18, type: 'silver', spark: [50, 48, 46, 42, 38, 35, 30, 28, 25] },
-    ETHUSD: { symbol: 'ETHUSD', name: 'Ethereum', buy: 1921.03, spread: 9, change: 0.73, type: 'eth', spark: [42, 40, 41, 39, 43, 42, 44, 45, 46] },
-    BNBUSD: { symbol: 'BNBUSD', name: 'Binance Coin', buy: 604.06, spread: 22, change: 2.18, type: 'bnb', spark: [50, 48, 45, 43, 40, 38, 35, 32, 30] },
-    EURNZD: { symbol: 'EURNZD', name: 'Euro / NZD', buy: 1.961, spread: 65, change: -0.10, type: 'forex', flag1: '🇪🇺', flag2: '🇳🇿', spark: [30, 32, 35, 38, 40, 42, 43, 45, 48] }
+    XAUUSD: { symbol: 'XAUUSD', name: 'Gold', buy: 4323.35, spread: 24, change: -1.62, type: 'gold', spark: [50, 48, 45, 40, 38, 30, 28, 25, 20] },
+    EURJPY: { symbol: 'EURJPY', name: 'Euro / Yen', buy: 183.81, spread: 65, change: 0.18, type: 'forex', flag1: '🇪🇺', flag2: '🇯🇵', spark: [30, 35, 32, 40, 42, 45, 44, 48, 50] },
+    BTCUSD: { symbol: 'BTCUSD', name: 'Bitcoin', buy: 63345.99, spread: 19, change: -0.90, type: 'crypto', cryptoChar: '₿', spark: [40, 38, 39, 37, 36, 35, 36, 34, 33] },
+    USOUSD: { symbol: 'USOUSD', name: 'Crude Oil', buy: 78.45, spread: 26, change: -0.35, type: 'oil', spark: [20, 22, 25, 30, 28, 35, 38, 40, 42] },
+    NASUSD: { symbol: 'NASUSD', name: 'Nasdaq 100', buy: 20726.88, spread: 22, change: 1.09, type: 'indices', label: '100', spark: [60, 58, 55, 52, 50, 48, 45, 42, 40] },
+    USDJPY: { symbol: 'USDJPY', name: 'US Dollar / Yen', buy: 159.39, spread: 50, change: -0.47, type: 'forex', flag1: '🇺🇸', flag2: '🇯🇵', spark: [35, 38, 40, 42, 43, 44, 45, 46, 48] },
+    XAGUSD: { symbol: 'XAGUSD', name: 'Silver', buy: 38.42, spread: 53, change: 0.85, type: 'silver', spark: [50, 48, 46, 42, 38, 35, 30, 28, 25] },
+    ETHUSD: { symbol: 'ETHUSD', name: 'Ethereum', buy: 1882.79, spread: 9, change: -0.75, type: 'eth', spark: [42, 40, 41, 39, 43, 42, 44, 45, 46] },
+    BNBUSD: { symbol: 'BNBUSD', name: 'Binance Coin', buy: 584.20, spread: 22, change: 1.18, type: 'bnb', spark: [50, 48, 45, 43, 40, 38, 35, 32, 30] },
+    EURNZD: { symbol: 'EURNZD', name: 'Euro / NZD', buy: 1.971, spread: 65, change: 0.04, type: 'forex', flag1: '🇪🇺', flag2: '🇳🇿', spark: [30, 32, 35, 38, 40, 42, 43, 45, 48] }
   });
 
   // 2. Market Watch - Forex Pairs State (Matching Kama Capital feed)
@@ -72,7 +72,7 @@ export default function Home() {
     { id: 8, image: 'https://www.instagram.com/p/DWOVzjXDR0M/media/?size=l', likes: 143, commentsCount: 6, link: 'https://www.instagram.com/p/DWOVzjXDR0M/', caption: 'Official registration callback desk is active. Connect with our dedicated VIP desk. 📞', comments: [{ user: 'broker_advisor', text: 'Top customer desk support.' }, { user: 'al_fattan_client', text: 'Dubai office has been helpful.' }] }
   ]);
   const [instaSlideIndex, setInstaSlideIndex] = useState(0);
-  const [liveGoldPrice, setLiveGoldPrice] = useState(2023.78);
+  const [liveGoldPrice, setLiveGoldPrice] = useState(4323.35);
   const [techMode, setTechMode] = useState('spreads');
   const [hoveredBar, setHoveredBar] = useState(null);
   const [isWAChatOpen, setIsWAChatOpen] = useState(false);
@@ -240,10 +240,14 @@ export default function Home() {
   useEffect(() => {
     async function fetchLiveMarketRates() {
       try {
-        const response = await fetch('/api/rates');
+        const response = await fetch('/api/rates', { cache: 'no-store' });
         const data = await response.json();
         if (data && data.success && data.rates) {
           const r = data.rates;
+
+          if (r.gold && r.gold.price) {
+            setLiveGoldPrice(r.gold.price);
+          }
 
           // Update Top Ticker Bar
           setTickerItems(prev => ({

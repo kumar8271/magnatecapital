@@ -46,18 +46,19 @@ export async function GET() {
     const ethItem = cryptoData.find((i) => i.symbol === 'ETHUSDT');
     const paxgItem = cryptoData.find((i) => i.symbol === 'PAXGUSDT');
 
-    const btcPrice = btcItem ? parseFloat(btcItem.lastPrice) : 65223.99;
-    const btcChange = btcItem ? parseFloat(btcItem.priceChangePercent) : 0.30;
+    const btcPrice = btcItem ? parseFloat(btcItem.lastPrice) : 63345.99;
+    const btcChange = btcItem ? parseFloat(btcItem.priceChangePercent) : -0.90;
 
-    const ethPrice = ethItem ? parseFloat(ethItem.lastPrice) : 3480.12;
-    const ethChange = ethItem ? parseFloat(ethItem.priceChangePercent) : -0.15;
+    const ethPrice = ethItem ? parseFloat(ethItem.lastPrice) : 1882.79;
+    const ethChange = ethItem ? parseFloat(ethItem.priceChangePercent) : -0.75;
 
-    const paxgPrice = paxgItem ? parseFloat(paxgItem.lastPrice) : 2024.11;
+    const paxgPrice = paxgItem ? parseFloat(paxgItem.lastPrice) : 4323.35;
+    const paxgChange = paxgItem ? parseFloat(paxgItem.priceChangePercent) : -1.62;
 
     // Derived FX Rates & Calculations
     const eurusd = parseFloat((1 / eurRate).toFixed(4));
     const gbpusd = parseFloat((1 / gbpRate).toFixed(4));
-    const usdjpy = jpyRate;
+    const usdjpy = parseFloat(jpyRate.toFixed(2));
     const eurjpy = parseFloat((eurusd * jpyRate).toFixed(2));
     const eurnzd = parseFloat((eurusd * nzdRate).toFixed(4));
 
@@ -77,8 +78,8 @@ export async function GET() {
       gold: {
         symbol: 'GOLD',
         price: parseFloat(paxgPrice.toFixed(2)),
-        change: 0.01,
-        isUp: true
+        change: parseFloat(paxgChange.toFixed(2)),
+        isUp: paxgChange >= 0
       },
       btcusd: {
         symbol: 'BTCUSD',
@@ -94,19 +95,19 @@ export async function GET() {
       },
       spx500: {
         symbol: 'SPX500',
-        price: 5088.80,
+        price: 5840.50,
         change: 0.45,
         isUp: true
       },
       eurjpy: {
         symbol: 'EURJPY',
-        price: parseFloat(eurjpy.toFixed(2)),
+        price: eurjpy,
         change: 0.18,
         isUp: true
       },
       usdjpy: {
         symbol: 'USDJPY',
-        price: parseFloat(usdjpy.toFixed(2)),
+        price: usdjpy,
         change: -0.47,
         isUp: false
       },
@@ -118,14 +119,14 @@ export async function GET() {
       },
       eurnzd: {
         symbol: 'EURNZD',
-        price: parseFloat(eurnzd.toFixed(4)),
+        price: eurnzd,
         change: 0.04,
         isUp: true
       },
       silver: {
         symbol: 'SILVER',
-        price: 31.48,
-        change: 1.10,
+        price: 38.42,
+        change: 0.85,
         isUp: true
       }
     };
