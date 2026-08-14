@@ -144,6 +144,8 @@ export default function EconomicCalendarPage() {
                   { code: 'JPY', label: '🇯🇵 JPY' },
                   { code: 'AUD', label: '🇦🇺 AUD' },
                   { code: 'CAD', label: '🇨🇦 CAD' },
+                  { code: 'CHF', label: '🇨🇭 CHF' },
+                  { code: 'NZD', label: '🇳🇿 NZD' },
                   { code: 'INR', label: '🇮🇳 INR' },
                 ].map(c => (
                   <button 
