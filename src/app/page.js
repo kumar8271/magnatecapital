@@ -1697,7 +1697,7 @@ export default function Home() {
                 <i className="fa-solid fa-location-dot" style={{ color: '#38BDF8' }}></i>
                 <div>
                   <h5>Headquarters</h5>
-                  <p>Al Fattan Currency House, DIFC, Dubai, UAE</p>
+                  <p>Dubai, UAE</p>
                 </div>
               </div>
               <div className="detail-item">

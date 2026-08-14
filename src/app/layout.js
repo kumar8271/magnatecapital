@@ -2,11 +2,11 @@ import "./globals.css";
 
 export const metadata = {
   title: "Magnate Capital | Premium Forex & CFD Trading Broker in Dubai",
-  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, ultra-low latency execution, leverage up to 1:500, and institutional speed under 15ms. Regulated premium brokerage headquarters in Currency House, DIFC, Dubai.",
+  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, ultra-low latency execution, leverage up to 1:500, and institutional speed under 15ms. Regulated premium brokerage headquarters in Dubai, UAE.",
   keywords: [
     "Forex trading", "Online Forex broker", "Trade Gold CFD", "ECN broker Dubai", 
     "WebTrader Trading Platform", "CFD trading indices", "Raw Spreads Broker", 
-    "Dubai Currency House broker", "Commodities trading desk"
+    "Dubai Forex broker", "Commodities trading desk"
   ],
   openGraph: {
     title: "Magnate Capital | Premium Forex & CFD Trading Broker",
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Al Fattan Currency House, DIFC",
+      "streetAddress": "Dubai, UAE",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "postalCode": "00000",
