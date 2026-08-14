@@ -1174,7 +1174,7 @@ export default function Home() {
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }}></span>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f', display: 'inline-block' }}></span>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginLeft: '6px' }}>MT5 Execution Bridge</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginLeft: '6px' }}>Execution Bridge</span>
               </div>
               <div style={{ display: 'flex', gap: '4px', background: '#05060D', padding: '3px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <button onClick={() => setTechMode('spreads')} style={{ padding: '4px 10px', fontSize: '0.65rem', fontWeight: 800, borderRadius: '6px', cursor: 'pointer', border: 'none', background: techMode === 'spreads' ? '#0040E9' : 'transparent', color: techMode === 'spreads' ? '#fff' : 'var(--text-muted)' }}>
@@ -1212,7 +1212,7 @@ export default function Home() {
               </div>
               <div>
                 <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>LEVERAGE</div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff' }}>Up to 1:2000</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff' }}>1:500</div>
               </div>
             </div>
           </div>
