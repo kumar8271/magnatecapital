@@ -127,129 +127,27 @@ export default function Home() {
   const [calendarCurrency, setCalendarCurrency] = useState('all');
   const [calendarTimeframe, setCalendarTimeframe] = useState('today');
   const [selectedEventDetail, setSelectedEventDetail] = useState(null);
+  const [calendarEvents, setCalendarEvents] = useState([]);
+  const [isCalendarLoading, setIsCalendarLoading] = useState(true);
 
-  const economicEvents = [
-    {
-      id: 1,
-      time: '14:30 EST',
-      date: 'today',
-      country: 'USD',
-      flag: '🇺🇸',
-      impact: 'high',
-      event: 'US Non-Farm Payrolls (NFP)',
-      actual: '254K',
-      forecast: '180K',
-      previous: '159K',
-      isBetter: true,
-      impactInfo: 'Measures net change in employment. Higher than forecast signals US economic strength and is bullish for USD.',
-      affectedPairs: ['EURUSD', 'GBPUSD', 'USDJPY', 'XAUUSD']
-    },
-    {
-      id: 2,
-      time: '14:30 EST',
-      date: 'today',
-      country: 'USD',
-      flag: '🇺🇸',
-      impact: 'high',
-      event: 'US Unemployment Rate',
-      actual: '4.1%',
-      forecast: '4.2%',
-      previous: '4.2%',
-      isBetter: true,
-      impactInfo: 'Measures percentage of total work force that is unemployed. Lower than forecast is positive for USD.',
-      affectedPairs: ['EURUSD', 'USDJPY', 'XAUUSD']
-    },
-    {
-      id: 3,
-      time: '15:45 EST',
-      date: 'today',
-      country: 'EUR',
-      flag: '🇪🇺',
-      impact: 'high',
-      event: 'ECB Interest Rate Decision',
-      actual: '3.40%',
-      forecast: '3.40%',
-      previous: '3.65%',
-      isBetter: null,
-      impactInfo: 'Key interest rate set by the European Central Bank. Rate hikes boost EUR attraction.',
-      affectedPairs: ['EURUSD', 'EURGBP', 'EURJPY']
-    },
-    {
-      id: 4,
-      time: '16:00 EST',
-      date: 'today',
-      country: 'GBP',
-      flag: '🇬🇧',
-      impact: 'medium',
-      event: 'UK Retail Sales (MoM)',
-      actual: '0.3%',
-      forecast: '0.1%',
-      previous: '-0.2%',
-      isBetter: true,
-      impactInfo: 'Primary gauge of consumer spending in the UK economy.',
-      affectedPairs: ['GBPUSD', 'EURGBP', 'GBPJPY']
-    },
-    {
-      id: 5,
-      time: '18:00 EST',
-      date: 'today',
-      country: 'USD',
-      flag: '🇺🇸',
-      impact: 'high',
-      event: 'US FOMC Economic Projections & Rate Statement',
-      actual: '5.00%',
-      forecast: '5.00%',
-      previous: '5.25%',
-      isBetter: null,
-      impactInfo: 'Detailed monetary policy outlook from Federal Reserve governors.',
-      affectedPairs: ['EURUSD', 'GBPUSD', 'XAUUSD', 'SPX500']
-    },
-    {
-      id: 6,
-      time: '08:30 EST',
-      date: 'tomorrow',
-      country: 'JPY',
-      flag: '🇯🇵',
-      impact: 'medium',
-      event: 'BOJ Core CPI (YoY)',
-      actual: '2.3%',
-      forecast: '2.1%',
-      previous: '2.0%',
-      isBetter: true,
-      impactInfo: 'Bank of Japan preferred inflation measure.',
-      affectedPairs: ['USDJPY', 'EURJPY', 'GBPJPY']
-    },
-    {
-      id: 7,
-      time: '10:00 EST',
-      date: 'tomorrow',
-      country: 'AUD',
-      flag: '🇦🇺',
-      impact: 'high',
-      event: 'AU Employment Change',
-      actual: '64.1K',
-      forecast: '25.0K',
-      previous: '47.5K',
-      isBetter: true,
-      impactInfo: 'Key Australian labor market data release.',
-      affectedPairs: ['AUDUSD', 'EURAUD']
-    },
-    {
-      id: 8,
-      time: '12:30 EST',
-      date: 'tomorrow',
-      country: 'CAD',
-      flag: '🇨🇦',
-      impact: 'medium',
-      event: 'CA Building Permits (MoM)',
-      actual: '-1.5%',
-      forecast: '0.8%',
-      previous: '2.2%',
-      isBetter: false,
-      impactInfo: 'Leading indicator of Canadian housing market health.',
-      affectedPairs: ['USDCAD', 'EURCAD']
+  // Fetch Live Economic Calendar Data (IST timezone)
+  useEffect(() => {
+    async function loadCalendar() {
+      try {
+        setIsCalendarLoading(true);
+        const res = await fetch(`/api/calendar?timeframe=${calendarTimeframe}&currency=${calendarCurrency}&impact=${calendarImpact}`);
+        const data = await res.json();
+        if (data && data.events) {
+          setCalendarEvents(data.events);
+        }
+      } catch (err) {
+        console.error('Error fetching calendar:', err);
+      } finally {
+        setIsCalendarLoading(false);
+      }
     }
-  ];
+    loadCalendar();
+  }, [calendarTimeframe, calendarCurrency, calendarImpact]);
 
   // Instrument static configurations for the calculator
   const calculatorOptions = {
@@ -1474,19 +1372,25 @@ export default function Home() {
           </div>
 
           <div className="economic-calendar-container" style={{ background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)', borderRadius: '18px', padding: '24px' }}>
-            <div className="calendar-filter-bar" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '20px', alignItems: 'center' }}>
-              <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Timeframe:</span>
-                <button className={`filter-pill ${calendarTimeframe === 'today' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('today')}>Today</button>
-                <button className={`filter-pill ${calendarTimeframe === 'tomorrow' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('tomorrow')}>Tomorrow</button>
-                <button className={`filter-pill ${calendarTimeframe === 'all' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('all')}>All Week</button>
+            <div className="calendar-filter-bar" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '20px', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <div className="filter-group">
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Timeframe:</span>
+                  <button className={`filter-pill ${calendarTimeframe === 'today' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('today')}>Today</button>
+                  <button className={`filter-pill ${calendarTimeframe === 'tomorrow' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('tomorrow')}>Tomorrow</button>
+                  <button className={`filter-pill ${calendarTimeframe === 'all' ? 'active' : ''}`} onClick={() => setCalendarTimeframe('all')}>All Week</button>
+                </div>
+
+                <div className="filter-group">
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Impact:</span>
+                  <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All Impact</button>
+                  <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
+                  <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Medium</button>
+                </div>
               </div>
 
-              <div className="filter-group">
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginRight: '6px' }}>Impact:</span>
-                <button className={`filter-pill ${calendarImpact === 'all' ? 'active' : ''}`} onClick={() => setCalendarImpact('all')}>All Impact</button>
-                <button className={`filter-pill ${calendarImpact === 'high' ? 'active' : ''}`} onClick={() => setCalendarImpact('high')}>🔴 High</button>
-                <button className={`filter-pill ${calendarImpact === 'medium' ? 'active' : ''}`} onClick={() => setCalendarImpact('medium')}>🟠 Medium</button>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(0,64,233,0.15)', border: '1px solid rgba(0,64,233,0.3)', color: '#38BDF8', fontSize: '0.8rem', fontWeight: 700 }}>
+                <span>🇮🇳 Timezone: Indian Standard Time (IST, GMT+5:30)</span>
               </div>
             </div>
 
@@ -1494,7 +1398,7 @@ export default function Home() {
               <table className="calendar-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
                 <thead>
                   <tr style={{ background: 'rgba(5, 6, 13, 0.95)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                    <th style={{ padding: '14px 16px', textAlign: 'left' }}>Time</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left' }}>Date &amp; Time (IST)</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left' }}>Cur</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left' }}>Impact</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left' }}>Economic Event</th>
@@ -1504,13 +1408,26 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody>
-                  {economicEvents
-                    .filter(ev => calendarTimeframe === 'all' || ev.date === calendarTimeframe)
-                    .filter(ev => calendarCurrency === 'all' || ev.country === calendarCurrency)
-                    .filter(ev => calendarImpact === 'all' || ev.impact === calendarImpact)
-                    .map((ev) => (
+                  {isCalendarLoading ? (
+                    <tr>
+                      <td colSpan="7" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
+                        <i className="fa-solid fa-spinner fa-spin" style={{ fontSize: '1.5rem', color: '#38BDF8', marginBottom: '8px', display: 'block' }}></i>
+                        Loading Live IST Economic Calendar...
+                      </td>
+                    </tr>
+                  ) : calendarEvents.length === 0 ? (
+                    <tr>
+                      <td colSpan="7" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
+                        No events scheduled for the selected filter.
+                      </td>
+                    </tr>
+                  ) : (
+                    calendarEvents.map((ev) => (
                       <tr key={ev.id} className="event-row" onClick={() => setSelectedEventDetail(ev)} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)', cursor: 'pointer' }}>
-                        <td style={{ padding: '14px 16px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: 'var(--text-muted)' }}>{ev.time}</td>
+                        <td style={{ padding: '14px 16px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                          <span style={{ display: 'block', color: '#fff', fontWeight: 600 }}>{ev.date}</span>
+                          <span>{ev.time}</span>
+                        </td>
                         <td style={{ padding: '14px 16px' }}>
                           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#fff' }}>
                             <span>{ev.flag}</span>
@@ -1529,7 +1446,8 @@ export default function Home() {
                         <td style={{ padding: '14px 16px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.forecast}</td>
                         <td style={{ padding: '14px 16px', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)', textAlign: 'right' }}>{ev.previous}</td>
                       </tr>
-                    ))}
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>
@@ -1555,26 +1473,38 @@ export default function Home() {
                 </div>
 
                 <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>{selectedEventDetail.impactInfo}</p>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginBottom: '6px' }}>Event Overview &amp; Market Impact:</div>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>{selectedEventDetail.description || selectedEventDetail.impactInfo}</p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', textAlign: 'center', marginBottom: '20px', background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '10px' }}>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
-                    <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Actual</div>
+                    <div className={selectedEventDetail.isBetter ? 'val-better' : 'val-neutral'} style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace' }}>{selectedEventDetail.actual}</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</div>
-                    <div style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.forecast}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Forecast</div>
+                    <div style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.forecast}</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</div>
-                    <div style={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.previous}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Previous</div>
+                    <div style={{ fontSize: '1.1rem', fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-muted)' }}>{selectedEventDetail.previous}</div>
                   </div>
                 </div>
 
-                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block' }}>
-                  Trade This Release Live →
+                <div style={{ marginBottom: '24px' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginBottom: '8px' }}>Affected Currency Pairs:</div>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    {selectedEventDetail.affectedPairs?.map(p => (
+                      <span key={p} style={{ padding: '4px 10px', borderRadius: '6px', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid rgba(0, 64, 233, 0.35)', color: '#fff', fontSize: '0.8rem', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace' }}>
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <a href="https://trade.magnatefx.com/register/" target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px', borderRadius: '8px' }}>
+                  Trade Live on MT5 →
                 </a>
               </div>
             </div>

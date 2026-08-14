@@ -132,27 +132,34 @@ export default function EconomicCalendarPage() {
 
             </div>
 
-            {/* Currency Filter Bar Pills */}
-            <div style={{ paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Currencies:</span>
-              {[
-                { code: 'all', label: '🌐 All' },
-                { code: 'USD', label: '🇺🇸 USD' },
-                { code: 'EUR', label: '🇪🇺 EUR' },
-                { code: 'GBP', label: '🇬🇧 GBP' },
-                { code: 'JPY', label: '🇯🇵 JPY' },
-                { code: 'AUD', label: '🇦🇺 AUD' },
-                { code: 'CAD', label: '🇨🇦 CAD' },
-              ].map(c => (
-                <button 
-                  key={c.code}
-                  className={`filter-pill ${calendarCurrency === c.code ? 'active' : ''}`}
-                  onClick={() => setCalendarCurrency(c.code)}
-                  style={{ fontSize: '0.8rem', padding: '6px 14px' }}
-                >
-                  {c.label}
-                </button>
-              ))}
+            {/* Currency Filter Bar Pills & Timezone Badge */}
+            <div style={{ paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Currencies:</span>
+                {[
+                  { code: 'all', label: '🌐 All' },
+                  { code: 'USD', label: '🇺🇸 USD' },
+                  { code: 'EUR', label: '🇪🇺 EUR' },
+                  { code: 'GBP', label: '🇬🇧 GBP' },
+                  { code: 'JPY', label: '🇯🇵 JPY' },
+                  { code: 'AUD', label: '🇦🇺 AUD' },
+                  { code: 'CAD', label: '🇨🇦 CAD' },
+                  { code: 'INR', label: '🇮🇳 INR' },
+                ].map(c => (
+                  <button 
+                    key={c.code}
+                    className={`filter-pill ${calendarCurrency === c.code ? 'active' : ''}`}
+                    onClick={() => setCalendarCurrency(c.code)}
+                    style={{ fontSize: '0.8rem', padding: '6px 14px' }}
+                  >
+                    {c.label}
+                  </button>
+                ))}
+              </div>
+
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '20px', background: 'rgba(0,64,233,0.15)', border: '1px solid rgba(0,64,233,0.3)', color: '#38BDF8', fontSize: '0.8rem', fontWeight: 700 }}>
+                <span>🇮🇳 Timezone: Indian Standard Time (IST, GMT+5:30)</span>
+              </div>
             </div>
 
           </div>
@@ -163,7 +170,7 @@ export default function EconomicCalendarPage() {
               <table className="calendar-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ background: 'rgba(0, 0, 0, 0.6)', borderBottom: '1px solid rgba(0, 64, 233, 0.3)' }}>
-                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: '#38BDF8', textTransform: 'uppercase' }}>Date &amp; Time</th>
+                    <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: '#38BDF8', textTransform: 'uppercase' }}>Date &amp; Time (IST)</th>
                     <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: '#38BDF8', textTransform: 'uppercase' }}>Cur</th>
                     <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: '#38BDF8', textTransform: 'uppercase' }}>Impact</th>
                     <th style={{ padding: '18px 24px', fontSize: '0.78rem', color: '#38BDF8', textTransform: 'uppercase' }}>Economic Release</th>
