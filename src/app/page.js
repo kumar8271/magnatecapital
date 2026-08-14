@@ -129,7 +129,7 @@ export default function Home() {
   const [selectedPolicyModal, setSelectedPolicyModal] = useState(null); // 'kyc', 'aml', 'terms', 'legal'
 
   // Contact Form Inputs & Feedback
-  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', account: 'classic', message: '' });
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [formFeedback, setFormFeedback] = useState({ show: false, success: false, message: '' });
 
   // Economic Calendar Filter & Data State
@@ -462,7 +462,7 @@ export default function Home() {
       const data = await response.json();
       if (data.success) {
         setFormFeedback({ show: true, success: true, message: data.message });
-        setContactForm({ name: '', email: '', phone: '', account: 'classic', message: '' });
+        setContactForm({ name: '', email: '', phone: '', message: '' });
       } else {
         setFormFeedback({ show: true, success: false, message: data.message });
       }
@@ -1721,13 +1721,6 @@ export default function Home() {
               </div>
               <div className="form-group">
                 <input type="tel" id="form-phone" placeholder="Phone Number (e.g., +971...)" value={contactForm.phone} onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })} />
-              </div>
-              <div className="form-group">
-                <select id="form-account" value={contactForm.account} onChange={(e) => setContactForm({ ...contactForm, account: e.target.value })}>
-                  <option value="classic">Classic Account ($100 Min)</option>
-                  <option value="prime">Prime Account ($1,000 Min)</option>
-                  <option value="ecn">ECN Pro Account ($5,000 Min)</option>
-                </select>
               </div>
               <div className="form-group">
                 <textarea id="form-message" rows="4" placeholder="Your trading experience or messages..." value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}></textarea>
