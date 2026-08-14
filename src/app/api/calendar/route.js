@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 let cachedFFData = null;
 let lastCacheTime = 0;
-const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+const CACHE_TTL = 60 * 1000; // 1 minute fresh live cache
 
 function getCountryFlag(country) {
   const flags = {

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
-export const revalidate = 15; // Edge CDN caching for 15 seconds
+export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Always fresh live rates on every request
 
 export async function GET() {
   try {

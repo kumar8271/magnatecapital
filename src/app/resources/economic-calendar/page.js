@@ -22,7 +22,7 @@ export default function EconomicCalendarPage() {
     async function fetchCalendarData() {
       try {
         setIsLoading(true);
-        const res = await fetch(`/api/calendar?timeframe=${calendarTimeframe}&currency=${calendarCurrency}&impact=${calendarImpact}`);
+        const res = await fetch(`/api/calendar?timeframe=${calendarTimeframe}&currency=${calendarCurrency}&impact=${calendarImpact}`, { cache: 'no-store' });
         const data = await res.json();
         if (data && data.events) {
           setEventsData(data.events);
