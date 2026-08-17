@@ -159,13 +159,18 @@ export default function Home() {
     loadCalendar();
   }, [calendarTimeframe, calendarCurrency, calendarImpact]);
 
-  // Instrument static configurations for the calculator
+  // Instrument configurations for institutional calculator
   const calculatorOptions = {
-    EURUSD: { pipSize: 0.0001, contract: 100000, label: 'EURUSD (Forex - EUR/USD)' },
-    GBPUSD: { pipSize: 0.0001, contract: 100000, label: 'GBPUSD (Forex - GBP/USD)' },
-    XAUUSD: { pipSize: 0.01, contract: 100, label: 'XAUUSD (Gold vs US Dollar)' },
-    BTCUSD: { pipSize: 1, contract: 1, label: 'BTCUSD (Bitcoin vs Dollar)' },
-    USOIL: { pipSize: 0.01, contract: 1000, label: 'USOIL (Crude Oil)' }
+    EURUSD: { pipSize: 0.0001, contract: 100000, label: 'EURUSD (Euro / US Dollar)' },
+    GBPUSD: { pipSize: 0.0001, contract: 100000, label: 'GBPUSD (British Pound / US Dollar)' },
+    USDJPY: { pipSize: 0.01, contract: 100000, label: 'USDJPY (US Dollar / Japanese Yen)' },
+    AUDUSD: { pipSize: 0.0001, contract: 100000, label: 'AUDUSD (Australian Dollar / US Dollar)' },
+    USDCAD: { pipSize: 0.0001, contract: 100000, label: 'USDCAD (US Dollar / Canadian Dollar)' },
+    USDCHF: { pipSize: 0.0001, contract: 100000, label: 'USDCHF (US Dollar / Swiss Franc)' },
+    NZDUSD: { pipSize: 0.0001, contract: 100000, label: 'NZDUSD (New Zealand Dollar / US Dollar)' },
+    XAUUSD: { pipSize: 0.1, contract: 100, label: 'XAUUSD (Gold vs US Dollar - 100 oz)' },
+    BTCUSD: { pipSize: 1, contract: 1, label: 'BTCUSD (Bitcoin vs US Dollar)' },
+    USOIL: { pipSize: 0.01, contract: 1000, label: 'USOIL (Crude Oil - 1,000 bbl)' }
   };
 
   // --- EFFECT HOOKS ---
@@ -408,24 +413,53 @@ export default function Home() {
   }, []);
 
   // --- CALCULATION LOGIC ---
-  const activeAssetPrice = tickerItems[calcAsset.toLowerCase()]?.price || 1.0;
-  const currentAssetConfig = calculatorOptions[calcAsset] || { pipSize: 0.0001, contract: 100000 };
+  const currentAssetConfig = calculatorOptions[calcAsset] || calculatorOptions['EURUSD'];
+  const activeAssetPrice = tickerItems[calcAsset.toLowerCase()]?.price || (calcAsset === 'USDJPY' ? 155.40 : calcAsset === 'XAUUSD' ? liveGoldPrice : 1.0850);
   
+  // Calculate dynamic pip value per 1 standard lot
+  const getPipValuePerLot = (symbol) => {
+    if (symbol === 'USDJPY') {
+      const jpy = forexMatrixRates['JPY'] || 155.40;
+      return 1000 / jpy;
+    }
+    if (symbol === 'USDCAD') {
+      const cad = forexMatrixRates['CAD'] || 1.365;
+      return 10 / cad;
+    }
+    if (symbol === 'USDCHF') {
+      const chf = forexMatrixRates['CHF'] || 0.885;
+      return 10 / chf;
+    }
+    if (symbol === 'BTCUSD') return 1.0;
+    if (symbol === 'XAUUSD') return 10.0;
+    if (symbol === 'USOIL') return 10.0;
+    return 10.0; // Standard USD quote (EURUSD, GBPUSD, AUDUSD, NZDUSD)
+  };
+
+  const pipValuePerLot = getPipValuePerLot(calcAsset);
+
   // 1. Margin & Pip Value
-  const calculatedContractValue = calcLots * currentAssetConfig.contract * activeAssetPrice;
+  const calculatedContractValue = calcLots * currentAssetConfig.contract * (calcAsset === 'XAUUSD' || calcAsset === 'BTCUSD' || calcAsset === 'USOIL' || calcAsset === 'EURUSD' || calcAsset === 'GBPUSD' || calcAsset === 'AUDUSD' || calcAsset === 'NZDUSD' ? activeAssetPrice : 1.0);
   const calculatedRequiredMargin = calculatedContractValue / calcLeverage;
-  const calculatedPipValue = calcLots * currentAssetConfig.contract * currentAssetConfig.pipSize;
+  const calculatedPipValue = calcLots * pipValuePerLot;
 
   // 2. Position Size & Risk
   const calculatedRiskAmount = (riskBalance * riskPct) / 100;
-  const singlePipVal = 100000 * currentAssetConfig.pipSize;
-  const calculatedPositionLots = stopLossPips > 0 ? (calculatedRiskAmount / (stopLossPips * singlePipVal)).toFixed(2) : '0.00';
+  const rawPositionLots = stopLossPips > 0 && pipValuePerLot > 0 
+    ? calculatedRiskAmount / (stopLossPips * pipValuePerLot) 
+    : 0;
+  const calculatedPositionLots = rawPositionLots > 0 
+    ? (rawPositionLots >= 10 ? rawPositionLots.toFixed(1) : rawPositionLots.toFixed(2)) 
+    : '0.00';
+  const calculatedUnits = Math.round(rawPositionLots * currentAssetConfig.contract);
+  const calculatedMicroLots = (rawPositionLots * 100).toFixed(1);
+  const calculatedMiniLots = (rawPositionLots * 10).toFixed(2);
 
   // 3. Profit / Loss Estimator
   const pipDiff = tradeDirection === 'BUY' 
     ? (exitPrice - entryPrice) / currentAssetConfig.pipSize 
     : (entryPrice - exitPrice) / currentAssetConfig.pipSize;
-  const calculatedProfitLoss = pipDiff * calcLots * (currentAssetConfig.contract * currentAssetConfig.pipSize);
+  const calculatedProfitLoss = pipDiff * calcLots * pipValuePerLot;
 
   // --- HELPER FUNCTIONS ---
   function getSparklinePath(points, width, height) {
@@ -1366,6 +1400,15 @@ export default function Home() {
             <div className="calculator-grid">
               <div className="glass-card calc-card tech-card-pulse" style={{ background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0,64,233,0.35)' }}>
                 <div className="form-group">
+                  <label htmlFor="risk-asset">Select Instrument</label>
+                  <select id="risk-asset" value={calcAsset} onChange={(e) => setCalcAsset(e.target.value)}>
+                    {Object.entries(calculatorOptions).map(([key, opt]) => (
+                      <option value={key} key={key}>{opt.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="risk-balance">Account Balance ($)</label>
                   <input type="number" id="risk-balance" min="100" step="500" value={riskBalance} onChange={(e) => setRiskBalance(parseFloat(e.target.value) || 0)} />
                 </div>
@@ -1376,8 +1419,8 @@ export default function Home() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="sl-pips">Stop Loss (Pips)</label>
-                  <input type="number" id="sl-pips" min="1" max="500" step="1" value={stopLossPips} onChange={(e) => setStopLossPips(parseFloat(e.target.value) || 0)} />
+                  <label htmlFor="sl-pips">Stop Loss (Pips / Points)</label>
+                  <input type="number" id="sl-pips" min="1" max="10000" step="1" value={stopLossPips} onChange={(e) => setStopLossPips(parseFloat(e.target.value) || 0)} />
                 </div>
               </div>
 
@@ -1388,14 +1431,22 @@ export default function Home() {
                   <span className="res-val" style={{ color: '#ef5350' }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculatedRiskAmount)}</span>
                 </div>
                 <div className="result-row highlight">
-                  <span className="res-lbl">Recommended Lot Size:</span>
+                  <span className="res-lbl">Recommended Standard Lots:</span>
                   <span className="res-val" style={{ color: '#38BDF8', fontSize: '1.4rem' }}>{calculatedPositionLots} Lots</span>
                 </div>
                 <div className="result-row">
-                  <span className="res-lbl">Position Units:</span>
-                  <span className="res-val">{(parseFloat(calculatedPositionLots) * 100000).toLocaleString()} Units</span>
+                  <span className="res-lbl">Micro / Mini Lots:</span>
+                  <span className="res-val">{calculatedMicroLots} Micro ({calculatedMiniLots} Mini)</span>
                 </div>
-                <p className="calc-note">*Helps protect your trading capital by ensuring risk stays within strict money management rules.</p>
+                <div className="result-row">
+                  <span className="res-lbl">Total Position Units:</span>
+                  <span className="res-val">{calculatedUnits.toLocaleString()} Units</span>
+                </div>
+                <div className="result-row">
+                  <span className="res-lbl">Pip Value (1 Standard Lot):</span>
+                  <span className="res-val">${pipValuePerLot.toFixed(2)} USD</span>
+                </div>
+                <p className="calc-note">*Formula: (Account Balance &times; Risk %) &divide; (Stop Loss &times; Pip Value per Lot). Guarantees exact risk exposure.</p>
               </div>
             </div>
           )}
