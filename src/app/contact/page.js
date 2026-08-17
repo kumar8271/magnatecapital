@@ -29,7 +29,7 @@ export default function ContactPage() {
           
           {/* Contact Details Card */}
           <div className="glass-card tech-card-pulse" style={{ padding: '40px', borderRadius: '20px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)' }}>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#38BDF8', marginBottom: '24px' }}>Global Headquarters &amp; Desk</h3>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#38BDF8', marginBottom: '24px' }}>Global Operations &amp; Support Desk</h3>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '0.98rem', color: 'var(--text-secondary)' }}>
               <div>

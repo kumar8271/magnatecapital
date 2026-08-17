@@ -1787,7 +1787,7 @@ export default function Home() {
                         <img src="/favicon.png" alt="Magnate Avatar" style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid #0040E9' }} />
                         <div>
                           <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>magnatecapital</div>
-                          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Dubai, UAE</div>
+                          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Official Channel</div>
                         </div>
                       </div>
                       <a href={post.link} target="_blank" rel="noreferrer" className="btn-trading" style={{ padding: '4px 12px', fontSize: '0.7rem', borderColor: '#0040E9', color: '#38BDF8' }}>View Post</a>
@@ -1843,17 +1843,10 @@ export default function Home() {
             
             <div className="contact-details">
               <div className="detail-item">
-                <i className="fa-solid fa-location-dot" style={{ color: '#38BDF8' }}></i>
-                <div>
-                  <h5>Headquarters</h5>
-                  <p>Dubai, UAE</p>
-                </div>
-              </div>
-              <div className="detail-item">
                 <i className="fa-solid fa-envelope" style={{ color: '#38BDF8' }}></i>
                 <div>
                   <h5>Email Support</h5>
-                  <p>support@magnatecapital.com</p>
+                  <p><a href="mailto:support@magnatefx.com" style={{ color: 'inherit', textDecoration: 'none' }}>support@magnatefx.com</a></p>
                 </div>
               </div>
             </div>
@@ -1894,7 +1887,7 @@ export default function Home() {
             Embark on a rewarding journey with Magnate Capital, a leader in the financial services space. We're on the lookout for enthusiastic individuals with a passion for trading, technology, and client engagement.
           </p>
           <div style={{ display: 'inline-block', background: 'rgba(0, 64, 233, 0.15)', border: '1px solid #0040E9', padding: '14px 28px', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, color: '#fff', boxShadow: '0 0 20px rgba(0,64,233,0.3)' }}>
-            Share your CV at <a href="mailto:support@magnatefx.com" style={{ color: '#38BDF8', textDecoration: 'underline' }}>support@magnatefx.com</a>
+            Share your CV at <a href="mailto:noreply@magnatefx.com" style={{ color: '#38BDF8', textDecoration: 'underline' }}>noreply@magnatefx.com</a>
           </div>
         </div>
       </section>

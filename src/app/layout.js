@@ -1,12 +1,12 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Magnate Capital | Premium Forex & CFD Trading Broker in Dubai",
-  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, ultra-low latency execution, leverage up to 1:500, and institutional speed under 15ms. Regulated premium brokerage headquarters in Dubai, UAE.",
+  title: "Magnate Capital | Premium Forex & CFD Trading Broker",
+  description: "Trade Forex, Gold, Commodities, and Crypto with Magnate Capital. Experience raw ECN spreads from 0.0 pips, ultra-low latency execution, leverage up to 1:500, and institutional speed under 15ms. Regulated premium global brokerage.",
   keywords: [
-    "Forex trading", "Online Forex broker", "Trade Gold CFD", "ECN broker Dubai", 
+    "Forex trading", "Online Forex broker", "Trade Gold CFD", "ECN broker", 
     "WebTrader Trading Platform", "CFD trading indices", "Raw Spreads Broker", 
-    "Dubai Forex broker", "Commodities trading desk"
+    "Global Forex broker", "Commodities trading desk"
   ],
   openGraph: {
     title: "Magnate Capital | Premium Forex & CFD Trading Broker",
@@ -52,11 +52,11 @@ export default function RootLayout({ children }) {
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Dubai, UAE",
-      "addressLocality": "Dubai",
-      "addressRegion": "Dubai",
+      "streetAddress": "Foster Capital Inc, Robin Kelton Building, Choc Bay",
+      "addressLocality": "Castries",
+      "addressRegion": "Castries",
       "postalCode": "00000",
-      "addressCountry": "AE"
+      "addressCountry": "LC"
     },
     "geo": {
       "@type": "GeoCoordinates",
