@@ -131,11 +131,7 @@ export default function Footer() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
               <div>
-                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Legal Support Email:</strong>
-                <a href="mailto:compliance@magnatefx.com" style={{ color: '#38BDF8', fontWeight: 700 }}>compliance@magnatefx.com</a>
-              </div>
-              <div>
-                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Client Operations Email:</strong>
+                <strong style={{ color: '#fff', display: 'block', fontSize: '0.85rem' }}>Support &amp; Operations Email:</strong>
                 <a href="mailto:support@magnatefx.com" style={{ color: '#38BDF8', fontWeight: 700 }}>support@magnatefx.com</a>
               </div>
               <div>

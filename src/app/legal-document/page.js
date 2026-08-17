@@ -22,7 +22,7 @@ export default function LegalDocumentPage() {
           <li><strong>Legal Corporate Entity:</strong> Global Magnate Capital Ltd.</li>
           <li><strong>Company Registration Number:</strong> 2025-00329</li>
           <li><strong>Registered Office:</strong> Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia</li>
-          <li><strong>Compliance Contact Desk:</strong> <a href="mailto:compliance@magnatefx.com" style={{ color: 'var(--accent-gold)' }}>compliance@magnatefx.com</a></li>
+          <li><strong>Official Support Desk:</strong> <a href="mailto:support@magnatefx.com" style={{ color: 'var(--accent-gold)' }}>support@magnatefx.com</a></li>
         </ul>
       </div>
 
