@@ -147,11 +147,17 @@ export default function Footer() {
 
           {/* High Risk Warning Statement & Restricted Regions */}
           <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '20px', marginBottom: '30px', fontSize: '0.82rem', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
-            <p style={{ marginBottom: '12px' }}>
+            <p style={{ marginBottom: '14px' }}>
               <strong style={{ color: '#ef5350' }}>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.
             </p>
+            <p style={{ marginBottom: '10px' }}>
+              <strong style={{ color: '#38BDF8' }}>Restricted Regions:</strong> Magnate Capital does not provide services to residents or citizens of jurisdictions where such services would be contrary to local laws or regulations, including but not limited to the United States, Cuba, North Korea, Sudan, Syria, Iran, Myanmar, United Arab Emirates (UAE), and other restricted jurisdictions.
+            </p>
+            <p style={{ marginBottom: '10px' }}>
+              The information on this website is not directed at residents of any country or jurisdiction where the distribution or use of such information would be contrary to local law or regulation.
+            </p>
             <p style={{ margin: 0 }}>
-              <strong style={{ color: '#38BDF8' }}>Restricted Regions:</strong> Global Magnate Capital Ltd. does not provide services to residents of certain jurisdictions, including but not limited to the United States of America, Canada, North Korea, Iran, Cuba, Syria, Sudan, and any other jurisdiction where the distribution or provision of such financial services would be contrary to local laws or regulations.
+              Users are responsible for ensuring that accessing and using Magnate Capital's services is compliant with the laws and regulations applicable in their country of residence.
             </p>
           </div>
 

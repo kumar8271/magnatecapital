@@ -25,11 +25,19 @@ export default function TermsAndConditionsPage() {
       </p>
 
       <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>
-        Restricted Jurisdictions
+        Restricted Regions
       </h3>
 
+      <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '16px' }}>
+        <strong>Restricted Regions:</strong> Magnate Capital does not provide services to residents or citizens of jurisdictions where such services would be contrary to local laws or regulations, including but not limited to the United States, Cuba, North Korea, Sudan, Syria, Iran, Myanmar, United Arab Emirates (UAE), and other restricted jurisdictions.
+      </p>
+
+      <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '16px' }}>
+        The information on this website is not directed at residents of any country or jurisdiction where the distribution or use of such information would be contrary to local law or regulation.
+      </p>
+
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
-        Global Magnate Capital Ltd. does not establish accounts or offer brokerage services to residents of the United States of America, Canada, North Korea, Iran, Cuba, Syria, Sudan, or any jurisdiction where such services would be contrary to local laws or regulations.
+        Users are responsible for ensuring that accessing and using Magnate Capital's services is compliant with the laws and regulations applicable in their country of residence.
       </p>
 
       <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>
