@@ -1070,21 +1070,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. FEATURED BY INDUSTRY LEADERS TRUST BAR */}
-      <section style={{ padding: '50px 0', background: '#05060D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="container text-center">
-          <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--text-muted)', marginBottom: '24px', fontWeight: 700 }}>
-            Featured by Industry Leaders &amp; Global Liquidity Providers
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '48px', flexWrap: 'wrap', opacity: 0.75 }}>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>ONEZERO BRIDGE</span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>BLOOMBERG LP</span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>REFINITIV</span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>FIX PROTOCOL</span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', letterSpacing: '1px' }}>CURRENEX</span>
-          </div>
-        </div>
-      </section>
+
 
       {/* 7. ECN VELOCITY & SPEED VISUALIZER */}
       <section className="tech-section" style={{ background: '#010108', padding: '90px 0', position: 'relative' }}>
