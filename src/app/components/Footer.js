@@ -158,9 +158,6 @@ export default function Footer() {
               <div style={{ color: 'var(--text-secondary)' }}>
                 &copy; 2026 Global Magnate Capital Ltd. All rights reserved. Registered in Saint Lucia (Reg: 2025-00329).
               </div>
-              <div style={{ color: 'var(--text-secondary)' }}>
-                Designed &amp; Developed by <a href="https://www.echoweb.in/" target="_blank" rel="noreferrer" style={{ color: '#38BDF8', fontWeight: 700, textDecoration: 'underline' }}>ECHOWEB TECHNOLOGY</a>
-              </div>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '20px', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
