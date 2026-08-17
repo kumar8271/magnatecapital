@@ -854,15 +854,15 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Commission</span>
-                    <strong style={{ color: '#fff' }}>$3.50 / lot</strong>
+                    <strong style={{ color: '#fff' }}>$8.50 / lot</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Max Leverage</span>
-                    <strong style={{ color: '#fff' }}>1:100</strong>
+                    <strong style={{ color: '#fff' }}>1:200</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>Platforms</span>
-                    <strong style={{ color: '#fff' }}>WebTrader / FIX API</strong>
+                    <strong style={{ color: '#fff' }}>WebTrader / Mobile</strong>
                   </div>
                 </div>
               </div>

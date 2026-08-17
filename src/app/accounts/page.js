@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Trading Account Types | Classic Noble, Prime Crown & ECN Elite | Magnate Capital",
-  description: "Compare Magnate Capital account types: Classic Noble ($50 deposit, 1.5 pips), Prime Crown ($500 deposit, 0.8 pips), and ECN Elite ($5,000 deposit, Raw Spreads, $3.50 commission). Advanced WebTrader execution.",
+  description: "Compare Magnate Capital account types: Classic Noble ($50 deposit, 1.5 pips), Prime Crown ($500 deposit, 0.8 pips), and ECN Elite ($5,000 deposit, Raw Spreads, $8.50 commission). Advanced WebTrader execution.",
 };
 
 export default function AccountsPage() {
@@ -91,9 +91,9 @@ export default function AccountsPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: '25px 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Spreads: <strong>Raw Spreads from 0.0 pips</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Minimum Deposit: <strong>$5,000</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Commission: <strong>$3.50 per lot</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>WebTrader / FIX API</strong></li>
-                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Leverage: <strong>1:100</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Commission: <strong>$8.50 per lot</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Trading Platform: <strong>WebTrader / Mobile</strong></li>
+                <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Leverage: <strong>1:200</strong></li>
                 <li><i className="fa-solid fa-circle-check" style={{ color: '#0040E9', marginRight: '8px' }}></i> Ideal for: <strong>Institutions &amp; Scalpers</strong></li>
               </ul>
 
