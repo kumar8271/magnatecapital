@@ -9,7 +9,7 @@ export default function TermsAndConditionsPage() {
   return (
     <PolicyLayout activeTab="terms">
       <h2 style={{ color: 'var(--accent-gold)', fontSize: '2.2rem', fontWeight: 800, marginBottom: '16px' }}>
-        Terms & Conditions
+        Terms &amp; Conditions
       </h2>
 
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
@@ -17,7 +17,7 @@ export default function TermsAndConditionsPage() {
       </p>
 
       <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>
-        Governing Law & Jurisdiction
+        Governing Law &amp; Jurisdiction
       </h3>
 
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
@@ -25,7 +25,15 @@ export default function TermsAndConditionsPage() {
       </p>
 
       <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>
-        Execution & Order Policy
+        Restricted Jurisdictions
+      </h3>
+
+      <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '24px' }}>
+        Global Magnate Capital Ltd. does not establish accounts or offer brokerage services to residents of the United States of America, Canada, North Korea, Iran, Cuba, Syria, Sudan, or any jurisdiction where such services would be contrary to local laws or regulations.
+      </p>
+
+      <h3 style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>
+        Execution &amp; Order Policy
       </h3>
 
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8' }}>

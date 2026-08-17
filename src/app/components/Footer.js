@@ -145,10 +145,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* High Risk Warning Statement */}
+          {/* High Risk Warning Statement & Restricted Regions */}
           <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '20px', marginBottom: '30px', fontSize: '0.82rem', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
-            <p style={{ margin: 0 }}>
+            <p style={{ marginBottom: '12px' }}>
               <strong style={{ color: '#ef5350' }}>High Risk Investment Warning:</strong> Trading Foreign Exchange (Forex) and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or CFDs, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment and, therefore, you should not invest money that you cannot afford to lose.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong style={{ color: '#38BDF8' }}>Restricted Regions:</strong> Global Magnate Capital Ltd. does not provide services to residents of certain jurisdictions, including but not limited to the United States of America, Canada, North Korea, Iran, Cuba, Syria, Sudan, and any other jurisdiction where the distribution or provision of such financial services would be contrary to local laws or regulations.
             </p>
           </div>
 
