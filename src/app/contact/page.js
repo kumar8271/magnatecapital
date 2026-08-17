@@ -41,10 +41,6 @@ export default function ContactPage() {
                 <a href="mailto:support@magnatefx.com" style={{ color: '#38BDF8', textDecoration: 'none' }}>support@magnatefx.com</a>
               </div>
               <div>
-                <strong style={{ color: '#fff', display: 'block', fontSize: '1.05rem', marginBottom: '4px' }}>Compliance Email:</strong>
-                <a href="mailto:compliance@magnatefx.com" style={{ color: '#38BDF8', textDecoration: 'none' }}>compliance@magnatefx.com</a>
-              </div>
-              <div>
                 <strong style={{ color: '#fff', display: 'block', fontSize: '1.05rem', marginBottom: '4px' }}>Registered Address:</strong>
                 Foster Capital Inc, Robin Kelton Building, Choc Bay, Castries, Saint Lucia
               </div>
