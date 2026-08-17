@@ -690,7 +690,25 @@ export default function Home() {
             </div>
 
             {/* Card 6: Award Winning Support */}
-            <div className="glass-card tech-card-pulse" style={{ padding: '36px 30px', borderRadius: '16px', background: 'rgba(10, 13, 29, 0.85)', border: '1px solid rgba(0, 64, 233, 0.35)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
+            <div 
+              className="glass-card tech-card-pulse" 
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('open-support-chat'));
+                }
+              }}
+              style={{ 
+                padding: '36px 30px', 
+                borderRadius: '16px', 
+                background: 'rgba(10, 13, 29, 0.85)', 
+                border: '1px solid rgba(0, 64, 233, 0.35)', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between', 
+                transition: 'all 0.3s',
+                cursor: 'pointer'
+              }}
+            >
               <div>
                 <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#38BDF8', marginBottom: '10px', lineHeight: 1.15 }}>
                   Award winning<br />Support
@@ -699,8 +717,8 @@ export default function Home() {
                   24/5 in multiple languages with dedicated VIP desks.
                 </p>
               </div>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '16px', marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '0.85rem', fontWeight: 700 }}>
-                <i className="fa-solid fa-play" style={{ color: '#0040E9', fontSize: '0.7rem' }}></i> Exceptional Support
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '16px', marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px', color: '#38BDF8', fontSize: '0.85rem', fontWeight: 700 }}>
+                <i className="fa-solid fa-comments" style={{ color: '#0040E9', fontSize: '0.85rem' }}></i> Start Live Chat &rarr;
               </div>
             </div>
 

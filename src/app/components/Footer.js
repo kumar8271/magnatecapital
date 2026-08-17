@@ -1,12 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
   const [selectedPolicyModal, setSelectedPolicyModal] = useState(null);
   const [isWAChatOpen, setIsWAChatOpen] = useState(false);
   const [waMessage, setWaMessage] = useState('');
+
+  useEffect(() => {
+    const handleOpenChat = () => {
+      setIsWAChatOpen(true);
+    };
+    window.addEventListener('open-support-chat', handleOpenChat);
+    return () => {
+      window.removeEventListener('open-support-chat', handleOpenChat);
+    };
+  }, []);
 
   return (
     <>
