@@ -1000,16 +1000,16 @@ export default function Home() {
         <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '50px', alignItems: 'center', position: 'relative', zIndex: 2 }}>
           <div>
             <h2 style={{ fontSize: '2.8rem', fontWeight: 800, lineHeight: '1.15', color: '#fff', letterSpacing: '-0.02em' }}>
-              Creating the<br />next <span style={{ fontStyle: 'italic', opacity: 0.9 }}>generation</span> of trading opportunities.
+              Gateway to <span style={{ fontStyle: 'italic', opacity: 0.9 }}>Global Markets,</span><br />Built for Traders.
             </h2>
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#fff' }}></span>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>Driven by innovation.</span>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#38BDF8' }}></span>
+              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>Institutional-grade execution.</span>
             </div>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'rgba(255,255,255,0.95)', marginBottom: '24px', fontWeight: 500 }}>
-              Magnate Capital has been building trading infrastructure designed for one purpose: giving traders a faster, smoother, and more transparent way to access global financial markets.
+              Magnate Capital is more than a brokerage — it is a gateway to global markets, built around the modern trader. We focus on delivering a friction-free experience where technology, execution, transparency, and service come together seamlessly.
             </p>
             <a href="/about" className="btn" style={{ background: 'rgba(255,255,255,0.2)', border: '1.5px solid #fff', color: '#fff', padding: '12px 28px', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '8px', backdropFilter: 'blur(10px)' }}>
               About us <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
