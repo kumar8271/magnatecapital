@@ -547,7 +547,7 @@ export default function Home() {
               margin: '0 0 16px 0' 
             }}>
               Built Heavy.<br />
-              Executes Light-Speed.
+              Executes Lightning-Speed.
             </h1>
 
             <p style={{ 
