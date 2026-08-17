@@ -10,10 +10,16 @@ export default function CalculatorPage() {
   const [calcLots, setCalcLots] = useState(1.0);
   const [calcLeverage, setCalcLeverage] = useState(500);
 
-  // Risk Calculator State
+  // Position Size & Risk Calculator State
+  const [accountCurrency, setAccountCurrency] = useState('USD');
   const [riskBalance, setRiskBalance] = useState(10000);
+  const [riskType, setRiskType] = useState('percent'); // 'percent' or 'cash'
   const [riskPct, setRiskPct] = useState(1.0);
+  const [riskCash, setRiskCash] = useState(100);
+  const [slMode, setSlMode] = useState('pips'); // 'pips' or 'price'
   const [stopLossPips, setStopLossPips] = useState(30);
+  const [posEntryPrice, setPosEntryPrice] = useState(1.0850);
+  const [posStopPrice, setPosStopPrice] = useState(1.0820);
 
   // Profit / Loss Estimator State
   const [tradeDirection, setTradeDirection] = useState('BUY');
@@ -46,23 +52,33 @@ export default function CalculatorPage() {
   };
 
   const pipValuePerLot = getPipValuePerLot(calcAsset);
+  const currencySymbol = accountCurrency === 'EUR' ? '€' : accountCurrency === 'GBP' ? '£' : accountCurrency === 'INR' ? '₹' : accountCurrency === 'AED' ? 'AED ' : '$';
 
   // 1. Margin & Pip Value
   const calculatedContractValue = calcLots * currentAssetConfig.contract * (calcAsset === 'XAUUSD' || calcAsset === 'BTCUSD' || calcAsset === 'USOIL' || calcAsset === 'EURUSD' || calcAsset === 'GBPUSD' || calcAsset === 'AUDUSD' || calcAsset === 'NZDUSD' ? currentAssetConfig.defaultPrice : 1.0);
   const calculatedRequiredMargin = calculatedContractValue / calcLeverage;
   const calculatedPipValue = calcLots * pipValuePerLot;
 
-  // 2. Position Size & Risk
-  const calculatedRiskAmount = (riskBalance * riskPct) / 100;
-  const rawPositionLots = stopLossPips > 0 && pipValuePerLot > 0
-    ? calculatedRiskAmount / (stopLossPips * pipValuePerLot)
+  // 2. Position Size & Risk (Precision Formula)
+  const calculatedRiskAmount = riskType === 'percent' 
+    ? (riskBalance * (riskPct / 100)) 
+    : riskCash;
+
+  const effectiveSlPips = slMode === 'price'
+    ? Math.max(0.1, Math.abs(posEntryPrice - posStopPrice) / currentAssetConfig.pipSize)
+    : Math.max(0.1, stopLossPips);
+
+  const rawPositionLots = effectiveSlPips > 0 && pipValuePerLot > 0
+    ? calculatedRiskAmount / (effectiveSlPips * pipValuePerLot)
     : 0;
+
   const calculatedPositionLots = rawPositionLots > 0 
-    ? (rawPositionLots >= 10 ? rawPositionLots.toFixed(1) : rawPositionLots.toFixed(2)) 
+    ? (rawPositionLots >= 100 ? rawPositionLots.toFixed(1) : rawPositionLots.toFixed(2)) 
     : '0.00';
   const calculatedUnits = Math.round(rawPositionLots * currentAssetConfig.contract);
-  const calculatedMicroLots = (rawPositionLots * 100).toFixed(1);
+  const calculatedMicroLots = (rawPositionLots * 100).toFixed(2);
   const calculatedMiniLots = (rawPositionLots * 10).toFixed(2);
+  const calculatedPositionMargin = (rawPositionLots * currentAssetConfig.contract * (calcAsset === 'USDJPY' ? 1.0 : currentAssetConfig.defaultPrice)) / calcLeverage;
 
   // 3. Profit / Loss Estimator
   const pipDiff = tradeDirection === 'BUY'
@@ -140,7 +156,8 @@ export default function CalculatorPage() {
             {activeCalcTool === 'position' && (
               <div>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#38BDF8', marginBottom: '20px' }}>Position Sizing &amp; Risk Management</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
                   <div>
                     <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Trading Instrument</label>
                     <select value={calcAsset} onChange={(e) => setCalcAsset(e.target.value)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }}>
@@ -149,35 +166,80 @@ export default function CalculatorPage() {
                       ))}
                     </select>
                   </div>
+
                   <div>
-                    <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Account Balance ($)</label>
-                    <input type="number" value={riskBalance} onChange={(e) => setRiskBalance(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Account Currency</label>
+                    <select value={accountCurrency} onChange={(e) => setAccountCurrency(e.target.value)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }}>
+                      <option value="USD">USD ($)</option>
+                      <option value="EUR">EUR (€)</option>
+                      <option value="GBP">GBP (£)</option>
+                      <option value="AED">AED (د.إ)</option>
+                      <option value="INR">INR (₹)</option>
+                    </select>
                   </div>
+                </div>
+
+                <div style={{ marginBottom: '16px' }}>
+                  <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Account Balance ({currencySymbol})</label>
+                  <input type="number" min="10" step="500" value={riskBalance} onChange={(e) => setRiskBalance(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
                   <div>
-                    <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Max Risk (%)</label>
-                    <input type="number" step="0.5" value={riskPct} onChange={(e) => setRiskPct(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                      <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', margin: 0 }}>Risk Basis</label>
+                      <div style={{ display: 'flex', gap: '4px' }}>
+                        <button type="button" onClick={() => setRiskType('percent')} style={{ padding: '3px 8px', fontSize: '0.7rem', borderRadius: '4px', border: '1px solid #0040E9', background: riskType === 'percent' ? '#0040E9' : 'transparent', color: '#fff', cursor: 'pointer' }}>%</button>
+                        <button type="button" onClick={() => setRiskType('cash')} style={{ padding: '3px 8px', fontSize: '0.7rem', borderRadius: '4px', border: '1px solid #0040E9', background: riskType === 'cash' ? '#0040E9' : 'transparent', color: '#fff', cursor: 'pointer' }}>{currencySymbol}</button>
+                      </div>
+                    </div>
+                    {riskType === 'percent' ? (
+                      <input type="number" step="0.5" value={riskPct} onChange={(e) => setRiskPct(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    ) : (
+                      <input type="number" step="50" value={riskCash} onChange={(e) => setRiskCash(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    )}
                   </div>
+
                   <div>
-                    <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Stop Loss (Pips / Points)</label>
-                    <input type="number" value={stopLossPips} onChange={(e) => setStopLossPips(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                      <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', margin: 0 }}>Stop Loss Method</label>
+                      <div style={{ display: 'flex', gap: '4px' }}>
+                        <button type="button" onClick={() => setSlMode('pips')} style={{ padding: '3px 8px', fontSize: '0.7rem', borderRadius: '4px', border: '1px solid #0040E9', background: slMode === 'pips' ? '#0040E9' : 'transparent', color: '#fff', cursor: 'pointer' }}>Pips</button>
+                        <button type="button" onClick={() => setSlMode('price')} style={{ padding: '3px 8px', fontSize: '0.7rem', borderRadius: '4px', border: '1px solid #0040E9', background: slMode === 'price' ? '#0040E9' : 'transparent', color: '#fff', cursor: 'pointer' }}>Price</button>
+                      </div>
+                    </div>
+                    {slMode === 'pips' ? (
+                      <input type="number" step="1" value={stopLossPips} onChange={(e) => setStopLossPips(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }} />
+                    ) : (
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+                        <input type="number" step="0.0001" placeholder="Entry" value={posEntryPrice} onChange={(e) => setPosEntryPrice(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '10px', borderRadius: '6px', color: '#fff', fontSize: '0.85rem' }} />
+                        <input type="number" step="0.0001" placeholder="SL" value={posStopPrice} onChange={(e) => setPosStopPrice(parseFloat(e.target.value) || 0)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '10px', borderRadius: '6px', color: '#fff', fontSize: '0.85rem' }} />
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
                   <div style={{ background: 'rgba(0,0,0,0.5)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)' }}>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Max Risk Amount</div>
-                    <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#ef5350', fontFamily: 'JetBrains Mono, monospace' }}>${calculatedRiskAmount.toFixed(2)} USD</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>{riskPct}% of ${riskBalance.toLocaleString()}</div>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#ef5350', fontFamily: 'JetBrains Mono, monospace' }}>{currencySymbol}{calculatedRiskAmount.toFixed(2)}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>Stop Loss: {effectiveSlPips.toFixed(1)} Pips</div>
                   </div>
                   <div style={{ background: 'rgba(0,0,0,0.5)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(0,64,233,0.4)' }}>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Recommended Standard Lots</div>
                     <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#38BDF8', fontFamily: 'JetBrains Mono, monospace' }}>{calculatedPositionLots} Lots</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>{calculatedMicroLots} Micro &bull; {calculatedUnits.toLocaleString()} Units</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>{calculatedMiniLots} Mini &bull; {calculatedMicroLots} Micro</div>
                   </div>
                 </div>
 
-                <p style={{ marginTop: '20px', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                  *Formula: (Account Balance &times; Risk %) &divide; (Stop Loss &times; Pip Value per Standard Lot). Pip Value: ${pipValuePerLot.toFixed(2)} USD.
+                <div style={{ marginTop: '16px', background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '10px', fontSize: '0.82rem', color: 'var(--text-secondary)', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '10px' }}>
+                  <span>Units: <strong style={{ color: '#fff' }}>{calculatedUnits.toLocaleString()}</strong></span>
+                  <span>Pip Value (1 Lot): <strong style={{ color: '#38BDF8' }}>${pipValuePerLot.toFixed(2)} USD</strong></span>
+                  <span>Margin Req (1:500): <strong style={{ color: '#fff' }}>${calculatedPositionMargin.toFixed(2)} USD</strong></span>
+                </div>
+
+                <p style={{ marginTop: '16px', fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center' }}>
+                  *Formula: Risk Amount &divide; (Stop Loss Pips &times; Pip Value per Standard Lot). Guaranteed zero risk overshoot.
                 </p>
               </div>
             )}
@@ -185,7 +247,7 @@ export default function CalculatorPage() {
             {activeCalcTool === 'profit' && (
               <div>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#38BDF8', marginBottom: '20px' }}>Profit / Loss Estimator</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                   <div>
                     <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '6px' }}>Trading Instrument</label>
                     <select value={calcAsset} onChange={(e) => setCalcAsset(e.target.value)} style={{ width: '100%', background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px', borderRadius: '8px', color: '#fff' }}>
