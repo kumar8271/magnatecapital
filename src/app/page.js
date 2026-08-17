@@ -502,8 +502,8 @@ export default function Home() {
           
           {/* Top Eyebrow / Sub-headline */}
           <div style={{ paddingTop: '20px' }}>
-            <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', fontWeight: 600, color: '#fff', lineHeight: 1.3, letterSpacing: '-0.015em', margin: 0 }}>
-              The leading <span style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.85)' }}>friction-free<br />forex broker.</span>
+            <h2 style={{ fontSize: 'clamp(1.2rem, 2.2vw, 1.65rem)', fontWeight: 700, color: '#fff', lineHeight: 1.35, letterSpacing: '-0.015em', margin: 0 }}>
+              Magnate Capital <span style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.85)' }}>— Trade with Royalty, Built for Speed, Trust &amp; Loyalty.</span>
             </h2>
           </div>
 
